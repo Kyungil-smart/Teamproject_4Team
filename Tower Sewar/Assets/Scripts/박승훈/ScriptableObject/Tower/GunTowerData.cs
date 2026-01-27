@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Gun Tower Data", menuName = "Scriptable Object/Gun Tower Data", order = 0)]
+[CreateAssetMenu(fileName = "Gun Tower Data", menuName = "Scriptable Object/Tower/Gun Tower Data", order = 0)]
 public class GunTowerData : ScriptableObject
 {
     [Header("기본 생성 정보")]
     [SerializeField] private string _towerName;
     public string TowerName => _towerName;
     [SerializeField] private int _towerBuildCost;
-    public int TowerBuildCost => _towerBuildCost;
+    int TowerBuildCost => _towerBuildCost;
     
     [Space(20)]
     [Header("1단계 타워 정보")]
@@ -34,8 +35,6 @@ public class GunTowerData : ScriptableObject
     
     [Space(20)]
     [Header("3단계 타워 정보")]
-    [SerializeField] private int _towerUpCost3;
-    public int TowerUpCost3 => _towerUpCost3;
     [SerializeField] private float _towerAtt3;
     public float TowerAtt3 => _towerAtt3;
     [SerializeField] private float _towerAttSpd3;

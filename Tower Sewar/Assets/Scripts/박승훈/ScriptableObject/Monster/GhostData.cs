@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostData : MonoBehaviour
+[CreateAssetMenu(fileName = "Ghost Data", menuName = "Scriptable Object/Monster/Ghost Data", order = 3)]
+public class GhostData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("기본 생성 정보")]
+    [SerializeField] private string _name;
+    public string Name => _name;
+    [Space(10)]
+    [SerializeField] private float _spawnDelay;
+    public float SpawnDelay => _spawnDelay;
+    
+    [Space(20)]
+    [SerializeField] private float _hp;
+    public float Hp => _hp;
+    [SerializeField] private float _moveSpeed;
+    public float MoveSpeed => _moveSpeed;
+    [SerializeField] private int _dropGold;
+    public int DropGold => _dropGold;
 }
