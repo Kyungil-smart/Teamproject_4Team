@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD0C0\uC6CC \uC138\uC6CC"
+  m_text: "\uD0C0\uC6CC\uC138\uC6CC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 76186a6ee7088cd4ab8800165f7d2671, type: 2}
   m_sharedMaterial: {fileID: 7567109485373767741, guid: 76186a6ee7088cd4ab8800165f7d2671, type: 2}
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 40
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
