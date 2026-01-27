@@ -5,12 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Bat Data", menuName = "Scriptable Object/Monster/Bat Data", order = 2)]
 public class BatData : ScriptableObject
 {
-    [Header("기본 생성 정보")]
+    [Header("기본 생성 데이터")]
     [SerializeField] private string _name;
-    public string Name => _name;
-    [Space(10)]
-    [SerializeField] private float _spawnDelay;
-    public float SpawnDelay => _spawnDelay;
+    public string Name {get => _name;}
     
     [Space(20)]
     [SerializeField] private float _hp;
