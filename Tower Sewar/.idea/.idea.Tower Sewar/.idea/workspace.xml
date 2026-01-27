@@ -7,8 +7,12 @@
     <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/박승훈/Test_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/박승훈/Test_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/TowerData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/TowerData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/GunTower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/GunTower.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/BatData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/BatData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/GhostData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/GhostData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/RabbitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/RabbitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/SlimeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/SlimeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Tower/GunTowerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Tower/GunTowerData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
