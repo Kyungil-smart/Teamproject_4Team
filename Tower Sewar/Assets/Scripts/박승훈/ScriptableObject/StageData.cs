@@ -30,5 +30,4 @@ public class WaveData
     [Header("웨이브 데이터")]
     [SerializeField] private int _clearGold;
     public int ClearGold => _clearGold;
-    
 }
