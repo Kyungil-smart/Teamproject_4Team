@@ -31,6 +31,7 @@ public class Turret : MonoBehaviour
         if (_gradeController.TowerDatas.Count > 0)
         {
             RefreshTower();
+            Debug.Log("한글 테스트");
         }
     }
 
