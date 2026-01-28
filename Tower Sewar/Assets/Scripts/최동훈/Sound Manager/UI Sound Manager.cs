@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class UISoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static UISoundManager instance;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        // 메니저 생성
+        if (instance == null)
+        {
+            instance = gameObject.GetComponent<UISoundManager>();
+            DontDestroyOnLoad(gameObject);
+        }
+
+        // 오브젝트 파괴
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
