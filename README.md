@@ -1,4 +1,5 @@
 # KGA 팀 프로젝트 4조
+![사진](/Tower%20Sewar/picture/Example.png)
 # 타워 세워 (Tower Defense)
 
 몰려오는 웨이브를 막으며 최종 스테이지까지 버티면 승리하는 타워 디펜스 게임 제작 프로젝트이다.
