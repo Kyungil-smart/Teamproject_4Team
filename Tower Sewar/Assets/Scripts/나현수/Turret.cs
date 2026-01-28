@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform _towerModelParent; 
     private GameObject _currentModel; 
 
-    private int _curGrade = 0;
+    private int _curGrade = -1;
     private GunTowerData _currentData;
 
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
@@ -28,10 +28,9 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
-        if (_gradeController.TowerDatas.Count > 0)
+        if (_curGrade >= 0 && _gradeController.TowerDatas.Count > 0)
         {
             RefreshTower();
-            Debug.Log("한글 테스트");
         }
     }
 
@@ -49,12 +48,12 @@ public class Turret : MonoBehaviour
     {
         if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {
-            _curGrade++; 
+            _curGrade++;
             RefreshTower();
         }
         else
         {
-            Debug.Log("업그레이 완료");
+            Debug.Log("이미 최고 레벨입니다");
         }
     }
 
@@ -82,8 +81,10 @@ public class Turret : MonoBehaviour
 
     private void RefreshTower()
     {
+        if (_curGrade < 0) return;
+
         _currentData = _gradeController.TowerDatas[_curGrade];
-        Debug.Log($"이미 최고의 레벨입니다. : {_currentData.TowerName}, 데미지 : {_currentData.TowerAtt}");
+        Debug.Log($"{_currentData.TowerName}, 데미지 : {_currentData.TowerAtt}");
 
         if (_currentModel != null)
         {
@@ -96,6 +97,8 @@ public class Turret : MonoBehaviour
 
             _currentModel.transform.localPosition = Vector3.zero;
             _currentModel.transform.localRotation = Quaternion.identity;
+
+            _towerHead = _currentModel.transform;
         }
     }
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Turret_Grade : MonoBehaviour
 {
-    [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(4);
+    List<GunTowerData> _towerData = new List<GunTowerData>(4);
     public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }
 
     [SerializeField] private GameObject[] _towerPrefabs; 
@@ -40,5 +40,23 @@ public class Turret_Grade : MonoBehaviour
         lv2.TowerAttDelay  = 1.0f;
         lv2.TowerRange     = 1500.0f;
         _towerData.Add(lv2);
+
+        GunTowerData lv3 = ScriptableObject.CreateInstance<GunTowerData>();
+        lv3.TowerName = "Lv3";
+        lv3.TowerBuildCost = 10000000;
+        lv3.TowerUpCost = 100;
+        lv3.TowerAtt = 20.0f;
+        lv3.TowerAttDelay = 1.0f;
+        lv3.TowerRange = 1500.0f;
+        _towerData.Add(lv3);
+
+        GunTowerData lv4 = ScriptableObject.CreateInstance<GunTowerData>();
+        lv4.TowerName = "Lv4";
+        lv4.TowerBuildCost = 10000000;
+        lv4.TowerUpCost = 100;
+        lv4.TowerAtt = 20.0f;
+        lv4.TowerAttDelay = 1.0f;
+        lv4.TowerRange = 1500.0f;
+        _towerData.Add(lv4);
     }
 }
