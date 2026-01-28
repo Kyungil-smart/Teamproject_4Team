@@ -6,6 +6,8 @@ public class TileRaycaster : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 100f;
 
+    [SerializeField] private float rayHeightOffset = 1.2f;
+
     [SerializeField] private LayerMask tileLayer;
 
     public GameObject CurrentHoverObject {  get; private set; }
@@ -16,17 +18,15 @@ public class TileRaycaster : MonoBehaviour
 
     private void Update()
     {
-        // 마우스 락 상태일 때는 타일 선택 안 함
-        if (Cursor.lockState == CursorLockMode.Locked)
-            return;
         HandleRaycast();
         HandleClick();
     }
 
     private void HandleRaycast()
     {
-        
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Vector3 rayOrigin = transform.position + Vector3.up * rayHeightOffset;
+        Ray ray = new Ray(rayOrigin, transform.forward);
 
         Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red);
 
@@ -53,6 +53,19 @@ public class TileRaycaster : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        // 레이 항상 표시 (두껍게)
+        Gizmos.color = Color.red;
+
+        Vector3 rayOrigin = transform.position + Vector3.up * rayHeightOffset;
+        Vector3 rayEnd = rayOrigin + transform.forward * rayDistance;
+
+        // 중심선
+        Gizmos.DrawLine(rayOrigin, rayEnd);
+
+        // 두께 표현용 보조선 (좌우)
+        Gizmos.DrawLine(rayOrigin + transform.right * 0.05f, rayEnd + transform.right * 0.05f);
+        Gizmos.DrawLine(rayOrigin - transform.right * 0.05f, rayEnd - transform.right * 0.05f);
+
         if (CurrentHoverObject != null)
         {
             Gizmos.color = Color.yellow;
