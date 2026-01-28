@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 3698779638523751784}
   - component: {fileID: 1288546254809491847}
   - component: {fileID: 8391875998529786249}
+  - component: {fileID: 1746000279963204413}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -161,6 +162,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 8
+--- !u!114 &1746000279963204413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687111679197436142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bf45f81c969b142a4b1975dbd7ef4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 100
+  tileLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &7957906594580047031
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,14 +204,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7957906594580047031}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 30, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7055690106519099583}
   m_Father: {fileID: 3698779638523751784}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!114 &759278279159642472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,8 +224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc020f89dd3fd7488b65bbd947143a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limitLeft: -10
+  limitRight: 10
+  limitBack: -20
+  limitForward: 20
+  zoomSpeed: 10
+  minZoomY: 5
+  maxZoomY: 20
   panSpeed: 30
-  playerTransform: {fileID: 3698779638523751784}
 --- !u!114 &5536453087340655778
 MonoBehaviour:
   m_ObjectHideFlags: 0
