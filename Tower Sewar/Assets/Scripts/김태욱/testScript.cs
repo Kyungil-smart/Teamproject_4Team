@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class testScript : MonoBehaviour
 {
-    // Å×½ºÆ® ÇÑ±Û ÁÖ¼® ÀÔ´Ï´Ù
-    // °¡³ª´Ù¶ó¸¶¹Ù»ç¾Æ
-    //¤±³ª¾î·ç¤¿¤±³ÊÀ¯¶ó¤Ã ¤±´º¤¿¾î·ù³ª¸Û¤©/!!!@#!¤Ã¤¿¤Ó¤¤¤º¤¤¿ï¹Ì¸¸¿ï
-    // asldkjfnbsakljdfbkjasbvkjsa
+    // í…ŒìŠ¤íŠ¸ í•œê¸€ ì£¼ì„ ì…ë‹ˆë‹¤
+    // ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„
+    //ã…ë‚˜ì–´ë£¨ã…ã…ë„ˆìœ ë¼ã…“ ã…ë‰´ã…ì–´ë¥˜ë‚˜eedã…‡ã…‡ë©ã„¹/!!!@#!ã…“ã…ã…£ã„´ã…Šã„´ìš¸ë¯¸ë§Œìš¸
+    // asldkjfnbsakljdfbkjasbvkjsaasdf
 
     // Start is called before the first frame update
     void Start()
