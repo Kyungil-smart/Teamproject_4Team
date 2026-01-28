@@ -6,8 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/DataTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/DataTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/GunTowerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/GunTowerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Demo.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Demo.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Blue.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Blue.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Yellow.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Yellow.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/Platform_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/Platform_1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/RapidFireCannon_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/RapidFireCannon_1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_1.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_2.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_3.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_3.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_4.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_4.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Readme.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Readme.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/Manager/SceneManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/Manager/SceneManager.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="35" />
+    <option name="cachedIndexableFilesCount" value="37" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -36,26 +53,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PSH&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "PSH",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Unity.exe" />
@@ -103,6 +120,8 @@
       <updated>1769498453809</updated>
       <workItem from="1769498456020" duration="5322000" />
       <workItem from="1769562516433" duration="4608000" />
+      <workItem from="1769568134581" duration="10000" />
+      <workItem from="1769568165285" duration="325000" />
     </task>
     <servers />
   </component>
