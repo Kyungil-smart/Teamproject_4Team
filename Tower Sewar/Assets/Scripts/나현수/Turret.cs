@@ -1,13 +1,13 @@
-using System.Collections.Generic; // ¸®½ºÆ® »ç¿ëÀ» À§ÇØ ÇÊ¿äÇÕ´Ï´Ù.
+using System.Collections.Generic; // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Õ´Ï´ï¿½.
 using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    // ÅÍ·¿ Á¤º¸
+    // ï¿½Í·ï¿½ ï¿½ï¿½ï¿½ï¿½
     [SerializeField] private float _rotateSpeed = 30.0f;
     private Turret_Grade turret_Grade = new Turret_Grade();
 
-    // Àû Á¤º¸
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
 
     [SerializeField] private bool _isEnemy;
