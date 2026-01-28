@@ -1,24 +1,24 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// ÇÃ·¹ÀÌ¾îÀÇ Å°º¸µå ÀÌµ¿°ú ÀÌµ¿ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ´ã´çÇÏ´Â Å¬·¡½º
+// í”Œë ˆì´ì–´ì˜ í‚¤ë³´ë“œ ì´ë™ê³¼ ì´ë™ ì• ë‹ˆë©”ì´ì…˜ì„ ë‹´ë‹¹í•˜ëŠ” í´ë˜ìŠ¤
 public class PlayerMovement : MonoBehaviour
 {
-    // ÀÌµ¿ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Á¦¾îÇÏ±â À§ÇÑ Animator
+    // ì´ë™ ì• ë‹ˆë©”ì´ì…˜ì„ ì œì–´í•˜ê¸° ìœ„í•œ Animator
     private Animator _animator;
 
-    // ÇÃ·¹ÀÌ¾î ÀÌµ¿ ¼Óµµ
+    // í”Œë ˆì´ì–´ ì´ë™ ì†ë„
     [SerializeField] private float _moveSpeed;
 
-    // ControlStateManager ÂüÁ¶
-    // ÇöÀç ÇÃ·¹ÀÌ¾î ÀÌµ¿ÀÌ °¡´ÉÇÑ »óÅÂÀÎÁö È®ÀÎÇÏ±â À§ÇØ »ç¿ë
+    // ControlStateManager ì°¸ì¡°
+    // í˜„ì¬ í”Œë ˆì´ì–´ ì´ë™ì´ ê°€ëŠ¥í•œ ìƒíƒœì¸ì§€ í™•ì¸í•˜ê¸° ìœ„í•´ ì‚¬ìš©
     private ControlStateManager _controlStateManager;
 
     private void Awake()
     {
-        // Animator ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿Â´Ù
+        // Animator ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤
         _animator = GetComponent<Animator>();
 
-        // ¾À¿¡ Á¸ÀçÇÏ´Â ControlStateManager¸¦ Ã£´Â´Ù
+        // ì”¬ì— ì¡´ì¬í•˜ëŠ” ControlStateManagerë¥¼ ì°¾ëŠ”ë‹¤
         _controlStateManager = FindObjectOfType<ControlStateManager>();
     }
 
@@ -29,44 +29,44 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        // ÇöÀç »óÅÂ¿¡¼­ ÇÃ·¹ÀÌ¾î ÀÌµ¿ÀÌ ºÒ°¡´ÉÇÏ¸é Ã³¸®ÇÏÁö ¾Ê´Â´Ù
+        // í˜„ì¬ ìƒíƒœì—ì„œ í”Œë ˆì´ì–´ ì´ë™ì´ ë¶ˆê°€ëŠ¥í•˜ë©´ ì²˜ë¦¬í•˜ì§€ ì•ŠëŠ”ë‹¤
         if (!_controlStateManager.CanMove)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
 
-        // ¸¶¿ì½º°¡ ¶ô »óÅÂ°¡ ¾Æ´Ï¶ó¸é ÇÃ·¹ÀÌ¾î ÀÌµ¿À» ¸·´Â´Ù
-        // (UI Á¶ÀÛ ÁßÀÌ°Å³ª ESC·Î ¶ô ÇØÁ¦µÈ »óÈ²)
+        // ë§ˆìš°ìŠ¤ê°€ ë½ ìƒíƒœê°€ ì•„ë‹ˆë¼ë©´ í”Œë ˆì´ì–´ ì´ë™ì„ ë§‰ëŠ”ë‹¤
+        // (UI ì¡°ì‘ ì¤‘ì´ê±°ë‚˜ ESCë¡œ ë½ í•´ì œëœ ìƒí™©)
         if (Cursor.lockState != CursorLockMode.Locked)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
 
-        // Å°º¸µå ÀÔ·Â°ªÀ» ¹Ş´Â´Ù
+        // í‚¤ë³´ë“œ ì…ë ¥ê°’ì„ ë°›ëŠ”ë‹¤
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        // ÀÌµ¿ º¤ÅÍ¸¦ »ı¼ºÇÑ´Ù
+        // ì´ë™ ë²¡í„°ë¥¼ ìƒì„±í•œë‹¤
         Vector3 movement = new Vector3(horizontal, 0f, vertical);
 
-        // ÀÔ·ÂÀÌ ¾ø´Ù¸é ÀÌµ¿ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ²ö´Ù
+        // ì…ë ¥ì´ ì—†ë‹¤ë©´ ì´ë™ ì• ë‹ˆë©”ì´ì…˜ì„ ëˆë‹¤
         if (movement == Vector3.zero)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
-        // ´ë°¢¼± ÀÌµ¿ ½Ã ¼Óµµ°¡ »¡¶óÁö´Â ¹®Á¦¸¦ ¹æÁöÇÑ´Ù
+        // ëŒ€ê°ì„  ì´ë™ ì‹œ ì†ë„ê°€ ë¹¨ë¼ì§€ëŠ” ë¬¸ì œë¥¼ ë°©ì§€í•œë‹¤
         movement.Normalize();
 
-        // ÀÌµ¿ ¹æÇâÀ» ¹Ù¶óº¸µµ·Ï ÇÃ·¹ÀÌ¾î¸¦ È¸Àü½ÃÅ²´Ù
+        // ì´ë™ ë°©í–¥ì„ ë°”ë¼ë³´ë„ë¡ í”Œë ˆì´ì–´ë¥¼ íšŒì „ì‹œí‚¨ë‹¤
         transform.rotation = Quaternion.LookRotation(movement);
 
-        // ÇÃ·¹ÀÌ¾î¸¦ Àü¹æÀ¸·Î ÀÌµ¿½ÃÅ²´Ù
+        // í”Œë ˆì´ì–´ë¥¼ ì „ë°©ìœ¼ë¡œ ì´ë™ì‹œí‚¨ë‹¤
         transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
 
-        // ÀÌµ¿ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ÄÒ´Ù
+        // ì´ë™ ì• ë‹ˆë©”ì´ì…˜ì„ ì¼ ë‹¤
         _animator.SetBool("IsRunning", true);
     }
 }
