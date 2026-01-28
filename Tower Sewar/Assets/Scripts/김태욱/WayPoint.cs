@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WayPoint", menuName = "Scriptable Object/WayPoint", order = 0)]
 public class WayPoint : ScriptableObject
 {
-    [Header("¸Ê º° WayPoint Á¤º¸")]
+    [Header("ë§µ ë³„ WayPoint ì •ë³´")]
     [SerializeField]
     private List<MapPathData> _maps;
     public List<MapPathData> Maps { get { return _maps; } }

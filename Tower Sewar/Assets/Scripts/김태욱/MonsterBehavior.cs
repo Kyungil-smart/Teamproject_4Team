@@ -1,27 +1,27 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterBehavior : MonoBehaviour
 {
-    //¸ó½ºÅÍ data ÂüÁ¶
+    //ëª¬ìŠ¤í„° data ì°¸ì¡°
     [SerializeField]
-    GhostData _ghostData;
+    MonsterData _ghostData;
 
-    //¸ÊÀÇ wayPoint ÂüÁ¶
+    //ë§µì˜ wayPoint ì°¸ì¡°
     [SerializeField]
     WayPoint _wayPoint;
 
-    //¸ó½ºÅÍ ÇöÀçÃ¼·Â
+    //ëª¬ìŠ¤í„° í˜„ì¬ì²´ë ¥
     float _hp;
-    //¸ó½ºÅÍ ÇöÀç¼Óµµ
+    //ëª¬ìŠ¤í„° í˜„ì¬ì†ë„
     float _velocity;
-    //¸ó½ºÅÍ µå¶ø°ñµå
+    //ëª¬ìŠ¤í„° ë“œëê³¨ë“œ
     int _dropGold;
-    //¸ó½ºÅÍ ÀÌµ¿°æ·Î
+    //ëª¬ìŠ¤í„° ì´ë™ê²½ë¡œ
     List<Vector3> _pathPoints;
-    //¸ó½ºÅÍ ÇöÀç pathpoint index
+    //ëª¬ìŠ¤í„° í˜„ì¬ pathpoint index
     int _pathIndex;
     
 
@@ -43,41 +43,41 @@ public class MonsterBehavior : MonoBehaviour
         Move();
     }
 
-    //¸ó½ºÅÍ ÃÊ±âÈ­
+    //ëª¬ìŠ¤í„° ì´ˆê¸°í™”
     void Init()
     {
         _hp = _ghostData.Hp;
         _velocity = _ghostData.MoveSpeed;
         _dropGold = _ghostData.DropGold;
-        //TODO: Maps[0] -> Maps[ÇöÀç¸Ê]À¸·Î º¯°æÇØ¾ßÇÑ´Ù.
+        //TODO: Maps[0] -> Maps[í˜„ì¬ë§µ]ìœ¼ë¡œ ë³€ê²½í•´ì•¼í•œë‹¤.
         _pathPoints = _wayPoint.Maps[0].PathPoints;
         _pathIndex = 0;
     }
 
-    //¸ó½ºÅÍ ÀÌµ¿
+    //ëª¬ìŠ¤í„° ì´ë™
     void Move()
     {
         if (_pathPoints == null) return;
 
 
-        //³¡±îÁö µµÂøÇßÀ¸¸é µµÂø¿¡ µû¸¥ Ã³¸®
+        //ëê¹Œì§€ ë„ì°©í–ˆìœ¼ë©´ ë„ì°©ì— ë”°ë¥¸ ì²˜ë¦¬
         if(_pathIndex >= _pathPoints.Count)
         {
-            //µµÂøÃ³¸®
-            //Debug.Log("µµÂø!!!!!!!!!!!!!!!!!!");
+            //ë„ì°©ì²˜ë¦¬
+            //Debug.Log("ë„ì°©!!!!!!!!!!!!!!!!!!");
             return;
         }
-        //Debug.Log($"ÇöÀçÀ§Ä¡ x: {transform.position.x} y: {transform.position.y} z: {transform.position.z}");
-        //Debug.Log($"¸ñÇ¥À§Ä¡ x: {_pathPoints[_pathIndex].x} y: {_pathPoints[_pathIndex].y} z: {_pathPoints[_pathIndex].z}");
-        //Debug.Log($"ÀÌµ¿°Å¸® {_velocity * Time.deltaTime}");
+        //Debug.Log($"í˜„ì¬ìœ„ì¹˜ x: {transform.position.x} y: {transform.position.y} z: {transform.position.z}");
+        //Debug.Log($"ëª©í‘œìœ„ì¹˜ x: {_pathPoints[_pathIndex].x} y: {_pathPoints[_pathIndex].y} z: {_pathPoints[_pathIndex].z}");
+        //Debug.Log($"ì´ë™ê±°ë¦¬ {_velocity * Time.deltaTime}");
         transform.position = Vector3.MoveTowards(transform.position, _pathPoints[_pathIndex], _velocity * Time.deltaTime);
 
-        //¸ñÀûÁö¿¡ µµÂøÇßÀ¸¸é ¸ñÇ¥ÁöÁ¡À» ´ÙÀ½ ¸ñÀûÁö·Î º¯°æ
+        //ëª©ì ì§€ì— ë„ì°©í–ˆìœ¼ë©´ ëª©í‘œì§€ì ì„ ë‹¤ìŒ ëª©ì ì§€ë¡œ ë³€ê²½
         if (transform.position == _pathPoints[_pathIndex])
         {
             _pathIndex++;
 
-            //rotationµµ ¹Ù²ãÁÜ
+            //rotationë„ ë°”ê¿”ì¤Œ
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
             transform.forward = dir.normalized;
         }
