@@ -4,19 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="" />
+    <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/박승훈/Test_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/박승훈/Test_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Bat Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Bat Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Bat Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Bat Data.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Ghost Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Ghost Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Ghost Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Ghost Data.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Rabbit Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Rabbit Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Rabbit Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Rabbit Data.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Slime Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Slime Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Slime Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Slime Data.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/BatData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/BatData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/GhostData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/GhostData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/RabbitData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/RabbitData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/SlimeData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Monster/SlimeData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Tower.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Tower/GunTowerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/Tower/GunTowerData.cs.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="2" />
+    <option name="cachedIndexableFilesCount" value="35" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37cc348edc804f4cb176b63962c716e7177200/25/e0bd2277/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/박승훈/ScriptableObject/StageData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -97,6 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1769498453809</updated>
       <workItem from="1769498456020" duration="5322000" />
+      <workItem from="1769562516433" duration="2810000" />
     </task>
     <servers />
   </component>
