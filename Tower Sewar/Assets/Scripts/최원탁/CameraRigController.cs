@@ -3,12 +3,7 @@
 // Player의 자식으로 동작하는 RTS 쿼터뷰 카메라 컨트롤러
 public class CameraRigController : MonoBehaviour
 {
-    [Header("카메라 이동제한 범위")]
-    [SerializeField] private float limitLeft = -10f;
-    [SerializeField] private float limitRight = 10f;
-    [SerializeField] private float limitBack = -8f;
-    [SerializeField] private float limitForward = 8f;
-
+    
     [Header("카메라 줌")]
     [SerializeField] private float minDistance = 3f;
     [SerializeField] private float maxDistance = 10f;
