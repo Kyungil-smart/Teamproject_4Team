@@ -10,18 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c9128b574323d4096991d84537d136, type: 3}
-  m_Name: GunTower
+  m_Name: GunTower_Tier4
   m_EditorClassIdentifier: 
   _towerName: GunTower
-  _towerBuildCost: 150
-  _towerUpCost1: 150
-  _towerAtt1: 10
-  _towerAttSpd1: 3
-  _towerRange1: 4
-  _towerUpCost2: 200
-  _towerAtt2: 16
-  _towerAttSpd2: 3.5
-  _towerRange2: 4.5
-  _towerAtt3: 22
-  _towerAttSpd3: 4
-  _towerRange3: 5
+  _towerBuildCost: 0
+  _towerUpCost: 250
+  _towerAtt: 32
+  _towerAttDelay: 0.45
+  _towerRange: 6

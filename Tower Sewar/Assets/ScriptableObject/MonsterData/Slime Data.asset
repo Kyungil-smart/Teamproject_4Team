@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567af6e0d1e74fc4982add0862c5be0a, type: 3}
-  m_Name: Ghost Data
+  m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
+  m_Name: Slime Data
   m_EditorClassIdentifier: 
-  _name: "\uC720\uB839"
-  _spawnDelay: 4
-  _hp: 150
-  _moveSpeed: 4.5
-  _dropGold: 25
+  _name: "\uC2AC\uB77C\uC784"
+  _hp: 100
+  _moveSpeed: 4
+  _dropGold: 20

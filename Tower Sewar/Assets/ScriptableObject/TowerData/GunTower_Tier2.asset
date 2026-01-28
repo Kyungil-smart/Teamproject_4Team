@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb13f1a1c0f8614ebbb356f7ae9f32f, type: 3}
-  m_Name: Rabbit Data
+  m_Script: {fileID: 11500000, guid: e6c9128b574323d4096991d84537d136, type: 3}
+  m_Name: GunTower_Tier2
   m_EditorClassIdentifier: 
-  _name: "\uD1A0\uB07C"
-  _spawnDelay: 5
-  _hp: 350
-  _moveSpeed: 2.5
-  _dropGold: 35
+  _towerName: GunTower
+  _towerBuildCost: 0
+  _towerUpCost: 150
+  _towerAtt: 16
+  _towerAttDelay: 0.7
+  _towerRange: 4.5

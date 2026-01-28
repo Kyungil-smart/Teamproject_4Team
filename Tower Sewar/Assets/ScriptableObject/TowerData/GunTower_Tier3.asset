@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e367b0e05eb92be4dad2ffd96b4dfc43, type: 3}
-  m_Name: Slime Data
+  m_Script: {fileID: 11500000, guid: e6c9128b574323d4096991d84537d136, type: 3}
+  m_Name: GunTower_Tier3
   m_EditorClassIdentifier: 
-  _name: "\uC2AC\uB77C\uC784"
-  _spawnDelay: 3
-  _hp: 100
-  _moveSpeed: 4
-  _dropGold: 20
+  _towerName: GunTower
+  _towerBuildCost: 0
+  _towerUpCost: 200
+  _towerAtt: 23
+  _towerAttDelay: 0.6
+  _towerRange: 5

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Bat Data
   m_EditorClassIdentifier: 
   _name: "\uBC15\uC950"
-  _spawnDelay: 3
   _hp: 85
   _moveSpeed: 5
   _dropGold: 25
