@@ -19,10 +19,9 @@ MonoBehaviour:
   _towerAttSpd1: 3
   _towerRange1: 4
   _towerUpCost2: 200
-  _towerAtt2: 15
+  _towerAtt2: 16
   _towerAttSpd2: 3.5
   _towerRange2: 4.5
-  _towerUpCost3: 250
-  _towerAtt3: 20
+  _towerAtt3: 22
   _towerAttSpd3: 4
   _towerRange3: 5
