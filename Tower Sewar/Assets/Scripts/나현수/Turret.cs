@@ -1,49 +1,62 @@
-using System.Collections.Generic; // 리스트 사용을 위해 필요합니다.
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class Turret : MonoBehaviour
 {
+    // Turret Grade
+    private Turret_Grade _gradeController;
+
+    // 터렛 회전
+    [SerializeField] private Transform _towerHead; // 회전시킬 머리(상부) 오브젝트
+
     // 터렛 정보
-    [SerializeField] private float _rotateSpeed = 30.0f;
-    private Turret_Grade turret_Grade = new Turret_Grade();
+    [SerializeField] private Transform _towerModelParent; // 프리팹이 생성될 부모 위치
+    private GameObject _currentModel; // 현재 화면에 보이는 모델
+
+    private int _curGrade = 0;
+    private GunTowerData _currentData;
 
     // 적 정보
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
-
     [SerializeField] private bool _isEnemy;
-    private Transform _currentTarget;
+    public bool IsEnemy => _isEnemy;
+    public Transform _currentTarget { get; set; }
 
     private void Awake()
     {
+        _gradeController = GetComponent<Turret_Grade>();
+
         _isEnemy = false;
-        _rotateSpeed = 30.0f;
+    }
+
+    private void Start()
+    {
+        if (_gradeController.TowerDatas.Count > 0)
+        {
+            RefreshTower();
+        }
     }
 
     private void Update()
     {
         UpdateTarget();
 
-        if (_isEnemy && _currentTarget != null)
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            transform.LookAt(_currentTarget);
-        }
-        else
-        {
-            transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
+            Upgrade();
         }
     }
 
-    private void UpdateTarget()
+    private void Upgrade()
     {
-        if (_enemyList.Count > 0)
+        if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {
-            _isEnemy = true;
-            _currentTarget = _enemyList[0];
+            _curGrade++; 
+            RefreshTower();
         }
         else
         {
-            _isEnemy = false;
-            _currentTarget = null;
+            Debug.Log("이미 최고 등급입니다.");
         }
     }
 
@@ -66,6 +79,39 @@ public class Rotate : MonoBehaviour
             {
                 _enemyList.Remove(other.transform);
             }
+        }
+    }
+
+    private void RefreshTower()
+    {
+        _currentData = _gradeController.TowerDatas[_curGrade];
+        Debug.Log($"업그레이드 완료! 현재 이름: {_currentData.TowerName}, 공격력: {_currentData.TowerAtt}");
+
+        if (_currentModel != null)
+        {
+            Destroy(_currentModel);
+        }
+
+        if (_gradeController.TowerPrefabs.Length > _curGrade && _gradeController.TowerPrefabs[_curGrade] != null)
+        {
+            _currentModel = Instantiate(_gradeController.TowerPrefabs[_curGrade], _towerModelParent);
+
+            _currentModel.transform.localPosition = Vector3.zero;
+            _currentModel.transform.localRotation = Quaternion.identity;
+        }
+    }
+
+    private void UpdateTarget()
+    {
+        if (_enemyList.Count > 0)
+        {
+            _isEnemy = true;
+            _currentTarget = _enemyList[0];
+        }
+        else
+        {
+            _isEnemy = false;
+            _currentTarget = null;
         }
     }
 }
