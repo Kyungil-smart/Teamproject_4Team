@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 163879914623982650}
-  - component: {fileID: 2778853271579757848}
-  - component: {fileID: 6997428501495127916}
+  - component: {fileID: -1889969980797336243}
+  - component: {fileID: 714098015452594088}
   m_Layer: 0
   m_Name: UI_SFX2
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2778853271579757848
+--- !u!82 &-1889969980797336243
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 80721227073f0cf4497b42ead9687c56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 822edceb9023eb44dbfc3e5a93a89b4c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.48
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6997428501495127916
+--- !u!114 &714098015452594088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

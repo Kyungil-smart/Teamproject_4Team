@@ -6,6 +6,17 @@ public class UISoundManager : MonoBehaviour
 {
     private static UISoundManager instance;
 
+    [Header("Sound")]
+    public AudioSource AudioSource;
+
+    [Header("Title BGM")]
+    public AudioClip bgmSource;
+
+    [Header("SFX")]
+    public AudioClip clickSound;
+    public AudioClip exitSound;
+
+
     void Awake()
     {
         // 메니저 생성
