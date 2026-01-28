@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49e407cea18ce74a8570fe085aa7f63, type: 3}
+  m_Name: WayPoint
+  m_EditorClassIdentifier: 
+  _maps:
+  - _mapName: FirstMap
+    _pathPoints:
+    - {x: -37, y: 0, z: 36}
+    - {x: 40.5, y: 0, z: 36}
+    - {x: 45, y: 0, z: 30}
+    - {x: 45, y: 0, z: 22}
+    - {x: 40.5, y: 0, z: 16}
+    - {x: -34, y: 0, z: 16}
+    - {x: -39, y: 0, z: 10}
+    - {x: -39, y: 0, z: 2}
+    - {x: -34, y: 0, z: -4}
+    - {x: 40, y: 0, z: -4}
+    - {x: 45, y: 0, z: -10}
+    - {x: 45, y: 0, z: -18}
+    - {x: 40, y: 0, z: -24}
+    - {x: -34, y: 0, z: -24}
+    - {x: -39, y: 0, z: -30}
+    - {x: -39, y: 0, z: -38}
+    - {x: -35, y: 0, z: -44}
+    - {x: 42.5, y: 0, z: -44}

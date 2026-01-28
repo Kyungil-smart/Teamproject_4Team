@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TestSecond : MonoBehaviour
 {
-    // ÀÎÄÚµù Å×½ºÆ®
-    // ¸·°¡³ª¾È¾Æ³¶³ª
+    // ì¸ì½”ë”© í…ŒìŠ¤íŠ¸
+    // ë§‰ê°€ë‚˜ì•ˆì•„ë‚­ë‚˜
 }
