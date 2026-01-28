@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
+    // 터렛 정보
     [SerializeField] private float _rotateSpeed = 30.0f;
-    [SerializeField] private bool _isEnemy;
+    private Turret_Grade turret_Grade = new Turret_Grade();
 
+    // 적 정보
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
 
+    [SerializeField] private bool _isEnemy;
     private Transform _currentTarget;
 
     private void Awake()
