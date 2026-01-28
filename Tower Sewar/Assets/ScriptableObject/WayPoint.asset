@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49e407cea18ce74a8570fe085aa7f63, type: 3}
   m_Name: WayPoint
   m_EditorClassIdentifier: 
+  _maps:
+  - _mapName: FirstMap
+    _pathPoints:
+    - {x: -37, y: 0, z: 36}
+    - {x: 40.5, y: 0, z: 36}
+    - {x: 45, y: 0, z: 30}

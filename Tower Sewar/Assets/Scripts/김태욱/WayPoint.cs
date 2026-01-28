@@ -7,18 +7,22 @@ public class WayPoint : ScriptableObject
 {
     [Header("¸Ê º° WayPoint Á¤º¸")]
     [SerializeField]
-    private List<WayPointList> _mapList;
+    private List<MapPathData> _maps;
+    public List<MapPathData> Maps { get { return _maps; } }
 
 
 }
-
-
 [System.Serializable]
-public class WayPointList
+public class MapPathData
 {
     [SerializeField]
-    string _mapName;
-    [SerializeField] 
-    private List<Vector3> _wayPointList;
+    private string _mapName;
+    public string MapName { get { return _mapName; } }
+
+    [SerializeField]
+    private List<Vector3> _pathPoints;
+    public List<Vector3> PathPoints { get { return _pathPoints; } }
 }
+
+
 
