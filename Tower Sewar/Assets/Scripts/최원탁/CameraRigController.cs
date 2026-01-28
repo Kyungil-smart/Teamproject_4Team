@@ -1,36 +1,36 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// PlayerÀÇ ÀÚ½ÄÀ¸·Î µ¿ÀÛÇÏ´Â RTS ÄõÅÍºä Ä«¸Ş¶ó ÄÁÆ®·Ñ·¯
+// Playerì˜ ìì‹ìœ¼ë¡œ ë™ì‘í•˜ëŠ” RTS ì¿¼í„°ë·° ì¹´ë©”ë¼ ì»¨íŠ¸ë¡¤ëŸ¬
 public class CameraRigController : MonoBehaviour
 {
-    [Header("Ä«¸Ş¶ó ÀÌµ¿Á¦ÇÑ ¹üÀ§")]
+    [Header("ì¹´ë©”ë¼ ì´ë™ì œí•œ ë²”ìœ„")]
     [SerializeField] private float limitLeft = -10f;
     [SerializeField] private float limitRight = 10f;
     [SerializeField] private float limitBack = -8f;
     [SerializeField] private float limitForward = 8f;
 
-    [Header("Ä«¸Ş¶ó ÁÜ")]
+    [Header("ì¹´ë©”ë¼ ì¤Œ")]
     [SerializeField] private float zoomSpeed = 10f;
     [SerializeField] private float minZoomY = 5f;
     [SerializeField] private float maxZoomY = 20f;
 
-    // ¸¶¿ì½º ÀÌµ¿¿¡ µû¸¥ Ä«¸Ş¶ó ÀÌµ¿ ¼Óµµ
+    // ë§ˆìš°ìŠ¤ ì´ë™ì— ë”°ë¥¸ ì¹´ë©”ë¼ ì´ë™ ì†ë„
     [SerializeField] private float panSpeed = 5f;
 
-    // ControlStateManager ÂüÁ¶
+    // ControlStateManager ì°¸ì¡°
     private ControlStateManager controlStateManager;
 
-    // Ä«¸Ş¶óÀÇ ±âº» ·ÎÄÃ À§Ä¡ (ÇÃ·¹ÀÌ¾î ±âÁØ ½ÃÁ¡)
-    // Player ±âÁØ ¡°Á¤Áß¾Ó ½ÃÁ¡¡±
+    // ì¹´ë©”ë¼ì˜ ê¸°ë³¸ ë¡œì»¬ ìœ„ì¹˜ (í”Œë ˆì´ì–´ ê¸°ì¤€ ì‹œì )
+    // Player ê¸°ì¤€ â€œì •ì¤‘ì•™ ì‹œì â€
     private Vector3 defaultLocalPosition;
 
     private void Awake()
     {
-        // ¾À¿¡ ÇÏ³ª ÀÖ´Â ControlStateManager¸¦ Ã£À½
-        // Ä«¸Ş¶ó°¡ ¡°Áö±İ Á¶ÀÛ °¡´ÉÇÑ »óÅÂÀÎÁö¡± ÆÇ´ÜÇÏ±â À§ÇÔ
+        // ì”¬ì— í•˜ë‚˜ ìˆëŠ” ControlStateManagerë¥¼ ì°¾ìŒ
+        // ì¹´ë©”ë¼ê°€ â€œì§€ê¸ˆ ì¡°ì‘ ê°€ëŠ¥í•œ ìƒíƒœì¸ì§€â€ íŒë‹¨í•˜ê¸° ìœ„í•¨
         controlStateManager = FindObjectOfType<ControlStateManager>();
 
-        // ½ÃÀÛ ½Ã Ä«¸Ş¶óÀÇ ±âº» ·ÎÄÃ À§Ä¡¸¦ ÀúÀåÇÑ´Ù
+        // ì‹œì‘ ì‹œ ì¹´ë©”ë¼ì˜ ê¸°ë³¸ ë¡œì»¬ ìœ„ì¹˜ë¥¼ ì €ì¥í•œë‹¤
         defaultLocalPosition = transform.localPosition;
     }
 
@@ -44,17 +44,17 @@ public class CameraRigController : MonoBehaviour
 
     private void HandleMouseLockInput()
     {
-        // ¸¶¿ì½º ¿ŞÂÊ Å¬¸¯ ½Ã
-        //¸¶¿ì½º¸¦ È­¸é Áß¾Ó¿¡ °íÁ¤
-        // ½ÃÁ¡ Á¶ÀÛ ¸ğµå ÁøÀÔ
+        // ë§ˆìš°ìŠ¤ ì™¼ìª½ í´ë¦­ ì‹œ
+        //ë§ˆìš°ìŠ¤ë¥¼ í™”ë©´ ì¤‘ì•™ì— ê³ ì •
+        // ì‹œì  ì¡°ì‘ ëª¨ë“œ ì§„ì…
         if (Input.GetMouseButtonDown(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 
-        // ¸¶¿ì½º ¶ô ÇØÁ¦
-        // UI Á¶ÀÛ °¡´É »óÅÂ
+        // ë§ˆìš°ìŠ¤ ë½ í•´ì œ
+        // UI ì¡°ì‘ ê°€ëŠ¥ ìƒíƒœ
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -64,43 +64,43 @@ public class CameraRigController : MonoBehaviour
 
     private void HandleCameraPan()
     {
-        // °ÔÀÓ ½ÃÁ¡ Á¶ÀÛÀÌ ±İÁöµÈ °æ¿ì
-        // Ä«¸Ş¶ó ÀÔ·Â Â÷´Ü
+        // ê²Œì„ ì‹œì  ì¡°ì‘ì´ ê¸ˆì§€ëœ ê²½ìš°
+        // ì¹´ë©”ë¼ ì…ë ¥ ì°¨ë‹¨
         if (!controlStateManager.CanLook)
             return;
-        // ¸¶¿ì½º°¡ ¶ô»óÅÂ°¡ ¾Æ´Ï¸é Ä«¸Ş¶ó ÀÌµ¿ ¾ÈµÊ
+        // ë§ˆìš°ìŠ¤ê°€ ë½ìƒíƒœê°€ ì•„ë‹ˆë©´ ì¹´ë©”ë¼ ì´ë™ ì•ˆë¨
         if (Cursor.lockState != CursorLockMode.Locked)
             return;
 
-        // ¸¶¿ì½º ÀÌµ¿·® È¹µæ
+        // ë§ˆìš°ìŠ¤ ì´ë™ëŸ‰ íšë“
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        // ¸¶¿ì½º ¾È¿òÁ÷ÀÌ¸é ÀÌµ¿ ¹æÁö
+        // ë§ˆìš°ìŠ¤ ì•ˆì›€ì§ì´ë©´ ì´ë™ ë°©ì§€
         if (mouseX == 0f && mouseY == 0f)
             return;
 
-        // ÇÃ·¹ÀÌ¾î ±âÁØ ¿À¸¥ÂÊ / ¾Õ ¹æÇâÀ¸·Î ·ÎÄÃ ÀÌµ¿
+        // í”Œë ˆì´ì–´ ê¸°ì¤€ ì˜¤ë¥¸ìª½ / ì• ë°©í–¥ìœ¼ë¡œ ë¡œì»¬ ì´ë™
         Vector3 move =
             (Vector3.right * mouseX + Vector3.forward * mouseY)
             * panSpeed * Time.deltaTime;
         
-        // ·ÎÄÃ ÀÌµ¿ Àû¿ë
+        // ë¡œì»¬ ì´ë™ ì ìš©
         transform.localPosition += move;
 
-        // ÀÌµ¿ ÈÄ À§Ä¡¸¦ Á¦ÇÑ ¹üÀ§ ¾ÈÀ¸·Î clamp ÇÑ´Ù
+        // ì´ë™ í›„ ìœ„ì¹˜ë¥¼ ì œí•œ ë²”ìœ„ ì•ˆìœ¼ë¡œ clamp í•œë‹¤
         Vector3 clampedPos = transform.localPosition;
 
         clampedPos.x = Mathf.Clamp(clampedPos.x, limitLeft, limitRight);
         clampedPos.z = Mathf.Clamp(clampedPos.z, limitBack, limitForward);
 
-        // Á¦ÇÑµÈ À§Ä¡¸¦ ´Ù½Ã Àû¿ë
+        // ì œí•œëœ ìœ„ì¹˜ë¥¼ ë‹¤ì‹œ ì ìš©
         transform.localPosition = clampedPos;
     }
 
     private void HandleResetByPlayerMove()
     {
-        // ÇÃ·¹ÀÌ¾î ÀÌµ¿ ÀÔ·ÂÀÌ µé¾î¿À¸é Ä«¸Ş¶ó¸¦ ±âº» À§Ä¡·Î º¹±Í
+        // í”Œë ˆì´ì–´ ì´ë™ ì…ë ¥ì´ ë“¤ì–´ì˜¤ë©´ ì¹´ë©”ë¼ë¥¼ ê¸°ë³¸ ìœ„ì¹˜ë¡œ ë³µê·€
         bool isPlayerMoving =
             Input.GetAxisRaw("Horizontal") != 0f ||
             Input.GetAxisRaw("Vertical") != 0f;
@@ -111,26 +111,26 @@ public class CameraRigController : MonoBehaviour
         }
     }
 
-    // ¸¶¿ì½º ÈÙ·Î Ä«¸Ş¶ó ÁÜÀ» Ã³¸®ÇÑ´Ù
+    // ë§ˆìš°ìŠ¤ íœ ë¡œ ì¹´ë©”ë¼ ì¤Œì„ ì²˜ë¦¬í•œë‹¤
     private void HandleZoom()
     {
-        // ¸¶¿ì½º ÈÙ ÀÔ·Â°ªÀ» °¡Á®¿Â´Ù
+        // ë§ˆìš°ìŠ¤ íœ  ì…ë ¥ê°’ì„ ê°€ì ¸ì˜¨ë‹¤
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        // ÀÔ·ÂÀÌ ¾øÀ¸¸é Ã³¸®ÇÏÁö ¾Ê´Â´Ù
+        // ì…ë ¥ì´ ì—†ìœ¼ë©´ ì²˜ë¦¬í•˜ì§€ ì•ŠëŠ”ë‹¤
         if (scroll == 0f)
             return;
 
-        // ÇöÀç ·ÎÄÃ À§Ä¡ °¡Á®¿À±â
+        // í˜„ì¬ ë¡œì»¬ ìœ„ì¹˜ ê°€ì ¸ì˜¤ê¸°
         Vector3 pos = transform.localPosition;
 
-        // ÈÙ ÀÔ·Â¿¡ µû¶ó Y°ª(³ôÀÌ)À» Á¶ÀıÇÑ´Ù
+        // íœ  ì…ë ¥ì— ë”°ë¼ Yê°’(ë†’ì´)ì„ ì¡°ì ˆí•œë‹¤
         pos.y -= scroll * zoomSpeed;
 
-        // ÁÜ ¹üÀ§¸¦ Á¦ÇÑÇÑ´Ù
+        // ì¤Œ ë²”ìœ„ë¥¼ ì œí•œí•œë‹¤
         pos.y = Mathf.Clamp(pos.y, minZoomY, maxZoomY);
 
-        // º¯°æµÈ À§Ä¡¸¦ ´Ù½Ã Àû¿ëÇÑ´Ù
+        // ë³€ê²½ëœ ìœ„ì¹˜ë¥¼ ë‹¤ì‹œ ì ìš©í•œë‹¤
         transform.localPosition = pos;
     }
 
