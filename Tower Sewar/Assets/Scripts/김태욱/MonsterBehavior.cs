@@ -17,7 +17,6 @@ public class MonsterBehavior : MonoBehaviour
     float _hp;
     //몬스터 현재속도
     float _velocity;
-    //
     //몬스터 드랍골드
     int _dropGold;
     //몬스터 이동경로
@@ -75,7 +74,13 @@ public class MonsterBehavior : MonoBehaviour
 
         //목적지에 도착했으면 목표지점을 다음 목적지로 변경
         if (transform.position == _pathPoints[_pathIndex])
+        {
             _pathIndex++;
+
+            //rotation도 바꿔줌
+            Vector3 dir = _pathPoints[_pathIndex] - transform.position;
+            transform.forward = dir.normalized;
+        }
 
     }
 }
