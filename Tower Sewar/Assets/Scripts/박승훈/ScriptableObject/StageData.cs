@@ -6,6 +6,7 @@ using UnityEngine;
 public class StageData : ScriptableObject
 {
     [SerializeField] List<WaveData> _waveDatas = new List<WaveData>();
+    public List<WaveData> WaveDatas => _waveDatas;
 }
 
 [System.Serializable]

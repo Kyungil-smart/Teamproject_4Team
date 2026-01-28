@@ -34,7 +34,7 @@ public class MonsterBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class MonsterBehavior : MonoBehaviour
         //끝까지 도착했으면 도착에 따른 처리
         if(_pathIndex >= _pathPoints.Count)
         {
-            //도착처리
+            //TODO: 도착처리
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             return;
         }

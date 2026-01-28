@@ -1411,17 +1411,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Violet
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011296433714, guid: 30d420b7cf5d3ad40b5c02db6d73287a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013931392504, guid: 30d420b7cf5d3ad40b5c02db6d73287a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4000013931392504, guid: 30d420b7cf5d3ad40b5c02db6d73287a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4000013931392504, guid: 30d420b7cf5d3ad40b5c02db6d73287a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4000013931392504, guid: 30d420b7cf5d3ad40b5c02db6d73287a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2459,7 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab732c2f8df00f243bd0462ca0de8776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ghostData: {fileID: 11400000, guid: 4193e170efc86214ca73df313128bc02, type: 2}
+  _ghostData: {fileID: 11400000, guid: bcb781bc76f32a340af76a711fc4a4c5, type: 2}
   _wayPoint: {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
 --- !u!136 &1812889929
 CapsuleCollider:
