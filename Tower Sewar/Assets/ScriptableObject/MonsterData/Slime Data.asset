@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
+  m_Name: Slime Data
+  m_EditorClassIdentifier: 
+  _name: "\uC2AC\uB77C\uC784"
+  _hp: 100
+  _moveSpeed: 4
+  _dropGold: 20
