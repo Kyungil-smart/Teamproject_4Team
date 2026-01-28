@@ -10,9 +10,20 @@ public class CameraRigController : MonoBehaviour
     [SerializeField] private float limitForward = 8f;
 
     [Header("카메라 줌")]
-    [SerializeField] private float zoomSpeed = 10f;
-    [SerializeField] private float minZoomY = 5f;
-    [SerializeField] private float maxZoomY = 20f;
+    [SerializeField] private float minDistance = 3f;
+    [SerializeField] private float maxDistance = 10f;
+    [SerializeField] private float zoomSpeed = 2f;
+
+    [Header("카메라 공전")]
+    [SerializeField] private Transform playerTarget;
+    [SerializeField] private float rotateSpeed = 120f;
+
+    [Header("카메라 거리")]
+    [SerializeField] private float followDistance = 6f;
+    [SerializeField] private float followHeight = 2f;
+
+    private float currentYaw;
+    private float currentPitch = 20f;
 
     // 마우스 이동에 따른 카메라 이동 속도
     [SerializeField] private float panSpeed = 5f;
@@ -37,10 +48,52 @@ public class CameraRigController : MonoBehaviour
     private void Update()
     {
         HandleMouseLockInput();
-        HandleCameraPan();
+        HandleOrbit();
         HandleZoom();
-        HandleResetByPlayerMove();
+        
     }
+
+    private void LateUpdate()
+    {
+        if (playerTarget == null)
+            return;
+
+        // 회전값으로 방향 계산
+        Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0f);
+
+        // 거리 유지한 위치 계산
+        Vector3 offset = rotation * new Vector3(0f, 0f, -followDistance);
+        Vector3 targetPos = playerTarget.position + Vector3.up * followHeight;
+
+        transform.position = targetPos + offset;
+
+        // 항상 플레이어를 바라본다
+        transform.LookAt(targetPos);
+    }
+
+
+    private void HandleOrbit()
+    {
+        if (!controlStateManager.CanLook)
+            return;
+
+        if (Cursor.lockState != CursorLockMode.Locked)
+            return;
+
+        if (playerTarget == null)
+            return;
+
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        currentYaw += mouseX * rotateSpeed * Time.deltaTime;
+        currentPitch -= mouseY * rotateSpeed * Time.deltaTime;
+        currentPitch = Mathf.Clamp(currentPitch, 10f, 70f);
+
+        // 항상 플레이어를 바라보게 한다
+        transform.LookAt(playerTarget);
+    }
+
 
     private void HandleMouseLockInput()
     {
@@ -62,76 +115,19 @@ public class CameraRigController : MonoBehaviour
         }
     }
 
-    private void HandleCameraPan()
-    {
-        // 게임 시점 조작이 금지된 경우
-        // 카메라 입력 차단
-        if (!controlStateManager.CanLook)
-            return;
-        // 마우스가 락상태가 아니면 카메라 이동 안됨
-        if (Cursor.lockState != CursorLockMode.Locked)
-            return;
+    
 
-        // 마우스 이동량 획득
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
-        // 마우스 안움직이면 이동 방지
-        if (mouseX == 0f && mouseY == 0f)
-            return;
-
-        // 플레이어 기준 오른쪽 / 앞 방향으로 로컬 이동
-        Vector3 move =
-            (Vector3.right * mouseX + Vector3.forward * mouseY)
-            * panSpeed * Time.deltaTime;
-        
-        // 로컬 이동 적용
-        transform.localPosition += move;
-
-        // 이동 후 위치를 제한 범위 안으로 clamp 한다
-        Vector3 clampedPos = transform.localPosition;
-
-        clampedPos.x = Mathf.Clamp(clampedPos.x, limitLeft, limitRight);
-        clampedPos.z = Mathf.Clamp(clampedPos.z, limitBack, limitForward);
-
-        // 제한된 위치를 다시 적용
-        transform.localPosition = clampedPos;
-    }
-
-    private void HandleResetByPlayerMove()
-    {
-        // 플레이어 이동 입력이 들어오면 카메라를 기본 위치로 복귀
-        bool isPlayerMoving =
-            Input.GetAxisRaw("Horizontal") != 0f ||
-            Input.GetAxisRaw("Vertical") != 0f;
-
-        if (isPlayerMoving)
-        {
-            transform.localPosition = defaultLocalPosition;
-        }
-    }
+    
 
     // 마우스 휠로 카메라 줌을 처리한다
     private void HandleZoom()
     {
-        // 마우스 휠 입력값을 가져온다
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-
-        // 입력이 없으면 처리하지 않는다
         if (scroll == 0f)
             return;
 
-        // 현재 로컬 위치 가져오기
-        Vector3 pos = transform.localPosition;
-
-        // 휠 입력에 따라 Y값(높이)을 조절한다
-        pos.y -= scroll * zoomSpeed;
-
-        // 줌 범위를 제한한다
-        pos.y = Mathf.Clamp(pos.y, minZoomY, maxZoomY);
-
-        // 변경된 위치를 다시 적용한다
-        transform.localPosition = pos;
+        followDistance -= scroll * zoomSpeed;
+        followDistance = Mathf.Clamp(followDistance, minDistance, maxDistance);
     }
 
 }

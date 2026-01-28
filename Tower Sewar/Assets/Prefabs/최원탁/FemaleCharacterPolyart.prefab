@@ -327,6 +327,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1812072891626710266}
+  - component: {fileID: 3917930320051445137}
+  - component: {fileID: 4677894436539919539}
+  - component: {fileID: 6262640672820845403}
+  - component: {fileID: 5392483976821692166}
   m_Layer: 0
   m_Name: FemaleCharacterPolyart
   m_TagString: Untagged
@@ -354,6 +358,69 @@ Transform:
   - {fileID: 2539411107751456622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3917930320051445137
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328023254706044480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ff3fab5e327b10e42a9da4ea2b8b94ad, type: 2}
+  m_Controller: {fileID: 9100000, guid: 585aa9cedaa62454dad2a541a60826fa, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4677894436539919539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328023254706044480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68c548ee8a31a34d83680392bb26afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
+--- !u!114 &6262640672820845403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328023254706044480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61ea9f33a95e7345814d3b9ca099877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5392483976821692166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328023254706044480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bf45f81c969b142a4b1975dbd7ef4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 2
+  rayHeightOffset: 0.5
+  tileLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1647417302430462415
 GameObject:
   m_ObjectHideFlags: 0
