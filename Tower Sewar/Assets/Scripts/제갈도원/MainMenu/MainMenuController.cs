@@ -10,9 +10,9 @@ public class MainMenuController : MonoBehaviour
     // Start 버튼
     public void StartButton()
     {
-        
+        GameSceneManager.Instance.LoadScene();
     }
-
+    
     // HowTo 열기
     public void HowToButton()
     {
@@ -29,5 +29,6 @@ public class MainMenuController : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+        Debug.Log("Exit");
     }
 }
