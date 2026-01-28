@@ -6,25 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Demo.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Demo.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Blue.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Blue.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Yellow.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Materials/Yellow.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/Platform_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/Platform_1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/RapidFireCannon_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Model/RapidFireCannon_1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_1.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_2.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_3.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_3.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_4.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Prefabs/RapidFireCannon_4.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Readme.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Readme.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/나현수/Turrets/Low Poly Sci-Fi Turrets Demo/Textures/Texture 2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/Manager/SceneManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/박승훈/Manager/SceneManager.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +102,7 @@
       <workItem from="1769498456020" duration="5322000" />
       <workItem from="1769562516433" duration="4608000" />
       <workItem from="1769568134581" duration="10000" />
-      <workItem from="1769568165285" duration="325000" />
+      <workItem from="1769568165285" duration="1217000" />
     </task>
     <servers />
   </component>
