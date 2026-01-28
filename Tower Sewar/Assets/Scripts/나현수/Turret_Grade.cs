@@ -9,7 +9,7 @@ public class Turret_Grade : MonoBehaviour
     [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(4);
     public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }
 
-    [SerializeField] private GameObject[] _towerPrefabs; // 등급별 타워 외형
+    [SerializeField] private GameObject[] _towerPrefabs; 
     public GameObject[] TowerPrefabs => _towerPrefabs;
 
     private void Awake()

@@ -3,20 +3,17 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    // Turret Grade
+    
     private Turret_Grade _gradeController;
 
-    // ÅÍ·¿ È¸Àü
-    [SerializeField] private Transform _towerHead; // È¸Àü½ÃÅ³ ¸Ó¸®(»óºÎ) ¿ÀºêÁ§Æ®
+    [SerializeField] private Transform _towerHead; 
 
-    // ÅÍ·¿ Á¤º¸
-    [SerializeField] private Transform _towerModelParent; // ÇÁ¸®ÆÕÀÌ »ı¼ºµÉ ºÎ¸ğ À§Ä¡
-    private GameObject _currentModel; // ÇöÀç È­¸é¿¡ º¸ÀÌ´Â ¸ğµ¨
+    [SerializeField] private Transform _towerModelParent; 
+    private GameObject _currentModel; 
 
     private int _curGrade = 0;
     private GunTowerData _currentData;
 
-    // Àû Á¤º¸
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
     [SerializeField] private bool _isEnemy;
     public bool IsEnemy => _isEnemy;
@@ -56,7 +53,7 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            Debug.Log("ÀÌ¹Ì ÃÖ°í µî±ŞÀÔ´Ï´Ù.");
+            Debug.Log("ì—…ê·¸ë ˆì´ ì™„ë£Œ");
         }
     }
 
@@ -85,7 +82,7 @@ public class Turret : MonoBehaviour
     private void RefreshTower()
     {
         _currentData = _gradeController.TowerDatas[_curGrade];
-        Debug.Log($"¾÷±×·¹ÀÌµå ¿Ï·á! ÇöÀç ÀÌ¸§: {_currentData.TowerName}, °ø°İ·Â: {_currentData.TowerAtt}");
+        Debug.Log($"ì´ë¯¸ ìµœê³ ì˜ ë ˆë²¨ì…ë‹ˆë‹¤. : {_currentData.TowerName}, ë°ë¯¸ì§€ : {_currentData.TowerAtt}");
 
         if (_currentModel != null)
         {
