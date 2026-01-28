@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WayPoint", menuName = "Scriptable Object/WayPoint", order = 0)]
 public class WayPoint : ScriptableObject
 {
+
     [Header("맵 별 WayPoint 정보")]
     [SerializeField]
     private List<MapPathData> _maps;
