@@ -15,9 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(_controlStateManager.CurrentState != ControlStateManager.ControlState.GamePlay)
+        if (!_controlStateManager.CanMove)
         {
-            _animator.SetBool("IsRunning", false);
             return;
         }
         Move();

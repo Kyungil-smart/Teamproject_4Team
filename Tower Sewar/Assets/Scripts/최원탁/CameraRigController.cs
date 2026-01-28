@@ -1,68 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// 워크래프트3 / RTS 스타일 쿼터뷰 카메라 컨트롤러
+// 마우스로 카메라 "회전"이 아니라 "이동"을 처리한다
 public class CameraRigController : MonoBehaviour
 {
-    [Header("이동 설정")]
-    [SerializeField] private float moveSpeed = 10f;
+    // 마우스 이동에 따른 카메라 이동 속도
+    [SerializeField] private float panSpeed = 10f;
 
-    [Header("맵 경계")]
-    [SerializeField] private Vector2 minBounds;
-    [SerializeField] private Vector2 maxBounds;
+    // ControlStateManager 참조
+    private ControlStateManager controlStateManager;
 
-    [Header("상태 관리자")]
-    [SerializeField] private ControlStateManager controlStateManager;
+    private void Awake()
+    {
+        // 씬에 존재하는 ControlStateManager를 찾는다
+        controlStateManager = FindObjectOfType<ControlStateManager>();
+    }
 
     private void Update()
     {
-        if (controlStateManager == null)
+        HandleMouseLockInput();
+        HandleCameraPan();
+    }
+
+    // 마우스 클릭 / ESC 입력으로 마우스 락 상태를 관리한다
+    private void HandleMouseLockInput()
+    {
+        // 마우스 왼쪽 버튼을 누르면 마우스를 락한다
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.LogError("ControlStateManager 연결 안 됨");
-            return;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
-        Debug.Log("현재 상태: " + controlStateManager.CurrentState);
-
-        if (controlStateManager.CurrentState != ControlStateManager.ControlState.TowerUI)
-            return;
-
-        HandleEdgeScroll();
-        // 게임 플레이 상태가 아니면 카메라 이동 불가
-        if (controlStateManager.CurrentState != ControlStateManager.ControlState.TowerUI)
-            return;
-
-        HandleMousePan();
+        // ESC 키를 누르면 마우스 락을 해제한다
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
-    private void HandleEdgeScroll()
+    // 마우스 이동에 따라 카메라를 이동시키는 로직
+    private void HandleCameraPan()
     {
-        Vector3 mousePos = Input.mousePosition;
-        Debug.Log($"MousePos: {mousePos}");
+        // 카메라 회전이 가능한 상태가 아니면 처리하지 않는다
+        if (!controlStateManager.CanLook)
+            return;
 
-    }
-    private void HandleMousePan()
-    {
-        // 마우스 이동량(델타) 입력 받기
+        // 마우스가 락 상태가 아니면 카메라 이동을 하지 않는다
+        if (Cursor.lockState != CursorLockMode.Locked)
+            return;
+
+        // 마우스 이동 값 가져오기
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        // 마우스를 안 움직였으면 아무 것도 안 함
-        if (mouseX == 0f && mouseY == 0f)
-            return;
+        // 카메라 기준 오른쪽 방향 벡터
+        Vector3 right = transform.right;
 
-        // 월드 기준 이동 방향 계산
-        Vector3 moveDirection = new Vector3(mouseX, 0f, mouseY);
+        // 카메라 기준 앞 방향 벡터 (Y축 제거해서 수평 이동만)
+        Vector3 forward = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
 
-        // 위치 계산
-        Vector3 newPosition = transform.position;
-        newPosition += moveDirection * moveSpeed * Time.deltaTime;
+        // 마우스 이동 방향에 따라 카메라 이동 벡터 계산
+        Vector3 move =
+            (right * mouseX + forward * mouseY) * panSpeed * Time.deltaTime;
 
-        // 맵 경계 제한
-        newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-        newPosition.z = Mathf.Clamp(newPosition.z, minBounds.y, maxBounds.y);
-
-        // 적용
-        transform.position = newPosition;
+        // CameraRig의 위치를 이동시킨다
+        transform.position += move;
     }
 }
