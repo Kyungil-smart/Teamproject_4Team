@@ -4,8 +4,8 @@ using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 public class DataTest : MonoBehaviour
 {
-    [SerializeField] List<MonsterData> monsterDatas = new List<MonsterData>();
-    private MonsterData bat;
+    [SerializeField] List<GunTowerData> GunTowers = new List<GunTowerData>();
+   
     
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class DataTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PrintMonsterInfo();
+            PrintTowerInfo();
         }
     }
     
@@ -25,25 +25,16 @@ public class DataTest : MonoBehaviour
     {
     }
 
-    private void PrintMonsterInfo()
+    private void PrintTowerInfo()
     {
-        for (int i = 0; i < monsterDatas.Count; i++)
+        for (int i = 0; i < GunTowers.Count; i++)
         {
-            Debug.Log($"몬스터 이름 : {monsterDatas[i].Name}");
-            Debug.Log($"몬스터 체력 : {monsterDatas[i].Hp}");
-            Debug.Log($"몬스터 이동속도 : {monsterDatas[i].MoveSpeed}");
-            Debug.Log($"몬스터 처치 시 드랍 골드  : {monsterDatas[i].DropGold}");
+            Debug.Log($"타워 이름 : {GunTowers[i].TowerName}");
+            Debug.Log($"타워 건설 비용 : {GunTowers[i].TowerBuildCost}");
+            Debug.Log($"타워 업그레이드 비용 : {GunTowers[i].TowerUpCost}");
+            Debug.Log($"타워 공격 속도  : {GunTowers[i].TowerAtt}");
+            Debug.Log($"타워 공격 범위 : {GunTowers[i].TowerRange}");
             Debug.Log("----------------------------------------------");
         }
     }
-}
-
-public struct MonData
-{
-    private float _hp;
-    public float Hp {get => _hp; set => _hp = value;}
-    private float _moveSpeed;
-    public float MoveSpeed {get => _moveSpeed; set => _moveSpeed = value;}
-    private float _dropGold;
-    public float DropGold {get => _dropGold; set => _dropGold = value;}
 }
