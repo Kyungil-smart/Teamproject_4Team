@@ -18,10 +18,10 @@ public class Turret_Grade : MonoBehaviour
 
     private void Update()
     {
-        if (Console.ReadKey(KeyCode.V))
-        {
-            UpgradeTurret();
-        }
+        // if (Console.ReadKey(KeyCode.V))
+        // {
+        //     UpgradeTurret();
+        // }
     }
 
     private void UpgradeTurret()
@@ -39,7 +39,7 @@ public class Turret_Grade : MonoBehaviour
         _towerData[0].TowerRange     = 1000.0f;
 
         _towerData[1].TowerName = "Lv2";
-        _towerData[1].TowerBuildCost = 10000000; // 지을수가 없게함
+        _towerData[1].TowerBuildCost = 10000000;
         _towerData[1].TowerUpCost = 100;
         _towerData[1].TowerAtt = 20.0f;
         _towerData[1].TowerAttDelay = 1.0f;
