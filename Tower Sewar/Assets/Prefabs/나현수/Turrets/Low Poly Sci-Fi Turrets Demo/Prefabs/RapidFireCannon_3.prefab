@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8294514482349384741}
   - component: {fileID: 4950532880494996352}
   - component: {fileID: 7158229874411003722}
-  - component: {fileID: 5388082121434054572}
   m_Layer: 0
   m_Name: RapidFireCannon_3
   m_TagString: Untagged
@@ -119,21 +118,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5388082121434054572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8671637467687091871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22cf450a9278f749a3a4618a8e80f80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotateSpeed: 30
-  _isEnemy: 0
-  _enemyList: []
 --- !u!1001 &2368952983287883974
 PrefabInstance:
   m_ObjectHideFlags: 0
