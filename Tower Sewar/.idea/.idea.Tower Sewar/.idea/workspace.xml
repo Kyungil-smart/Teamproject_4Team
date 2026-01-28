@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b3d514-b1fa-4624-8f0c-6b4076f8b98e" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/박승훈/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower Sewar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/제갈도원/TestScene_JGDW.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/제갈도원/TestScene_JGDW.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/제갈도원/TitleScene_JGDW.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/제갈도원/TitleScene_JGDW.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/제갈도원/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +30,9 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="38pZQ22HBTjElx9piBOt1IByQnG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,7 +47,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "PSH",
+    "git-widget-placeholder": "JGDW",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -102,6 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1769498453809</updated>
       <workItem from="1769498456020" duration="5322000" />
+      <workItem from="1769515281357" duration="4484000" />
     </task>
     <servers />
   </component>

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scenes/\uC81C\uAC08\uB3C4\uC6D0/TitleScene_JGDW.unity"
+    guid: 8ba0349efecc7d1488177a361d1f6183
+  - enabled: 1
+    path: "Assets/Scenes/\uC81C\uAC08\uB3C4\uC6D0/TestGameScene_JGDW.unity"
+    guid: bb83c8cebb46a63438d80ec26a571ed0
   m_configObjects: {}
