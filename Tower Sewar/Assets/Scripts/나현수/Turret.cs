@@ -1,49 +1,59 @@
-using System.Collections.Generic; // ¸®½ºÆ® »ç¿ëÀ» À§ÇØ ÇÊ¿äÇÕ´Ï´Ù.
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class Turret : MonoBehaviour
 {
-    // ÅÍ·¿ Á¤º¸
-    [SerializeField] private float _rotateSpeed = 30.0f;
-    private Turret_Grade turret_Grade = new Turret_Grade();
+    
+    private Turret_Grade _gradeController;
 
-    // Àû Á¤º¸
+    [SerializeField] private Transform _towerHead; 
+
+    [SerializeField] private Transform _towerModelParent; 
+    private GameObject _currentModel; 
+
+    private int _curGrade = 0;
+    private GunTowerData _currentData;
+
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
-
     [SerializeField] private bool _isEnemy;
-    private Transform _currentTarget;
+    public bool IsEnemy => _isEnemy;
+    public Transform _currentTarget { get; set; }
 
     private void Awake()
     {
+        _gradeController = GetComponent<Turret_Grade>();
+
         _isEnemy = false;
-        _rotateSpeed = 30.0f;
+    }
+
+    private void Start()
+    {
+        if (_gradeController.TowerDatas.Count > 0)
+        {
+            RefreshTower();
+        }
     }
 
     private void Update()
     {
         UpdateTarget();
 
-        if (_isEnemy && _currentTarget != null)
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            transform.LookAt(_currentTarget);
-        }
-        else
-        {
-            transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
+            Upgrade();
         }
     }
 
-    private void UpdateTarget()
+    private void Upgrade()
     {
-        if (_enemyList.Count > 0)
+        if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {
-            _isEnemy = true;
-            _currentTarget = _enemyList[0];
+            _curGrade++; 
+            RefreshTower();
         }
         else
         {
-            _isEnemy = false;
-            _currentTarget = null;
+            Debug.Log("ì—…ê·¸ë ˆì´ ì™„ë£Œ");
         }
     }
 
@@ -66,6 +76,39 @@ public class Rotate : MonoBehaviour
             {
                 _enemyList.Remove(other.transform);
             }
+        }
+    }
+
+    private void RefreshTower()
+    {
+        _currentData = _gradeController.TowerDatas[_curGrade];
+        Debug.Log($"ì´ë¯¸ ìµœê³ ì˜ ë ˆë²¨ìž…ë‹ˆë‹¤. : {_currentData.TowerName}, ë°ë¯¸ì§€ : {_currentData.TowerAtt}");
+
+        if (_currentModel != null)
+        {
+            Destroy(_currentModel);
+        }
+
+        if (_gradeController.TowerPrefabs.Length > _curGrade && _gradeController.TowerPrefabs[_curGrade] != null)
+        {
+            _currentModel = Instantiate(_gradeController.TowerPrefabs[_curGrade], _towerModelParent);
+
+            _currentModel.transform.localPosition = Vector3.zero;
+            _currentModel.transform.localRotation = Quaternion.identity;
+        }
+    }
+
+    private void UpdateTarget()
+    {
+        if (_enemyList.Count > 0)
+        {
+            _isEnemy = true;
+            _currentTarget = _enemyList[0];
+        }
+        else
+        {
+            _isEnemy = false;
+            _currentTarget = null;
         }
     }
 }

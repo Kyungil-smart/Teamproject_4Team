@@ -7,42 +7,38 @@ using UnityEngine;
 public class Turret_Grade : MonoBehaviour
 {
     [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(4);
-    public List<GunTowerData> TowerDatas => _towerData;
-    private int _curGrade = 0;
-    private int _maxGrade = 3;
+    public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }
+
+    [SerializeField] private GameObject[] _towerPrefabs; 
+    public GameObject[] TowerPrefabs => _towerPrefabs;
 
     private void Awake()
     {
         Init();
     }
 
-    // private void Update()
-    // {
-    //     if (Console.ReadKey(KeyCode.V))
-    //     {
-    //         UpgradeTurret();
-    //     }
-    // }
-
-    private void UpgradeTurret()
-    {
-        _curGrade++;
-    }
-
     private void Init()
     {
-        _towerData[0].TowerName      = "Lv1";
-        _towerData[0].TowerBuildCost = 100;
-        _towerData[0].TowerUpCost    = 100;
-        _towerData[0].TowerAtt       = 10.0f;
-        _towerData[0].TowerAttDelay  = 1.0f;
-        _towerData[0].TowerRange     = 1000.0f;
+        if (_towerData.Count > 0) return;
 
-        _towerData[1].TowerName = "Lv2";
-        _towerData[1].TowerBuildCost = 10000000; // �������� ������
-        _towerData[1].TowerUpCost = 100;
-        _towerData[1].TowerAtt = 20.0f;
-        _towerData[1].TowerAttDelay = 1.0f;
-        _towerData[1].TowerRange = 1500.0f;
+        _towerData.Clear();
+
+        GunTowerData lv1 = ScriptableObject.CreateInstance<GunTowerData>();
+        lv1.TowerName      = "Lv1";
+        lv1.TowerBuildCost = 100;
+        lv1.TowerUpCost    = 100;
+        lv1.TowerAtt       = 10.0f;
+        lv1.TowerAttDelay  = 1.0f;
+        lv1.TowerRange     = 1000.0f;
+        _towerData.Add(lv1);
+
+        GunTowerData lv2 = ScriptableObject.CreateInstance<GunTowerData>();
+        lv2.TowerName      = "Lv2";
+        lv2.TowerBuildCost = 10000000;
+        lv2.TowerUpCost    = 100;
+        lv2.TowerAtt       = 20.0f;
+        lv2.TowerAttDelay  = 1.0f;
+        lv2.TowerRange     = 1500.0f;
+        _towerData.Add(lv2);
     }
 }
