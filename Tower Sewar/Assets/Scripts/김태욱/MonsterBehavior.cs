@@ -53,7 +53,7 @@ public class MonsterBehavior : MonoBehaviour
         //죽음처리
         if (IsDead)
         {
-            //골드지급
+            //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
             MonsterSpawner.Instance.RemoveMonster(gameObject);
             Destroy(gameObject);
@@ -94,6 +94,7 @@ public class MonsterBehavior : MonoBehaviour
         {
             //TODO: 도착처리
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
+            // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             MonsterSpawner.Instance.RemoveMonster(gameObject);
             Destroy(gameObject);
 

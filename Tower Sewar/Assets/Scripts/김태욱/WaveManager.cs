@@ -45,9 +45,9 @@ public class WaveManager : MonoBehaviour
         _waveTimer -= Time.deltaTime;
 
         //타이머 로그
-        if(_isReadyTime)
-            Debug.Log($"[{_wave}단계] 준비시간 {_waveTimer:000}");
-        else Debug.Log($"[{_wave}단계] 전투시간 {_waveTimer:000}");
+        //if(_isReadyTime)
+        //    Debug.Log($"[{_wave}단계] 준비시간 {_waveTimer:000}");
+        //else Debug.Log($"[{_wave}단계] 전투시간 {_waveTimer:000}");
 
         //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
@@ -121,8 +121,6 @@ public class WaveManager : MonoBehaviour
                 MonsterSpawner.Instance.SpawnSlime();
                 Debug.Log("슬라임 스폰!");
             }
-
-
 
             _numsOfSpawnMonster++;
             _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
