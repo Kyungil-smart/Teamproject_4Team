@@ -16,8 +16,15 @@ public class Stage_Sound_Manager : MonoBehaviour
     [Header("Sound Player")]
     public AudioSource SoundPlayer;
 
+    [Header("Sound Volume Settings")]
+    [Range(0f, 1f)] public float waitingVolume = 1.0f;
+    [Range(0f, 1f)] public float waveVolume = 0.8f;
+    [Range(0f, 1f)] public float bossVolume = 0.8f;
+    [Range(0f, 1f)] public float clearVolume = 1.0f;
+    [Range(0f, 1f)] public float failVolume = 1.0f;
+
     [Header("Sound Clip")]
-    public AudioClip waitingBgm; 
+    public AudioClip waitingBgm;
     public AudioClip waveBgm;
     public AudioClip bossBgm;
     public AudioClip clearSfx;
@@ -65,7 +72,8 @@ public class Stage_Sound_Manager : MonoBehaviour
     }
     public void ChangeBGM(string state)
     {
-        if (SoundPlayer == null) return;
+        if (SoundPlayer == null)
+            return;
 
         SoundPlayer.Stop();
 
@@ -73,26 +81,31 @@ public class Stage_Sound_Manager : MonoBehaviour
         {
             case "Waiting":
                 SoundPlayer.clip = waitingBgm;
+                SoundPlayer.volume = waitingVolume;
                 SoundPlayer.loop = true;
                 break;
 
             case "Wave":
                 SoundPlayer.clip = waveBgm;
+                SoundPlayer.volume = waveVolume;
                 SoundPlayer.loop = true;
                 break;
 
             case "Boss":
                 SoundPlayer.clip = bossBgm;
+                SoundPlayer.volume = bossVolume;
                 SoundPlayer.loop = true;
                 break;
 
             case "Clear":
                 SoundPlayer.clip = clearSfx;
+                SoundPlayer.volume = clearVolume;
                 SoundPlayer.loop = false;
                 break;
 
             case "Fail":
                 SoundPlayer.clip = failSfx;
+                SoundPlayer.volume = failVolume;
                 SoundPlayer.loop = false;
                 break;
         }
@@ -100,5 +113,5 @@ public class Stage_Sound_Manager : MonoBehaviour
         SoundPlayer.Play();
     }
 
-  
+
 }

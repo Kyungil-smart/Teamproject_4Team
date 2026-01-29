@@ -142,6 +142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundPlayer: {fileID: -6691630434270917735}
+  waitingVolume: 0.48
+  waveVolume: 0.48
+  bossVolume: 0.48
+  clearVolume: 0.3
+  failVolume: 0.3
   waitingBgm: {fileID: 8300000, guid: 846b42749fcc6004bad8a6521d1ccc45, type: 3}
   waveBgm: {fileID: 8300000, guid: e86c3a17bba8dcf47acd6700ca9d38c0, type: 3}
   bossBgm: {fileID: 8300000, guid: 25f6a5cfca9045641b7e88ec440157a2, type: 3}
