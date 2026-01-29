@@ -23,7 +23,14 @@ public class MonsterBehavior : MonoBehaviour
     List<Vector3> _pathPoints;
     //몬스터 현재 pathpoint index
     int _pathIndex;
-    
+    //몬스터가 죽었는지 
+    public bool IsDead
+    {
+        get {
+            if(_hp > 0) return false;
+            return true;
+        }
+    }
 
     private void Awake()
     {
@@ -40,7 +47,17 @@ public class MonsterBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //이동처리
         Move();
+
+        //죽음처리
+        if (IsDead)
+        {
+            //골드지급
+            // _dropGold
+            MonsterSpawner.Instance.RemoveMonster(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     //몬스터 초기화
@@ -70,13 +87,16 @@ public class MonsterBehavior : MonoBehaviour
     void Move()
     {
         if (_pathPoints == null) return;
+        //if (IsDead) return;
 
-
-        //끝까지 도착했으면 도착에 따른 처리
+        //살아서 끝까지 도착했으면 도착에 따른 처리
         if(_pathIndex >= _pathPoints.Count)
         {
             //TODO: 도착처리
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
+            MonsterSpawner.Instance.RemoveMonster(gameObject);
+            Destroy(gameObject);
+
             return;
         }
         //Debug.Log($"현재위치 x: {transform.position.x} y: {transform.position.y} z: {transform.position.z}");
@@ -90,9 +110,17 @@ public class MonsterBehavior : MonoBehaviour
             _pathIndex++;
 
             //rotation도 바꿔줌
+            if (_pathIndex >= _pathPoints.Count) return;
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
             transform.forward = dir.normalized;
         }
 
+    }
+
+    //몬스터에게 데미지를 입힘
+    public void Damage(float damage)
+    {
+        if(IsDead) return;
+        _hp -= damage;
     }
 }

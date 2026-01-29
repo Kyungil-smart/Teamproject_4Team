@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    //몬스터 프리팹
-    [SerializeField]
-    GameObject[] _monsterPrefabs;
+
+    
 
     //스테이지 정보
     [SerializeField]
@@ -26,9 +25,12 @@ public class WaveManager : MonoBehaviour
 
     //스폰 주기를 조절하기위한 변수
     private float _spawnCoolTime;
-    //현재 스폰한 몹 개수
+    //현재 wave에서 스폰한 몹 개수
     private int _numsOfSpawnMonster;
 
+    //맵에 스폰된 몬스터의 총 개수
+    public int NumsOfMonsters
+    { get { return MonsterSpawner.Instance.MonsterCount; } }
      
     void Awake()
     {
@@ -75,7 +77,7 @@ public class WaveManager : MonoBehaviour
         }
 
         SpawnMonster();
-
+        Debug.Log($"몬스터 개수 {NumsOfMonsters}");
 
     }
 
@@ -101,22 +103,22 @@ public class WaveManager : MonoBehaviour
             //스폰처리 !!!!!!!! enum을하든 설정을 해줘야함.
             if (_stageData.WaveDatas[_wave].MonsterName == "박쥐")
             {
-                Instantiate(_monsterPrefabs[0]);
+                MonsterSpawner.Instance.SpawnBat();
                 Debug.Log("박쥐 스폰!");
             }
             else if (_stageData.WaveDatas[_wave].MonsterName == "유령")
             {
-                Instantiate(_monsterPrefabs[4]);
+                MonsterSpawner.Instance.SpawnGhost();
                 Debug.Log("유령 스폰!");
             }
             else if (_stageData.WaveDatas[_wave].MonsterName == "토끼")
             {
-                Instantiate(_monsterPrefabs[8]);
+                MonsterSpawner.Instance.SpawnRabbit();
                 Debug.Log("토끼 스폰!");
             }
             else if(_stageData.WaveDatas [_wave].MonsterName == "슬라임")
             {
-                Instantiate(_monsterPrefabs[12]);
+                MonsterSpawner.Instance.SpawnSlime();
                 Debug.Log("슬라임 스폰!");
             }
 
