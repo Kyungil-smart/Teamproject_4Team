@@ -21,7 +21,10 @@ public class Stage_Sound_Manager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     private void Update()
