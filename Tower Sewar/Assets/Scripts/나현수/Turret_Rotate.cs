@@ -1,9 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Turret_Rotate : MonoBehaviour
 {
     [SerializeField] private float _rotateSpeed = 30.0f;
-    private Turret _turret;
+    [SerializeField] private Turret _turret;
 
     void Awake()
     {
@@ -12,10 +12,14 @@ public class Turret_Rotate : MonoBehaviour
 
     void Update()
     {
-        if (_turret == null) return;
+        if (_turret == null) 
+        {
+            Debug.Log("터렛이 존재하지 않습니다.");
+            return;
+        }
 
         if (_turret.IsEnemy && _turret._currentTarget != null)
-        {
+        {       
             transform.LookAt(_turret._currentTarget);
         }
         else

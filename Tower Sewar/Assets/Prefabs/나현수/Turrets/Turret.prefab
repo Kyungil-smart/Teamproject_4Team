@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2238933793632857456}
   - component: {fileID: 1325278480625945482}
   - component: {fileID: 2837748841166470456}
+  - component: {fileID: 4277330335028471791}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -45,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22cf450a9278f749a3a4618a8e80f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerHead: {fileID: 0}
   _towerModelParent: {fileID: 2238933793632857456}
   _enemyList: []
   _isEnemy: 0
@@ -66,3 +66,24 @@ MonoBehaviour:
   - {fileID: 2507857462180137906, guid: 43ccef6ee7e46c94da99b2cbc5717906, type: 3}
   - {fileID: 8671637467687091871, guid: 9f4ed57ec2167714ab2678f91d11a9d1, type: 3}
   - {fileID: 2549582001120558232, guid: dde6181839bf0cb4288a868a70d82309, type: 3}
+--- !u!135 &4277330335028471791
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721282796791676266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
