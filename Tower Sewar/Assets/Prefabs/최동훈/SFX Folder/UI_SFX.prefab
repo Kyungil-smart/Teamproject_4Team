@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9133717149340109717}
   - component: {fileID: 6637128085007555158}
+  - component: {fileID: 6518185067626965571}
   m_Layer: 0
-  m_Name: UI_SFX1
+  m_Name: UI_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 822edceb9023eb44dbfc3e5a93a89b4c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.48
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -128,3 +129,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6518185067626965571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681860756715321720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3368398b1e8e73f4589719d8e5aed990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxPlayer: {fileID: 6637128085007555158}
+  normalSound: {fileID: 8300000, guid: f761d2cb13ac3db418c10b6ffff896f8, type: 3}
+  exitSound: {fileID: 8300000, guid: 822edceb9023eb44dbfc3e5a93a89b4c, type: 3}
