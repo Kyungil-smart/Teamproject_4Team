@@ -16,24 +16,24 @@ MonoBehaviour:
   - _monsterName: "\uC2AC\uB77C\uC784"
     _spawnAmount: 15
     _spawnDelay: 3
-    _waveReadyTime: 30
+    _waveReadyTime: 3
     _waveLimitTime: 60
     _clearGold: 50
   - _monsterName: "\uBC15\uC950"
     _spawnAmount: 12
     _spawnDelay: 3
-    _waveReadyTime: 30
+    _waveReadyTime: 3
     _waveLimitTime: 60
     _clearGold: 75
   - _monsterName: "\uD1A0\uB07C"
     _spawnAmount: 9
     _spawnDelay: 5
-    _waveReadyTime: 30
+    _waveReadyTime: 3
     _waveLimitTime: 60
     _clearGold: 100
   - _monsterName: "\uC720\uB839"
     _spawnAmount: 15
     _spawnDelay: 3
-    _waveReadyTime: 30
+    _waveReadyTime: 3
     _waveLimitTime: 60
     _clearGold: 125

@@ -81,6 +81,11 @@ public class MonsterBehavior : MonoBehaviour
             //초기위치 설정
             transform.position = _pathPoints[0];
         }
+
+        //애니메이션 시작시간 랜덤
+        Animator animator = GetComponent<Animator>();
+        float rand = Random.Range(0f, 1f);
+        animator.Play(0, 0, rand);
     }
 
     //몬스터 이동
