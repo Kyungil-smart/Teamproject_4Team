@@ -3,10 +3,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    
     private Turret_Grade _gradeController;
-
-    [SerializeField] private Transform _towerHead; 
 
     [SerializeField] private Transform _towerModelParent; 
     private GameObject _currentModel; 
@@ -30,7 +27,7 @@ public class Turret : MonoBehaviour
     {
         if (_curGrade >= 0 && _gradeController.TowerDatas.Count > 0)
         {
-            RefreshTower();
+            UpgradeTower();
         }
     }
 
@@ -49,7 +46,7 @@ public class Turret : MonoBehaviour
         if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {
             _curGrade++;
-            RefreshTower();
+            UpgradeTower();
         }
         else
         {
@@ -79,7 +76,7 @@ public class Turret : MonoBehaviour
         }
     }
 
-    private void RefreshTower()
+    private void UpgradeTower()
     {
         if (_curGrade < 0) return;
 
@@ -97,13 +94,13 @@ public class Turret : MonoBehaviour
 
             _currentModel.transform.localPosition = Vector3.zero;
             _currentModel.transform.localRotation = Quaternion.identity;
-
-            _towerHead = _currentModel.transform;
         }
     }
 
     private void UpdateTarget()
     {
+        _enemyList.RemoveAll(enemy => enemy == null);
+
         if (_enemyList.Count > 0)
         {
             _isEnemy = true;
