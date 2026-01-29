@@ -141,7 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e02866b78d03194da96f5d980a0a7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmPlayer: {fileID: -6691630434270917735}
-  waveBgm: {fileID: 8300000, guid: e86c3a17bba8dcf47acd6700ca9d38c0, type: 3}
+  SoundPlayer: {fileID: -6691630434270917735}
   waitingBgm: {fileID: 8300000, guid: 846b42749fcc6004bad8a6521d1ccc45, type: 3}
+  waveBgm: {fileID: 8300000, guid: e86c3a17bba8dcf47acd6700ca9d38c0, type: 3}
   bossBgm: {fileID: 8300000, guid: 25f6a5cfca9045641b7e88ec440157a2, type: 3}
+  clearSfx: {fileID: 8300000, guid: 08ac55ae6e8b72e4bb4791750d36a431, type: 3}
+  failSfx: {fileID: 8300000, guid: c8b1d2a6d011c784081cc9e718489ff1, type: 3}

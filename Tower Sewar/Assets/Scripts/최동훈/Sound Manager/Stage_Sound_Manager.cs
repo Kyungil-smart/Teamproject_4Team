@@ -6,18 +6,22 @@ using UnityEngine;
 // Stage_Sound_Manager.instance.ChangeBGM("Wave"); 웨이브 시작
 // Stage_Sound_Manager.instance.ChangeBGM("Boss"); 보스 등장 시
 // Stage_Sound_Manager.instance.ChangeBGM("Waiting"); 대기 시간
+// Stage_Sound_Manager.instance.ChangeBGM("Clear"); 클리어시
+// Stage_Sound_Manager.instance.ChangeBGM("Fail"); 실패시
 
 public class Stage_Sound_Manager : MonoBehaviour
 {
     public static Stage_Sound_Manager instance;
 
-    [Header("Audio Player")]
-    public AudioSource bgmPlayer;
+    [Header("Sound Player")]
+    public AudioSource SoundPlayer;
 
-    [Header("BGM Clip")]
+    [Header("Sound Clip")]
+    public AudioClip waitingBgm; 
     public AudioClip waveBgm;
-    public AudioClip waitingBgm;
     public AudioClip bossBgm;
+    public AudioClip clearSfx;
+    public AudioClip failSfx;
 
     private void Awake()
     {
@@ -46,28 +50,54 @@ public class Stage_Sound_Manager : MonoBehaviour
             ChangeBGM("Boss");
             Debug.Log("보스 BGM");
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ChangeBGM("Clear");
+            Debug.Log("클리어 SFX");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            ChangeBGM("Fail");
+            Debug.Log("패배 SFX");
+        }
     }
     public void ChangeBGM(string state)
     {
-        if (bgmPlayer == null) return;
+        if (SoundPlayer == null) return;
 
-        bgmPlayer.Stop();
+        SoundPlayer.Stop();
 
         switch (state)
         {
             case "Waiting":
-                bgmPlayer.clip = waitingBgm;
+                SoundPlayer.clip = waitingBgm;
+                SoundPlayer.loop = true;
                 break;
+
             case "Wave":
-                bgmPlayer.clip = waveBgm;
+                SoundPlayer.clip = waveBgm;
+                SoundPlayer.loop = true;
                 break;
+
             case "Boss":
-                bgmPlayer.clip = bossBgm;
+                SoundPlayer.clip = bossBgm;
+                SoundPlayer.loop = true;
+                break;
+
+            case "Clear":
+                SoundPlayer.clip = clearSfx;
+                SoundPlayer.loop = false;
+                break;
+
+            case "Fail":
+                SoundPlayer.clip = failSfx;
+                SoundPlayer.loop = false;
                 break;
         }
 
-        bgmPlayer.Play();
-        bgmPlayer.loop = true;
+        SoundPlayer.Play();
     }
 
   
