@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Turret_Grade : MonoBehaviour
 {
-    List<GunTowerData> _towerData = new List<GunTowerData>(4);
+    [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(5);
     public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }
 
     [SerializeField] private GameObject[] _towerPrefabs; 
@@ -22,6 +22,15 @@ public class Turret_Grade : MonoBehaviour
         if (_towerData.Count > 0) return;
 
         _towerData.Clear();
+
+        GunTowerData lv0 = ScriptableObject.CreateInstance<GunTowerData>();
+        lv0.TowerName = "Lv0";
+        lv0.TowerBuildCost = 0;
+        lv0.TowerUpCost    = 0;
+        lv0.TowerAtt       = 0;
+        lv0.TowerAttDelay  = 0;
+        lv0.TowerRange     = 0;
+        _towerData.Add(lv0);
 
         GunTowerData lv1 = ScriptableObject.CreateInstance<GunTowerData>();
         lv1.TowerName      = "Lv1";

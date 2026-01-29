@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.230714, y: 0, z: -5.0284963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61,11 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6cc2c0a916f164a846b5deeae00399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerData: []
   _towerPrefabs:
-  - {fileID: 6600623658154420595, guid: 9a16882aa1db5eb47b8f24dd1c753934, type: 3}
-  - {fileID: 2507857462180137906, guid: 43ccef6ee7e46c94da99b2cbc5717906, type: 3}
-  - {fileID: 8671637467687091871, guid: 9f4ed57ec2167714ab2678f91d11a9d1, type: 3}
-  - {fileID: 2549582001120558232, guid: dde6181839bf0cb4288a868a70d82309, type: 3}
+  - {fileID: 7245652531205163981, guid: 744088e827ed95a4a8e150d5682d1c16, type: 3}
+  - {fileID: 6600623658154420595, guid: 52650a90a945b514d81c8a6f11b6628a, type: 3}
+  - {fileID: 2507857462180137906, guid: 7d1e3d04a419d24458413748b8178863, type: 3}
+  - {fileID: 8671637467687091871, guid: df8db0ce0239cdf43bb1dfdee4c88727, type: 3}
+  - {fileID: 2549582001120558232, guid: 22996b97dc529f24c8e306d8fc1728d2, type: 3}
 --- !u!135 &4277330335028471791
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -76,7 +78,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -85,5 +87,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
