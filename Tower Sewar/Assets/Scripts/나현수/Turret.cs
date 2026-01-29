@@ -5,10 +5,10 @@ public class Turret : MonoBehaviour
 {
     private Turret_Grade _gradeController;
 
-    [SerializeField] private Transform _towerModelParent; 
-    private GameObject _currentModel; 
+    [SerializeField] private Transform _towerModelParent;
+    private GameObject _currentModel;
 
-    private int _curGrade = -1;
+    private int _curGrade = 0;
     private GunTowerData _currentData;
 
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();

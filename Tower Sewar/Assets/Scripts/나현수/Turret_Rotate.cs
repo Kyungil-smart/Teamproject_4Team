@@ -12,14 +12,14 @@ public class Turret_Rotate : MonoBehaviour
 
     void Update()
     {
-        if (_turret == null) 
+        if (_turret == null)
         {
             Debug.Log("터렛이 존재하지 않습니다.");
             return;
         }
 
         if (_turret.IsEnemy && _turret._currentTarget != null)
-        {       
+        {
             transform.LookAt(_turret._currentTarget);
         }
         else
