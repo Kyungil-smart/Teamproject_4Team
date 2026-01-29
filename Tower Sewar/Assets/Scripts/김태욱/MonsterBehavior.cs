@@ -92,7 +92,7 @@ public class MonsterBehavior : MonoBehaviour
     void Move()
     {
         if (_pathPoints == null) return;
-        //if (IsDead) return;
+        if (IsDead) return;
 
         //살아서 끝까지 도착했으면 도착에 따른 처리
         if(_pathIndex >= _pathPoints.Count)
@@ -128,5 +128,21 @@ public class MonsterBehavior : MonoBehaviour
     {
         if(IsDead) return;
         _hp -= damage;
+    }
+
+
+    //내일 하자.. Die 메서드로 애니메이션이랑 죽음처리..
+    IEnumerator Die()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("Die");
+
+        yield return null;
+
+        float dieTime = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(dieTime);
+
+        MonsterSpawner.Instance.RemoveMonster(gameObject);
+        Destroy(gameObject);
     }
 }
