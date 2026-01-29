@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4946123348158315003}
   - component: {fileID: 6859415714559233349}
+  - component: {fileID: 5483126704293798540}
   m_Layer: 0
   m_Name: Stage2 Wave BGM
   m_TagString: Untagged
@@ -42,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7735e3e8171194645a85272efb1d96a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -128,3 +129,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5483126704293798540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793373543068055352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e02866b78d03194da96f5d980a0a7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmPlayer: {fileID: 6859415714559233349}
+  waveBgm: {fileID: 8300000, guid: 7735e3e8171194645a85272efb1d96a3, type: 3}
+  waitingBgm: {fileID: 8300000, guid: 846b42749fcc6004bad8a6521d1ccc45, type: 3}
+  bossBgm: {fileID: 8300000, guid: 25f6a5cfca9045641b7e88ec440157a2, type: 3}

@@ -2268,6 +2268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d79950bd73be446a4d1569168d09c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 0}
   howToPanel: {fileID: 0}
   creditPanel: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
