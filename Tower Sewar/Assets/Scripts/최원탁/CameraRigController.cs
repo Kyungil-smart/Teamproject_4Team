@@ -20,9 +20,6 @@ public class CameraRigController : MonoBehaviour
     private float currentYaw;
     private float currentPitch = 20f;
 
-    // 마우스 이동에 따른 카메라 이동 속도
-    [SerializeField] private float panSpeed = 5f;
-
     // ControlStateManager 참조
     private ControlStateManager controlStateManager;
 

@@ -171,8 +171,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6830836295708612804, guid: 5a620d1a7c0aec14eaa90348c8dfbc01, type: 3}
+      propertyPath: panSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830836295708612804, guid: 5a620d1a7c0aec14eaa90348c8dfbc01, type: 3}
       propertyPath: followHeight
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7796648372088781629, guid: 5a620d1a7c0aec14eaa90348c8dfbc01, type: 3}
       propertyPath: m_Name
