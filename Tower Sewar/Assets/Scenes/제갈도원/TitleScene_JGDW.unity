@@ -4115,6 +4115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d79950bd73be446a4d1569168d09c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleText: {fileID: 1819878899}
   mainPanel: {fileID: 2120457431}
   howToPanel: {fileID: 1180578592}
   creditPanel: {fileID: 487100597}
