@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6065000683293246263}
   - component: {fileID: 7770949934529456708}
+  - component: {fileID: 6609816497976893207}
   m_Layer: 0
   m_Name: Stage1 Wave BGM
   m_TagString: Untagged
@@ -42,11 +43,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 947b14f7f373fd84fb0c158a09e963d5, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -128,3 +129,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6609816497976893207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441845044126405656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e02866b78d03194da96f5d980a0a7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPlayer: {fileID: 7770949934529456708}
+  waitingVolume: 0.48
+  waveVolume: 0.48
+  bossVolume: 0.48
+  clearVolume: 0.3
+  failVolume: 0.3
+  waitingBgm: {fileID: 8300000, guid: 846b42749fcc6004bad8a6521d1ccc45, type: 3}
+  waveBgm: {fileID: 8300000, guid: 947b14f7f373fd84fb0c158a09e963d5, type: 3}
+  bossBgm: {fileID: 8300000, guid: 25f6a5cfca9045641b7e88ec440157a2, type: 3}
+  clearSfx: {fileID: 8300000, guid: 08ac55ae6e8b72e4bb4791750d36a431, type: 3}
+  failSfx: {fileID: 8300000, guid: c8b1d2a6d011c784081cc9e718489ff1, type: 3}

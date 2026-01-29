@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/\uC81C\uAC08\uB3C4\uC6D0/TitleScene_JGDW.unity"
-    guid: 8ba0349efecc7d1488177a361d1f6183
+    path: "Assets/Scenes/\uBC15\uC2B9\uD6C8/Title_Scene.unity"
+    guid: 15bf9f9548366fb44a49581639a5ee20
   - enabled: 1
-    path: "Assets/Scenes/\uC81C\uAC08\uB3C4\uC6D0/TestGameScene_dw.unity"
-    guid: c7f94f425126a0343866871f526dac9f
+    path: "Assets/Scenes/\uBC15\uC2B9\uD6C8/Main_Game_Scene.unity"
+    guid: cc15e136b7657104298e5ceb42bdc2c6
   m_configObjects: {}
