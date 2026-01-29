@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,4 +16,9 @@ public class MonsterData : ScriptableObject
     public float MoveSpeed => _moveSpeed;
     [SerializeField] private int _dropGold;
     public int DropGold => _dropGold;
+
+    [Space(10)]
+    [SerializeField] private Vector3 _scale;
+    public Vector3 Scale => _scale;
+    
 }
