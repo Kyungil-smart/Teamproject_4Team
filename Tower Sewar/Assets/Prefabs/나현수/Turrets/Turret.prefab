@@ -61,11 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6cc2c0a916f164a846b5deeae00399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerData: []
   _towerPrefabs:
-  - {fileID: 6600623658154420595, guid: 9a16882aa1db5eb47b8f24dd1c753934, type: 3}
-  - {fileID: 2507857462180137906, guid: 43ccef6ee7e46c94da99b2cbc5717906, type: 3}
-  - {fileID: 8671637467687091871, guid: 9f4ed57ec2167714ab2678f91d11a9d1, type: 3}
-  - {fileID: 2549582001120558232, guid: dde6181839bf0cb4288a868a70d82309, type: 3}
+  - {fileID: 1299966950634140910, guid: f12b66bc3eed1ad45bf0a583036db2a8, type: 3}
+  - {fileID: 6600623658154420595, guid: 374c6ba29fb69ea4b9065368a821b03d, type: 3}
+  - {fileID: 2507857462180137906, guid: 4b4461f01395c5e44a0db5e4e2876a1a, type: 3}
+  - {fileID: 8671637467687091871, guid: be1167cb067f8aa45a253aac76da2d29, type: 3}
+  - {fileID: 2549582001120558232, guid: 309a44090c67f2b4093333abfd2dc1fa, type: 3}
 --- !u!135 &4277330335028471791
 SphereCollider:
   m_ObjectHideFlags: 0
