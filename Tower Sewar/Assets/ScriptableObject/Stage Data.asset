@@ -16,7 +16,7 @@ MonoBehaviour:
   - _monsterName: "\uC2AC\uB77C\uC784"
     _spawnAmount: 15
     _spawnDelay: 3
-    _waveReadyTime: 30
+    _waveReadyTime: 1
     _waveLimitTime: 60
     _clearGold: 50
   - _monsterName: "\uBC15\uC950"
