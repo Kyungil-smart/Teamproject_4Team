@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    RocketRotator rotator;
+    //RocketRotator rotator;
     
 }
