@@ -52,6 +52,8 @@ public class MonsterBehavior : MonoBehaviour
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
         _pathPoints = _wayPoint.Maps[0].PathPoints;
         _pathIndex = 0;
+        Vector3 dir = _pathPoints[_pathIndex] - transform.position;
+        transform.forward = dir.normalized;
     }
 
     //몬스터 이동
