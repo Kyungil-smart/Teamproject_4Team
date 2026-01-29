@@ -7,7 +7,7 @@ public class MonsterBehavior : MonoBehaviour
 {
     //몬스터 data 참조
     [SerializeField]
-    MonsterData _ghostData;
+    MonsterData _monsterData;
 
     //맵의 wayPoint 참조
     [SerializeField]
@@ -46,14 +46,20 @@ public class MonsterBehavior : MonoBehaviour
     //몬스터 초기화
     void Init()
     {
-        _hp = _ghostData.Hp;
-        _velocity = _ghostData.MoveSpeed;
-        _dropGold = _ghostData.DropGold;
+        if (_monsterData != null)
+        {
+            _hp = _monsterData.Hp;
+            _velocity = _monsterData.MoveSpeed;
+            _dropGold = _monsterData.DropGold;
+        }
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
-        _pathPoints = _wayPoint.Maps[0].PathPoints;
-        _pathIndex = 0;
-        Vector3 dir = _pathPoints[_pathIndex] - transform.position;
-        transform.forward = dir.normalized;
+        if (_wayPoint != null)
+        {
+            _pathPoints = _wayPoint.Maps[0].PathPoints;
+            _pathIndex = 0;
+            Vector3 dir = _pathPoints[_pathIndex] - transform.position;
+            transform.forward = dir.normalized;
+        }
     }
 
     //몬스터 이동

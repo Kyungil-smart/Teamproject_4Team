@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    //몬스터 프리팹
+    [SerializeField]
+    GameObject[] _monsterPrefabs;
+
     //스테이지 정보
     [SerializeField]
     StageData _stageData;
@@ -29,6 +33,8 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         Init();
+
+        SpawnMonster();
     }
 
     void Update()
@@ -37,7 +43,7 @@ public class WaveManager : MonoBehaviour
         _waveTimer -= Time.deltaTime;
         //Debug.Log($"waveTimer {_waveTimer}");
 
-        //타이머가 끝나면 상태변경
+        //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
         {
             _isReadyTime = !_isReadyTime;
@@ -93,5 +99,11 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime = 0;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
+    }
+
+    void SpawnMonster()
+    {
+        //테스트코드
+        Instantiate(_monsterPrefabs[0]);
     }
 }
