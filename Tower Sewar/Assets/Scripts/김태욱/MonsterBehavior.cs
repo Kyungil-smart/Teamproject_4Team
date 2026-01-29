@@ -63,6 +63,9 @@ public class MonsterBehavior : MonoBehaviour
     //몬스터 초기화
     void Init()
     {
+
+        transform.localScale = _monsterData.Scale;
+
         if (_monsterData != null)
         {
             _hp = _monsterData.Hp;

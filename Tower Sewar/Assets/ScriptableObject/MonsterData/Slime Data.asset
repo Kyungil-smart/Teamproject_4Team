@@ -16,3 +16,4 @@ MonoBehaviour:
   _hp: 100
   _moveSpeed: 4
   _dropGold: 20
+  _scale: {x: 50, y: 50, z: 50}
