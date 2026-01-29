@@ -6,11 +6,12 @@ public class MonsterSpawner : MonoBehaviour
 {
     public static MonsterSpawner Instance;
 
+    //소환된 몬스터 관리를 위한 배열
     private List<GameObject> _monsterList;
 
     //몬스터 프리팹
     [SerializeField]
-    GameObject[] _monsterPrefabs;
+    MonsterPrefabList _monsterPrefabList;
 
     public int MonsterCount
     {
@@ -34,18 +35,18 @@ public class MonsterSpawner : MonoBehaviour
 
     public void SpawnBat()
     {
-        _monsterList.Add(Instantiate(_monsterPrefabs[0]));
+        _monsterList.Add(Instantiate(_monsterPrefabList.List[0]));
     }
     public void SpawnGhost()
     {
-        _monsterList.Add(Instantiate(_monsterPrefabs[4]));
+        _monsterList.Add(Instantiate(_monsterPrefabList.List[4]));
     }
     public void SpawnRabbit()
     {
-        _monsterList.Add(Instantiate(_monsterPrefabs[8]));
+        _monsterList.Add(Instantiate(_monsterPrefabList.List[8]));
     }
     public void SpawnSlime()
     {
-        _monsterList.Add(Instantiate(_monsterPrefabs[12]));
+        _monsterList.Add(Instantiate(_monsterPrefabList.List[12]));
     }
 }

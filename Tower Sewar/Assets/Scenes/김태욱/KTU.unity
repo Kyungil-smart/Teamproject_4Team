@@ -254,23 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f046df5ef717d6469ac344305cc905c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterPrefabs:
-  - {fileID: 1000013827195344, guid: e7526b8c4c89f074f8b02c1fb706e35f, type: 3}
-  - {fileID: 1000011593744314, guid: 3c734e50b3ed8094ebd13a70e4dfce72, type: 3}
-  - {fileID: 1000012081666484, guid: 93d2bf5d793f649489685ff0fb05908a, type: 3}
-  - {fileID: 1000013849561652, guid: 5589c9fad797b7f43a2ed0adb89dc48c, type: 3}
-  - {fileID: 1000011148102054, guid: fdfeb0417b8add448a9e0fe013b82140, type: 3}
-  - {fileID: 1000010538092382, guid: 883ef5043222d504788fef76a50bcb51, type: 3}
-  - {fileID: 1000011296433714, guid: fe4db05e1ac392a41a11df98d1935e74, type: 3}
-  - {fileID: 1000011659465104, guid: 73452d4e7b9e00643b80af7fb705274b, type: 3}
-  - {fileID: 1000014069041812, guid: 0d672bfc7958fe64c8be9606b33d9e26, type: 3}
-  - {fileID: 1000013796193586, guid: a5fec9380b0c8df459d0aeecb90a30ba, type: 3}
-  - {fileID: 1000013767804016, guid: e06eaf96185c3f84bb35574794109ae9, type: 3}
-  - {fileID: 1000011046516534, guid: e3132b97463c67c489bc2af4790a25f2, type: 3}
-  - {fileID: 1000013175867634, guid: c70816b0d6f95d54da7fc946ee4e45b3, type: 3}
-  - {fileID: 1000012979649092, guid: 2c979ad550a8d154eb605754d3f42357, type: 3}
-  - {fileID: 1000013297890758, guid: f909d37e963475048a5bde378253110f, type: 3}
-  - {fileID: 1000014251014320, guid: 12860c2fc660a694a9ccf477be0c51fa, type: 3}
+  _monsterPrefabList: {fileID: 11400000, guid: 0b46411aeb8177044965652bc66467d3, type: 2}
 --- !u!1 &1856042459
 GameObject:
   m_ObjectHideFlags: 0
