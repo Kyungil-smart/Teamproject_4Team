@@ -55,10 +55,14 @@ public class MonsterBehavior : MonoBehaviour
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
         if (_wayPoint != null)
         {
+            //경로설정
             _pathPoints = _wayPoint.Maps[0].PathPoints;
             _pathIndex = 0;
+            //바라보는방향설정
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
             transform.forward = dir.normalized;
+            //초기위치 설정
+            transform.position = _pathPoints[0];
         }
     }
 

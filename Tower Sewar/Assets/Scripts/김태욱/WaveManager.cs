@@ -33,21 +33,24 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         Init();
+        Debug.Log("WaveManager Init");
 
-        SpawnMonster();
     }
 
     void Update()
     {
         //웨이브 시간 차감
         _waveTimer -= Time.deltaTime;
-        //Debug.Log($"waveTimer {_waveTimer}");
+
+        //타이머 로그
+        if(_isReadyTime)
+            Debug.Log($"[{_wave}단계] 준비시간 {_waveTimer:000}");
+        else Debug.Log($"[{_wave}단계] 전투시간 {_waveTimer:000}");
 
         //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
         {
             _isReadyTime = !_isReadyTime;
-            Debug.Log($"readyTime : {_isReadyTime} 으로 전환");
 
             //다음Wave로 전환을위해 초기화작업
             if (_isReadyTime)
@@ -66,28 +69,12 @@ public class WaveManager : MonoBehaviour
                 _spawnCoolTime = 0;
                 _numsOfSpawnMonster = 0;
                 _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
-                Debug.Log($"Wave : {_wave}단계 시작!!!");
             }
             else
                 _waveTimer = _stageData.WaveDatas[_wave].WaveLimitTime;
         }
 
-
-        //스폰처리
-        if (_isReadyTime) return;
-        if (_numsOfSpawnMonster == _stageData.WaveDatas[_wave].SpawnAmount) return;
-
-        //스폰 쿨타임 계산
-        _spawnCoolTime += Time.deltaTime;
-        if(_spawnCoolTime >= _stageData.WaveDatas[_wave].SpawnDelay)
-        {
-            //스폰로직
-            Debug.Log("스폰처리");
-
-            _numsOfSpawnMonster++;
-            _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
-        }
-        return;
+        SpawnMonster();
 
 
     }
@@ -103,7 +90,41 @@ public class WaveManager : MonoBehaviour
 
     void SpawnMonster()
     {
-        //테스트코드
-        Instantiate(_monsterPrefabs[0]);
+        //스폰처리
+        if (_isReadyTime) return;
+        if (_numsOfSpawnMonster == _stageData.WaveDatas[_wave].SpawnAmount) return;
+
+        //스폰 쿨타임 계산
+        _spawnCoolTime += Time.deltaTime;
+        if (_spawnCoolTime >= _stageData.WaveDatas[_wave].SpawnDelay)
+        {
+            //스폰처리 !!!!!!!! enum을하든 설정을 해줘야함.
+            if (_stageData.WaveDatas[_wave].MonsterName == "박쥐")
+            {
+                Instantiate(_monsterPrefabs[0]);
+                Debug.Log("박쥐 스폰!");
+            }
+            else if (_stageData.WaveDatas[_wave].MonsterName == "유령")
+            {
+                Instantiate(_monsterPrefabs[4]);
+                Debug.Log("유령 스폰!");
+            }
+            else if (_stageData.WaveDatas[_wave].MonsterName == "토끼")
+            {
+                Instantiate(_monsterPrefabs[8]);
+                Debug.Log("토끼 스폰!");
+            }
+            else if(_stageData.WaveDatas [_wave].MonsterName == "슬라임")
+            {
+                Instantiate(_monsterPrefabs[12]);
+                Debug.Log("슬라임 스폰!");
+            }
+
+
+
+            _numsOfSpawnMonster++;
+            _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
+        }
+        return;
     }
 }
