@@ -3,7 +3,10 @@
 // Player의 자식으로 동작하는 RTS 쿼터뷰 카메라 컨트롤러
 public class CameraRigController : MonoBehaviour
 {
-    
+    [Header("카메라 상하 각도 제한 (Pitch)")]
+    [SerializeField] private float minPitch = 10f;   // 엉덩이 쪽 (아래에서 위로 보는 각)
+    [SerializeField] private float maxPitch = 75f;   // 탑뷰 각도
+
     [Header("카메라 줌")]
     [SerializeField] private float minDistance = 3f;
     [SerializeField] private float maxDistance = 10f;
@@ -80,7 +83,7 @@ public class CameraRigController : MonoBehaviour
 
         currentYaw += mouseX * rotateSpeed * Time.deltaTime;
         currentPitch -= mouseY * rotateSpeed * Time.deltaTime;
-        currentPitch = Mathf.Clamp(currentPitch, 10f, 70f);
+        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
 
         // 항상 플레이어를 바라보게 한다
         transform.LookAt(playerTarget);

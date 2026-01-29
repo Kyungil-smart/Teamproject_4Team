@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 4677894436539919539}
   - component: {fileID: 6262640672820845403}
   - component: {fileID: 5392483976821692166}
+  - component: {fileID: 2752226349514584468}
   m_Layer: 0
   m_Name: FemaleCharacterPolyart
   m_TagString: Untagged
@@ -420,7 +421,21 @@ MonoBehaviour:
   rayHeightOffset: 0.5
   tileLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
+--- !u!114 &2752226349514584468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328023254706044480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e6fd01423c141469e083ff963bd27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileRaycaster: {fileID: 5392483976821692166}
+  ghostPrefab: {fileID: 648074111626590049, guid: bb4468a6848f60b46aa6622186d3e8cf, type: 3}
 --- !u!1 &1647417302430462415
 GameObject:
   m_ObjectHideFlags: 0

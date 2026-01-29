@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TileRaycaster : MonoBehaviour
 {
-    [SerializeField] private float rayDistance = 100f;
+    [SerializeField] private float rayDistance = 2f;
 
-    [SerializeField] private float rayHeightOffset = 1.2f;
+    [SerializeField] private float rayHeightOffset = 0.5f;
+
+    public float RayDistance => rayDistance;
+    public float RayHeightOffset => rayHeightOffset;
 
     [SerializeField] private LayerMask tileLayer;
 

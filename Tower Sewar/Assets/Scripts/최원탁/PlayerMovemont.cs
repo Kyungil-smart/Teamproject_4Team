@@ -1,24 +1,20 @@
 ﻿using UnityEngine;
 
-// 플레이어의 키보드 이동과 이동 애니메이션을 담당하는 클래스
+// 카메라가 보고 있는 방향을 "플레이어의 정면"으로 인식해서 이동하는 스크립트
 public class PlayerMovement : MonoBehaviour
 {
-    // 이동 애니메이션을 제어하기 위한 Animator
+    // 애니메이션
     private Animator _animator;
 
-    // 플레이어 이동 속도
-    [SerializeField] private float _moveSpeed;
+    // 이동 속도
+    [SerializeField] private float _moveSpeed = 5f;
 
-    // ControlStateManager 참조
-    // 현재 플레이어 이동이 가능한 상태인지 확인하기 위해 사용
+    // 상태 관리
     private ControlStateManager _controlStateManager;
 
     private void Awake()
     {
-        // Animator 컴포넌트를 가져온다
         _animator = GetComponent<Animator>();
-
-        // 씬에 존재하는 ControlStateManager를 찾는다
         _controlStateManager = FindObjectOfType<ControlStateManager>();
     }
 
@@ -29,44 +25,61 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        // 현재 상태에서 플레이어 이동이 불가능하면 처리하지 않는다
-        if (!_controlStateManager.CanMove)
+        // 이동 불가 상태면 중단
+        if (_controlStateManager == null || !_controlStateManager.CanMove)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
 
-        // 마우스가 락 상태가 아니라면 플레이어 이동을 막는다
-        // (UI 조작 중이거나 ESC로 락 해제된 상황)
+        // 마우스 락이 아닐 때 이동 차단
         if (Cursor.lockState != CursorLockMode.Locked)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
 
-        // 키보드 입력값을 받는다
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        // 입력
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
 
-        // 이동 벡터를 생성한다
-        Vector3 movement = new Vector3(horizontal, 0f, vertical);
+        Vector3 input = new Vector3(h, 0f, v);
 
-        // 입력이 없다면 이동 애니메이션을 끈다
-        if (movement == Vector3.zero)
+        // 입력 없으면 정지
+        if (input == Vector3.zero)
         {
             _animator.SetBool("IsRunning", false);
             return;
         }
-        // 대각선 이동 시 속도가 빨라지는 문제를 방지한다
-        movement.Normalize();
 
-        // 이동 방향을 바라보도록 플레이어를 회전시킨다
-        transform.rotation = Quaternion.LookRotation(movement);
+        // 대각선 속도 보정
+        input.Normalize();
 
-        // 플레이어를 전방으로 이동시킨다
-        transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
+        // 카메라의 Y축 회전(Yaw)만 사용
+        Transform cam = Camera.main.transform;
 
-        // 이동 애니메이션을 켠다
+        Vector3 camForward = new Vector3(
+            cam.forward.x,
+            0f,
+            cam.forward.z
+        ).normalized;
+
+        Vector3 camRight = new Vector3(
+            cam.right.x,
+            0f,
+            cam.right.z
+        ).normalized;
+
+        // 카메라 기준 이동 방향
+        Vector3 moveDir = camForward * input.z + camRight * input.x;
+
+        // 이동
+        transform.position += moveDir * _moveSpeed * Time.deltaTime;
+
+        // 이동 방향으로만 회전
+        transform.rotation = Quaternion.LookRotation(moveDir);
+
+        // 애니메이션 ON
         _animator.SetBool("IsRunning", true);
     }
 }
