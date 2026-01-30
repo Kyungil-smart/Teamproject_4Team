@@ -422,6 +422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5829678175132254949, guid: 2e9d60ad6cdc63746a93f009fcd96cbd, type: 3}
+      propertyPath: uiController
+      value: 
+      objectReference: {fileID: 241366549}
     - target: {fileID: 8030642609931528006, guid: 2e9d60ad6cdc63746a93f009fcd96cbd, type: 3}
       propertyPath: minDistance
       value: 2
