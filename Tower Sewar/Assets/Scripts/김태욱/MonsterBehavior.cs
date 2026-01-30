@@ -117,7 +117,7 @@ public class MonsterBehavior : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _pathPoints[_pathIndex], _velocity * Time.deltaTime);
 
         //목적지에 도착했으면 목표지점을 다음 목적지로 변경
-        if (transform.position == _pathPoints[_pathIndex])
+        if (Vector3.Distance(transform.position, _pathPoints[_pathIndex]) <= 0.05f)
         {
             _pathIndex++;
 
