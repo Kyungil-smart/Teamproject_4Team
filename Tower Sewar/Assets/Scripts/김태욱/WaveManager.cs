@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
 
-    
+    public static WaveManager _instance;
 
     //스테이지 정보
     [SerializeField]
@@ -34,6 +34,7 @@ public class WaveManager : MonoBehaviour
      
     void Awake()
     {
+        _instance = this;
         Init();
         Debug.Log("WaveManager Init");
 
