@@ -24,6 +24,15 @@ public class Title_BGM_Manager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (titleBgm != null)
+        {
+            bgmPlayer.volume = bgmVolume;
+            PlayBGM(titleBgm);
+        }
+    }
+
     public void PlayBGM(AudioClip clip)
     {
         bgmPlayer.clip = clip;
