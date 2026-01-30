@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010938279744}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010536494586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MESH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011582484298}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TailControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000013496850072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TailJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,9 @@ GameObject:
   - component: {fileID: 4000012843571490}
   - component: {fileID: 95000013357091332}
   - component: {fileID: 1391927836830309793}
-  m_Layer: 0
+  - component: {fileID: 5751530999854979936}
+  - component: {fileID: 4351367385980978903}
+  m_Layer: 9
   m_Name: Ghost_Green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,6 +198,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monsterData: {fileID: 11400000, guid: bcb781bc76f32a340af76a711fc4a4c5, type: 2}
   _wayPoint: {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
+--- !u!136 &5751530999854979936
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Height: 0.01
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!54 &4351367385980978903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010538092382}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1000011621446260
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000013579120446}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RootJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012563514006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeadJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010299640196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012899455380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeadControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010974754500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeadTipJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011361371044}
   - component: {fileID: 137000013188959522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012563302510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GhostControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

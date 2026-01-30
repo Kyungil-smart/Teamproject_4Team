@@ -32,19 +32,19 @@ public class MainMenuController : MonoBehaviour
     public void HowToButton() => Show(TitleType.HowTo);
     public void CreditButton() => Show(TitleType.Credit);
     public void BackButton() => Show(TitleType.Main);
-    
+
     private void Show(TitleType titleType)
     {
-        mainPanel.SetActive(titleType == TitleType.Main);
-        howToPanel.SetActive(titleType == TitleType.HowTo);
-        creditPanel.SetActive(titleType == TitleType.Credit);
-        
         switch (titleType)
         {
             case TitleType.Main: titleText.text = "타워세워"; break;
             case TitleType.HowTo: titleText.text = "HowTo"; break;
             case TitleType.Credit: titleText.text = "Credit"; break;
         }
+
+        mainPanel.SetActive(titleType == TitleType.Main);
+        howToPanel.SetActive(titleType == TitleType.HowTo);
+        creditPanel.SetActive(titleType == TitleType.Credit);
     }
 
     // 게임 종료

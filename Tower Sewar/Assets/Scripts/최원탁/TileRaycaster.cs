@@ -48,6 +48,9 @@ public class TileRaycaster : MonoBehaviour
     // 플레이어 상호작용 상태
     private PlayerInteractionState currentState = PlayerInteractionState.Normal;
 
+    // TileRaycaster에 UIcontroller 참조 추가
+    [SerializeField] private UIcontroller uiController;
+
     // =========================
     // Unity Update
     // =========================
@@ -188,7 +191,10 @@ public class TileRaycaster : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Debug.Log("▶ 설치 모드 진입 (락 해제)");
+        if (uiController != null)
+            uiController.OpenTowerSelection();
+
+        Debug.Log("▶ 설치 모드 진입 (락 해제 + 타워 선택 UI 오픈)");
     }
 
     /// <summary>
@@ -212,7 +218,10 @@ public class TileRaycaster : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        Debug.Log("◀ 설치 모드 취소 (락온)");
+        if (uiController != null)
+            uiController.CloseTowerSelection();
+
+        Debug.Log("◀ 설치 모드 취소 (락온 + 타워 선택 UI 닫힘)");
     }
 
     // =========================
