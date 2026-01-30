@@ -142,7 +142,6 @@ public class MonsterBehavior : MonoBehaviour
         _hp -= damage;
     }
 
-
     //죽는모션을 연출하면서 죽음.
     void Die()
     {
