@@ -40,6 +40,14 @@ public class CameraRigController : MonoBehaviour
         defaultLocalPosition = transform.localPosition;
     }
 
+    private void Start()
+    {
+        //마우스를 화면 중앙에 고정
+        // 시점 조작 모드 진입
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         HandleMouseLockInput();
@@ -92,14 +100,6 @@ public class CameraRigController : MonoBehaviour
 
     private void HandleMouseLockInput()
     {
-        // 마우스 왼쪽 클릭 시
-        //마우스를 화면 중앙에 고정
-        // 시점 조작 모드 진입
-        if (Input.GetMouseButtonDown(0))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
 
         // 마우스 락 해제
         // UI 조작 가능 상태
