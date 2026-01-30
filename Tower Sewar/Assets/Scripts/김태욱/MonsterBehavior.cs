@@ -133,7 +133,6 @@ public class MonsterBehavior : MonoBehaviour
         _hp -= damage;
     }
 
-
     //내일 하자.. Die 메서드로 애니메이션이랑 죽음처리..
     IEnumerator Die()
     {
