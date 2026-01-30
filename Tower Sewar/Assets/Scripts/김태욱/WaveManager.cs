@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
 
-    
+    public static WaveManager _instance;
 
     //스테이지 정보
     [SerializeField]
@@ -34,9 +34,14 @@ public class WaveManager : MonoBehaviour
      
     void Awake()
     {
+        _instance = this;
         Init();
-        Debug.Log("WaveManager Init");
 
+    }
+
+    void Start()
+    {
+        Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
     }
 
     void Update()
@@ -68,16 +73,19 @@ public class WaveManager : MonoBehaviour
 
                 //다음 웨이브로 gogo~!!
                 _wave++;
-                _spawnCoolTime = 0;
+                _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
                 _numsOfSpawnMonster = 0;
                 _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
+                Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
             }
             else
+            {
                 _waveTimer = _stageData.WaveDatas[_wave].WaveLimitTime;
+                Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
+            }
         }
 
         SpawnMonster();
-        Debug.Log($"몬스터 개수 {NumsOfMonsters}");
 
     }
 
@@ -85,7 +93,7 @@ public class WaveManager : MonoBehaviour
     {
         _wave = 0;
         _isReadyTime = true;
-        _spawnCoolTime = 0;
+        _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
     }
@@ -104,22 +112,18 @@ public class WaveManager : MonoBehaviour
             if (_stageData.WaveDatas[_wave].MonsterName == "박쥐")
             {
                 MonsterSpawner.Instance.SpawnBat();
-                Debug.Log("박쥐 스폰!");
             }
             else if (_stageData.WaveDatas[_wave].MonsterName == "유령")
             {
                 MonsterSpawner.Instance.SpawnGhost();
-                Debug.Log("유령 스폰!");
             }
             else if (_stageData.WaveDatas[_wave].MonsterName == "토끼")
             {
                 MonsterSpawner.Instance.SpawnRabbit();
-                Debug.Log("토끼 스폰!");
             }
             else if(_stageData.WaveDatas [_wave].MonsterName == "슬라임")
             {
                 MonsterSpawner.Instance.SpawnSlime();
-                Debug.Log("슬라임 스폰!");
             }
 
             _numsOfSpawnMonster++;

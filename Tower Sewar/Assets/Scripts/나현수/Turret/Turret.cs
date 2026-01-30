@@ -3,18 +3,27 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    // 단계 컨트롤러
     private Turret_Grade _gradeController;
-
-    [SerializeField] private Transform _towerModelParent;
-    private GameObject _currentModel;
-
     private int _curGrade = 0;
     private GunTowerData _currentData;
 
+    // 타워 모델 프리팹
+    [SerializeField] private Transform _towerModelParent;
+    private GameObject _currentModel;
+
+    // Enemy List
     [SerializeField] private List<Transform> _enemyList = new List<Transform>();
     [SerializeField] private bool _isEnemy;
     public bool IsEnemy => _isEnemy;
     public Transform _currentTarget { get; set; }
+
+    private Muzzle[] _muzzleScripts;
+    private int _muzzleIndex = 0;   
+
+    [Header("Firing Settings")]
+    private float _attDelay  = 0.5f; 
+    private float _attTimer = 0f;
 
     private void Awake()
     {
@@ -35,22 +44,14 @@ public class Turret : MonoBehaviour
     {
         UpdateTarget();
 
+        if (_isEnemy && _currentTarget != null)
+        {
+            HandleFiring();
+        }
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             Upgrade();
-        }
-    }
-
-    private void Upgrade()
-    {
-        if (_curGrade + 1 < _gradeController.TowerDatas.Count)
-        {
-            _curGrade++;
-            UpgradeTower();
-        }
-        else
-        {
-            Debug.Log("이미 최고 레벨입니다");
         }
     }
 
@@ -76,11 +77,48 @@ public class Turret : MonoBehaviour
         }
     }
 
+    private void HandleFiring()
+    {
+        _attTimer += Time.deltaTime;
+
+        if (_attTimer >= _attDelay)
+        {
+            FireSequential();
+            _attTimer = 0f;
+        }
+    }
+
+    private void FireSequential()
+    {
+        if (_muzzleScripts == null || _muzzleScripts.Length == 0 || _currentTarget == null) return;
+
+        _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget);
+
+        _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
+    }
+
+    private void Upgrade()
+    {
+        if (_curGrade + 1 < _gradeController.TowerDatas.Count)
+        {
+            _curGrade++;
+            UpgradeTower();
+        }
+        else
+        {
+            Debug.Log("이미 최고 레벨입니다");
+        }
+    }
+   
+
     private void UpgradeTower()
     {
         if (_curGrade < 0) return;
 
         _currentData = _gradeController.TowerDatas[_curGrade];
+        // 수치 조정
+        _attDelay = _currentData.TowerAttDelay;
+
         Debug.Log($"{_currentData.TowerName}, 데미지 : {_currentData.TowerAtt}");
 
         if (_currentModel != null)
@@ -94,6 +132,9 @@ public class Turret : MonoBehaviour
 
             _currentModel.transform.localPosition = Vector3.zero;
             _currentModel.transform.localRotation = Quaternion.identity;
+
+            _muzzleScripts = _currentModel.GetComponentsInChildren<Muzzle>();
+            _muzzleIndex = 0;
         }
     }
 

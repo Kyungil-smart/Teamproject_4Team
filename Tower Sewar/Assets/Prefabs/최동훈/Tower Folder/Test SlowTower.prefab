@@ -217,12 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1335d64eadb2f8448b5a45c2111201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerSound: {fileID: 6272485990187900160}
+  towerSound: {fileID: 6272485990187900160}
   attackVolume: 0.25
-  buildVolume: 0.8
-  upgradeVolume: 0.8
+  buildVolume: 0.35
+  upgradeVolume: 0.2
   destroyVolume: 0.15
   attackSfx: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
-  buildSfx: {fileID: 0}
-  UpgradeSfx: {fileID: 0}
+  buildSfx: {fileID: 8300000, guid: f39bb14a4d0c8bb4f9c5123138bab39c, type: 3}
+  UpgradeSfx: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
   destroySfx: {fileID: 8300000, guid: 958408b32ccf3714ea02821877b0870c, type: 3}

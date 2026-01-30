@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531d10eee04e6ac499f3eb11071fdda7, type: 3}
+  m_Name: _MonsterDieAnimationPrefabList
+  m_EditorClassIdentifier: 
+  _list:
+  - {fileID: 1000013827195344, guid: 7c96b79c51a09cc4ca69cfd899dddd86, type: 3}
+  - {fileID: 1000011593744314, guid: c9c06ded126aa9f4884e95acd2aa2868, type: 3}
+  - {fileID: 1000012081666484, guid: 52877ab4b4015ea4ba8ab007a4e60df6, type: 3}
+  - {fileID: 1000013849561652, guid: 1390fc2ebfc601e4fb89364698ccadd2, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

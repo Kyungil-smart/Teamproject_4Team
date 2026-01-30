@@ -6,7 +6,7 @@ public class UI_SFX_Manager : MonoBehaviour
 {
     public static UI_SFX_Manager instance;
 
-    [Header("SFX Player")]
+    [Header("Sound Player")]
     public AudioSource sfxPlayer;
 
     [Header("SFX Clip")]

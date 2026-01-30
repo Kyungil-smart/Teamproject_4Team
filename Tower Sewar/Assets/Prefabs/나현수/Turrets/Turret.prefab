@@ -49,6 +49,7 @@ MonoBehaviour:
   _towerModelParent: {fileID: 2238933793632857456}
   _enemyList: []
   _isEnemy: 0
+  _fireRate: 0.5
 --- !u!114 &2837748841166470456
 MonoBehaviour:
   m_ObjectHideFlags: 0
