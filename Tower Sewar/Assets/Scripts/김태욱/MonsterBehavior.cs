@@ -16,7 +16,7 @@ public class MonsterBehavior : MonoBehaviour
     //몬스터 종류
     string _monsterType;
 
-    //몬스터 현재체력
+    //몬스터 현재체력 //임시 serializeField로 해둠
     [SerializeField]
     float _hp;
     //몬스터 현재속도
@@ -59,8 +59,7 @@ public class MonsterBehavior : MonoBehaviour
         {
             //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
-            MonsterSpawner.Instance.RemoveMonster(gameObject);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -109,9 +108,7 @@ public class MonsterBehavior : MonoBehaviour
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-            //끝까지 살아남은 몬스터는 죽는모션 없이 일단은 바로 없애는걸로 하자. 
-            MonsterSpawner.Instance.RemoveMonster(gameObject);
-            Destroy(gameObject);
+            Die();
 
             return;
         }
@@ -164,23 +161,5 @@ public class MonsterBehavior : MonoBehaviour
 
     }
 
-    //Die()호출을 하면 실행되는 루틴(방식변경으로 현재 안씀)
-    IEnumerator DieRoutine()
-    {
-
-        //Die 트리거를 설정하고
-        Animator animator = GetComponent<Animator>();
-        animator.SetTrigger("Die");
-
-        //한프레임 기다림(애니메이션 전환)
-        yield return null;
-
-        //죽는 애니메이션시간 가져오고 그만큼 기다림
-        float dieTime = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(dieTime);
-
-        //제거
-        MonsterSpawner.Instance.RemoveMonster(gameObject);
-        Destroy(gameObject);
-    }
+    
 }
