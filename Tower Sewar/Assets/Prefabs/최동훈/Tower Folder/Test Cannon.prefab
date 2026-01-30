@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1335d64eadb2f8448b5a45c2111201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerSound: {fileID: 2741275531828306095}
+  towerSound: {fileID: 2741275531828306095}
   attackVolume: 0.25
   buildVolume: 0.35
   upgradeVolume: 0.2
