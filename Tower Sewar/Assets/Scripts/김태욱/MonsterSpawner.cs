@@ -13,6 +13,10 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField]
     MonsterPrefabList _monsterPrefabList;
 
+    //몬스터 사망애니메이션 프리팹
+    [SerializeField]
+    MonsterPrefabList _monsterDieAnimationList;
+
     public int MonsterCount
     {
         get { return _monsterList.Count; }
@@ -48,5 +52,39 @@ public class MonsterSpawner : MonoBehaviour
     public void SpawnSlime()
     {
         _monsterList.Add(Instantiate(_monsterPrefabList.List[12]));
+    }
+
+    //죽는애니메이션 연출하는 객체 생성
+    public void DieAnimationBat(Vector3 localScale, Vector3 position, Vector3 forward)
+    {
+        if (_monsterDieAnimationList.List[0] == null) return;
+        GameObject o = Instantiate(_monsterDieAnimationList.List[0]);
+        o.transform.localScale = localScale;
+        o.transform.position = position;
+        o.transform.forward = forward;
+    }
+    public void DieAnimationGhost(Vector3 localScale, Vector3 position, Vector3 forward)
+    {
+        if (_monsterDieAnimationList.List[4] == null) return;
+        GameObject o = Instantiate(_monsterDieAnimationList.List[4]);
+        o.transform.localScale = localScale;
+        o.transform.position = position;
+        o.transform.forward = forward;
+    }
+    public void DieAnimationRabbit(Vector3 localScale, Vector3 position, Vector3 forward)
+    {
+        if (_monsterDieAnimationList.List[8] == null) return;
+        GameObject o = Instantiate(_monsterDieAnimationList.List[8]);
+        o.transform.localScale = localScale;
+        o.transform.position = position;
+        o.transform.forward = forward;
+    }
+    public void DieAnimationSlime(Vector3 localScale, Vector3 position, Vector3 forward)
+    {
+        if (_monsterDieAnimationList.List[12] == null) return;
+        GameObject o = Instantiate(_monsterDieAnimationList.List[12]);
+        o.transform.localScale = localScale;
+        o.transform.position = position;
+        o.transform.forward = forward;
     }
 }
