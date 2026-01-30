@@ -7,17 +7,20 @@ public class Title_BGM_Manager : MonoBehaviour
 {
     private static Title_BGM_Manager instance;
 
-    [Header("Audio Player")]
+    [Header("Sound Player")]
     public AudioSource bgmPlayer;
+
+    [Header("Sound Volume Settings")]
+    [Range(0f, 1f)] public float bgmVolume = 0.3f;
 
     [Header("BGM Clip")]
     public AudioClip titleBgm;
 
-    private void Start()
+    private void Awake()
     {
-        if (titleBgm != null)
-        { 
-            PlayBGM(titleBgm);
+        if (instance == null)
+        {
+            instance = this;
         }
     }
 

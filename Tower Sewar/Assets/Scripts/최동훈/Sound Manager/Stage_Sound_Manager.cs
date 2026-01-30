@@ -15,18 +15,23 @@ public class Stage_Sound_Manager : MonoBehaviour
 
     [Header("Sound Player")]
     public AudioSource SoundPlayer;
+    public AudioSource SfxPlayer;
 
     [Header("Sound Volume Settings")]
-    [Range(0f, 1f)] public float waitingVolume = 1.0f;
-    [Range(0f, 1f)] public float waveVolume = 0.8f;
-    [Range(0f, 1f)] public float bossVolume = 0.8f;
-    [Range(0f, 1f)] public float clearVolume = 1.0f;
-    [Range(0f, 1f)] public float failVolume = 1.0f;
+    [Range(0f, 1f)] public float waitingVolume = 0.3f;
+    [Range(0f, 1f)] public float waveVolume = 0.3f;
+    [Range(0f, 1f)] public float bossVolume = 0.3f;
+    [Range(0f, 1f)] public float clearVolume = 0.25f;
+    [Range(0f, 1f)] public float failVolume = 0.25f;
+    [Range(0f, 1f)] public float waveSfxVolume = 0.3f;
+    [Range(0f, 1f)] public float bossSfxVolume = 0.1f;
 
     [Header("Sound Clip")]
     public AudioClip waitingBgm;
     public AudioClip waveBgm;
     public AudioClip bossBgm;
+    public AudioClip waveSfx;
+    public AudioClip bossWaveSfx;
     public AudioClip clearSfx;
     public AudioClip failSfx;
 
@@ -42,37 +47,37 @@ public class Stage_Sound_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ChangeBGM("Waiting");
+            SettingSound("Waiting");
             Debug.Log("대기 BGM");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            ChangeBGM("Wave");
+            SettingSound("Wave");
             Debug.Log("웨이브 BGM");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ChangeBGM("Boss");
+            SettingSound("Boss");
             Debug.Log("보스 BGM");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            ChangeBGM("Clear");
+            SettingSound("Clear");
             Debug.Log("클리어 SFX");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            ChangeBGM("Fail");
+            SettingSound("Fail");
             Debug.Log("패배 SFX");
         }
     }
-    public void ChangeBGM(string state)
+    public void SettingSound(string state)
     {
-        if (SoundPlayer == null)
+        if (SoundPlayer == null || SfxPlayer == null)
             return;
 
         SoundPlayer.Stop();
@@ -110,8 +115,16 @@ public class Stage_Sound_Manager : MonoBehaviour
                 break;
         }
 
+        switch (state)
+        {
+            case "Wave":
+                SfxPlayer.PlayOneShot(waveSfx, waveSfxVolume);
+                break;
+
+            case "Boss":
+                SfxPlayer.PlayOneShot(bossWaveSfx, bossSfxVolume);
+                break;
+        }
         SoundPlayer.Play();
     }
-
-
 }

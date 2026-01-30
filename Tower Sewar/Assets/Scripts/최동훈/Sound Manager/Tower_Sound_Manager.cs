@@ -13,14 +13,14 @@ public class Tower_Sound_Manager : MonoBehaviour
 {
     public static Tower_Sound_Manager instance;
 
-    [Header("Tower Player")]
-    public AudioSource TowerSound;
+    [Header("Sound Player")]
+    public AudioSource towerSound;
 
-    [Header("Tower Volume Settings")]
-    [Range(0f, 1f)] public float attackVolume = 1.0f;
-    [Range(0f, 1f)] public float buildVolume = 0.8f;
-    [Range(0f, 1f)] public float upgradeVolume = 0.8f;
-    [Range(0f, 1f)] public float destroyVolume = 1.0f;
+    [Header("Sound Volume Settings")]
+    [Range(0f, 1f)] public float attackVolume = 0.25f;
+    [Range(0f, 1f)] public float buildVolume = 0.35f;
+    [Range(0f, 1f)] public float upgradeVolume = 0.2f;
+    [Range(0f, 1f)] public float destroyVolume = 0.15f;
 
     [Header("Tower Clip")]
     public AudioClip attackSfx;
@@ -64,29 +64,29 @@ public class Tower_Sound_Manager : MonoBehaviour
 
     public void PlaySFX(string state)
     {
-        if (TowerSound == null)
+        if (towerSound == null)
             return;
 
         switch (state)
         {
             case "Attack":
-                TowerSound.PlayOneShot(attackSfx);
-                TowerSound.volume = attackVolume;
+                towerSound.PlayOneShot(attackSfx);
+                towerSound.volume = attackVolume;
                 break;
 
             case "Build":
-                TowerSound.PlayOneShot(buildSfx);
-                TowerSound.volume = buildVolume;
+                towerSound.PlayOneShot(buildSfx);
+                towerSound.volume = buildVolume;
                 break;
 
             case "Upgrade":
-                TowerSound.PlayOneShot(UpgradeSfx);
-                TowerSound.volume = upgradeVolume;
+                towerSound.PlayOneShot(UpgradeSfx);
+                towerSound.volume = upgradeVolume;
                 break;
 
             case "Destroy":
-                TowerSound.PlayOneShot(destroySfx);
-                TowerSound.volume = destroyVolume;
+                towerSound.PlayOneShot(destroySfx);
+                towerSound.volume = destroyVolume;
                 break;
         }
     }
