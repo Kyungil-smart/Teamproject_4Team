@@ -3,7 +3,9 @@ guid: 0f046df5ef717d6469ac344305cc905c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _monsterPrefabList: {fileID: 11400000, guid: 0b46411aeb8177044965652bc66467d3, type: 2}
+  - _monsterDieAnimationList: {fileID: 11400000, guid: c8a2a4eb2b497de4588034b9a5fbb09b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

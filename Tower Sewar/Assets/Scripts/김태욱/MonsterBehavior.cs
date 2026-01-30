@@ -13,7 +13,11 @@ public class MonsterBehavior : MonoBehaviour
     [SerializeField]
     WayPoint _wayPoint;
 
+    //몬스터 종류
+    string _monsterType;
+
     //몬스터 현재체력
+    [SerializeField]
     float _hp;
     //몬스터 현재속도
     float _velocity;
@@ -31,8 +35,6 @@ public class MonsterBehavior : MonoBehaviour
             return true;
         }
     }
-    //삭제가 예약되어있는지
-    bool _isDeleteReserved;
 
     private void Awake()
     {
@@ -53,11 +55,12 @@ public class MonsterBehavior : MonoBehaviour
         Move();
 
         //죽음처리
-        if (IsDead && _isDeleteReserved == false)
+        if (IsDead)
         {
             //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
-            Die();
+            MonsterSpawner.Instance.RemoveMonster(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -72,6 +75,7 @@ public class MonsterBehavior : MonoBehaviour
             _hp = _monsterData.Hp;
             _velocity = _monsterData.MoveSpeed;
             _dropGold = _monsterData.DropGold;
+            _monsterType = _monsterData.Name;
         }
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
         if (_wayPoint != null)
@@ -91,7 +95,6 @@ public class MonsterBehavior : MonoBehaviour
         float rand = Random.Range(0f, 1f);
         animator.Play(0, 0, rand);
 
-        _isDeleteReserved = false;
     }
 
     //몬스터 이동
@@ -106,7 +109,7 @@ public class MonsterBehavior : MonoBehaviour
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-            //끝까지 살아남은 몬스터는 죽는모션 없이 바로 없애는걸로 하자. 
+            //끝까지 살아남은 몬스터는 죽는모션 없이 일단은 바로 없애는걸로 하자. 
             MonsterSpawner.Instance.RemoveMonster(gameObject);
             Destroy(gameObject);
 
@@ -142,15 +145,26 @@ public class MonsterBehavior : MonoBehaviour
         _hp -= damage;
     }
 
-    //죽는모션을 연출하면서 죽음.
+    //바로 destroy후 애니메이션 연출용 객체생성
     void Die()
     {
-        if (_isDeleteReserved) return;
-        _isDeleteReserved = true;
-        StartCoroutine(DieRoutine());
+        //애니메이션 객체 생성
+        if (_monsterType == "박쥐")
+            MonsterSpawner.Instance.DieAnimationBat(transform.localScale, transform.position, transform.forward);
+        else if (_monsterType == "토끼")
+            MonsterSpawner.Instance.DieAnimationRabbit(transform.localScale, transform.position, transform.forward);
+        else if (_monsterType == "유령")
+            MonsterSpawner.Instance.DieAnimationGhost(transform.localScale, transform.position, transform.forward);
+        else if (_monsterType == "슬라임")
+            MonsterSpawner.Instance.DieAnimationSlime(transform.localScale, transform.position, transform.forward);
+
+        //몬스터 destroy
+        MonsterSpawner.Instance.RemoveMonster(gameObject);
+        Destroy(gameObject);
+
     }
 
-    //Die()호출을 하면실해되는 루틴
+    //Die()호출을 하면 실행되는 루틴(방식변경으로 현재 안씀)
     IEnumerator DieRoutine()
     {
 

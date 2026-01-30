@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterPrefabList: {fileID: 11400000, guid: 0b46411aeb8177044965652bc66467d3, type: 2}
+  _monsterDieAnimationList: {fileID: 11400000, guid: c8a2a4eb2b497de4588034b9a5fbb09b, type: 2}
 --- !u!1 &1856042459
 GameObject:
   m_ObjectHideFlags: 0
