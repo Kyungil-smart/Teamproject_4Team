@@ -69,7 +69,7 @@ public class WaveManager : MonoBehaviour
 
                 //다음 웨이브로 gogo~!!
                 _wave++;
-                _spawnCoolTime = 0;
+                _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
                 _numsOfSpawnMonster = 0;
                 _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
             }
@@ -86,7 +86,7 @@ public class WaveManager : MonoBehaviour
     {
         _wave = 0;
         _isReadyTime = true;
-        _spawnCoolTime = 0;
+        _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
     }
