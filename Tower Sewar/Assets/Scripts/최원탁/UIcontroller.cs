@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class UIcontroller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject TowerSelectionPanel;
 
-    // Update is called once per frame
-    void Update()
+    public void OpenTowerSelection()
     {
-        
+        TowerSelectionPanel.SetActive(true);
+    }
+    
+    public void CloseTowerSelection()
+    {
+        TowerSelectionPanel.SetActive(false);
     }
 }
