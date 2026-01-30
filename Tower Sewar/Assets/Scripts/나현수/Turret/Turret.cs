@@ -22,16 +22,14 @@ public class Turret : MonoBehaviour
     private int _muzzleIndex = 0;   
 
     [Header("Firing Settings")]
-    [SerializeField] private float _fireRate = 0.5f; 
-    private float _fireTimer = 0f;
+    private float _attDelay  = 0.5f; 
+    private float _attTimer = 0f;
 
     private void Awake()
     {
         _gradeController = GetComponent<Turret_Grade>();
 
         _isEnemy = false;
-
-        // Muzzle
     }
 
     private void Start()
@@ -81,12 +79,12 @@ public class Turret : MonoBehaviour
 
     private void HandleFiring()
     {
-        _fireTimer += Time.deltaTime;
+        _attTimer += Time.deltaTime;
 
-        if (_fireTimer >= _fireRate)
+        if (_attTimer >= _attDelay)
         {
             FireSequential();
-            _fireTimer = 0f;
+            _attTimer = 0f;
         }
     }
 
@@ -118,6 +116,9 @@ public class Turret : MonoBehaviour
         if (_curGrade < 0) return;
 
         _currentData = _gradeController.TowerDatas[_curGrade];
+        // 수치 조정
+        _attDelay = _currentData.TowerAttDelay;
+
         Debug.Log($"{_currentData.TowerName}, 데미지 : {_currentData.TowerAtt}");
 
         if (_currentModel != null)

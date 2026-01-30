@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class Rocket : MonoBehaviour
 {
     [SerializeField] Transform _target;
@@ -43,6 +42,3 @@ public class Rocket : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
-
-

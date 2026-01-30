@@ -4,7 +4,7 @@ using UnityEngine;
 public class Muzzle : MonoBehaviour
 {
     [SerializeField] private GameObject _rocketPrefab;
-    [SerializeField] private int        _rocketPoolSize;
+    [SerializeField] private int        _rocketPoolSize = 30;
     [SerializeField] private Transform  _FirePoint;
 
     private List<GameObject> _rockets = new List<GameObject>();
