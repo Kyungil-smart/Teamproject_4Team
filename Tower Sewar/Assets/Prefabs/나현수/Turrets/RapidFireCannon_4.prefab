@@ -84,6 +84,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6289886928708058628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7133239075224616311}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7133239075224616311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289886928708058628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.243, z: 0.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9206677948524212971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9206677948524212968
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9206677948524212971}
   - component: {fileID: 8804822054213116297}
+  - component: {fileID: 7656389741821567240}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -117,6 +149,7 @@ Transform:
   - {fileID: 9206677949336125979}
   - {fileID: 9206677948966856122}
   - {fileID: 8668876975047674803}
+  - {fileID: 7133239075224616311}
   m_Father: {fileID: 2894196073985041954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8804822054213116297
@@ -133,6 +166,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateSpeed: 30
   _turret: {fileID: 0}
+--- !u!114 &7656389741821567240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206677948524212968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e36c3fc05aa94c4fad6ba586c69c944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rocketPrefab: {fileID: 1299966950634140910, guid: f12b66bc3eed1ad45bf0a583036db2a8, type: 3}
+  _rocketPoolSize: 30
+  _FirePoint: {fileID: 7133239075224616311}
 --- !u!1 &9206677948966856123
 GameObject:
   m_ObjectHideFlags: 0
