@@ -5,8 +5,13 @@ using UnityEngine;
 public class UIcontroller : MonoBehaviour
 {
     [SerializeField] private List<GameObject> TowerSelectionPanel = new List<GameObject>();
+    private TileRaycaster _raycaster;
     private int _selectedTower = 0;
-    
+
+    private void Start()
+    {
+        _raycaster = GetComponent<TileRaycaster>();
+    }
 
     public void OpenTowerSelection()
     {
@@ -22,6 +27,8 @@ public class UIcontroller : MonoBehaviour
         {
             g.SetActive(false);
         }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void GunTower()
