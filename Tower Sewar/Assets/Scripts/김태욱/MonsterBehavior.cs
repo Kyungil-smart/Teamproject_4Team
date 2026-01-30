@@ -130,9 +130,13 @@ public class MonsterBehavior : MonoBehaviour
     }
 
     //몬스터에게 데미지를 입힘
-    public void Damage(float damage)
+    public void TakeDamage(float damage)
     {
-        if(IsDead) return;
+        if(IsDead)
+        {
+            Debug.Log($"이미 죽었어용~! 체력 : {_hp}");
+            return;
+        }
         _hp -= damage;
     }
 
