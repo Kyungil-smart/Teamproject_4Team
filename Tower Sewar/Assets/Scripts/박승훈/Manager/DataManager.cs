@@ -6,6 +6,10 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance {get; private set;}
     
+    // HUD 에서 골드, 목슴 연동 할 거
+    public int PlayerGold { get; set; }
+    public int PlayerLife { get; set; }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -16,6 +20,8 @@ public class DataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    
+    
 
     private void Start()
     {
@@ -24,6 +30,8 @@ public class DataManager : MonoBehaviour
 
     private void Init()
     {
-        
+        PlayerGold = 111;
+        PlayerLife = 222;
+
     }
 }

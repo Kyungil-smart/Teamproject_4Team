@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1644872911322580114}
   - component: {fileID: 8661652363457211536}
   - component: {fileID: 7748629563077795711}
+  - component: {fileID: 6428748692668600425}
   m_Layer: 5
   m_Name: RootPanel
   m_TagString: Untagged
@@ -78,6 +79,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6428748692668600425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236437819669219568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f36d79ab75a7b49b18ebfae45d7630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 15340680723154988}
+  goldText: {fileID: 3864264203937277940}
+  goalText: {fileID: 1588752300746855219}
+  waveText: {fileID: 2952342441990326059}
+  timeText: {fileID: 2695571482363064043}
 --- !u!1 &2775815054323381911
 GameObject:
   m_ObjectHideFlags: 0
