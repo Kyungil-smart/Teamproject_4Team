@@ -32,6 +32,5 @@ public class DataManager : MonoBehaviour
     {
         PlayerGold = 111;
         PlayerLife = 222;
-
     }
 }

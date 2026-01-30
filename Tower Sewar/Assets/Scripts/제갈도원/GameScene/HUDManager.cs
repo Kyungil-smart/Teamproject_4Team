@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class HUDManager : MonoBehaviour
     [Header("Left Area")]
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI goldText;
-    [SerializeField] private TextMeshProUGUI goalText;
+    [SerializeField] private TextMeshProUGUI monsterCountText;
 
     [Header("Center Area")]
     [SerializeField] private TextMeshProUGUI waveText;
@@ -57,14 +58,14 @@ public class HUDManager : MonoBehaviour
         int seconds = (int)(time % 60);
         timeText.text = $"{minutes:00}:{seconds:00}";
 
-        // Goal - MonsterSpawner도 필요해서 try-catch로 보호
+        // monsterCountText - MonsterSpawner도 필요함 합치면 해결 될 듯
         try
         {
-            goalText.text = $"{WaveManager._instance.NumsOfMonsters}";
+            monsterCountText.text = $"{WaveManager._instance.NumsOfMonsters}";
         }
         catch
         {
-            goalText.text = "0";
+            monsterCountText.text = "0";
         }
         
         // Health & Gold
