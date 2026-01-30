@@ -127,6 +127,8 @@ public class MonsterBehavior : MonoBehaviour
             transform.forward = dir.normalized;
         }
 
+        
+
     }
 
     //몬스터에게 데미지를 입힘
@@ -141,6 +143,7 @@ public class MonsterBehavior : MonoBehaviour
     }
 
 
+    //죽는모션을 연출하면서 죽음.
     void Die()
     {
         if (_isDeleteReserved) return;
