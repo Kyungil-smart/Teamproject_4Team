@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 아래의 코드를 추가 해서 사운드 호출 가능
-// Stage_Sound_Manager.instance.ChangeBGM("Wave"); 웨이브 시작
-// Stage_Sound_Manager.instance.ChangeBGM("Boss"); 보스 등장 시
-// Stage_Sound_Manager.instance.ChangeBGM("Waiting"); 대기 시간
-// Stage_Sound_Manager.instance.ChangeBGM("Clear"); 클리어시
-// Stage_Sound_Manager.instance.ChangeBGM("Fail"); 실패시
+// Stage_Sound_Manager.instance.SettingSound("Wave"); 웨이브 시작
+// Stage_Sound_Manager.instance.SettingSound("Boss"); 보스 등장 시
+// Stage_Sound_Manager.instance.SettingSound("Waiting"); 대기 시간
+// Stage_Sound_Manager.instance.SettingSound("Clear"); 클리어시
+// Stage_Sound_Manager.instance.SettingSound("Fail"); 실패시
 
 public class Stage_Sound_Manager : MonoBehaviour
 {
@@ -80,6 +80,7 @@ public class Stage_Sound_Manager : MonoBehaviour
         if (SoundPlayer == null || SfxPlayer == null)
             return;
 
+        StopAllCoroutines();
         SoundPlayer.Stop();
 
         switch (state)
