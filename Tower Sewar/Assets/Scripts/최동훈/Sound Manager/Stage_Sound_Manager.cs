@@ -82,6 +82,7 @@ public class Stage_Sound_Manager : MonoBehaviour
 
         StopAllCoroutines();
         SoundPlayer.Stop();
+        SfxPlayer.Stop();
 
         switch (state)
         {
