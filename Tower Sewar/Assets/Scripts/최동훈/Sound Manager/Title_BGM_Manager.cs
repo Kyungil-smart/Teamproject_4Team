@@ -28,14 +28,14 @@ public class Title_BGM_Manager : MonoBehaviour
     {
         if (titleBgm != null)
         {
-            bgmPlayer.volume = bgmVolume;
-            PlayBGM(titleBgm);
+            PlayBGM(titleBgm, bgmVolume);
         }
     }
 
-    public void PlayBGM(AudioClip clip)
+    public void PlayBGM(AudioClip title, float bgmVolume)
     {
-        bgmPlayer.clip = clip;
+        bgmPlayer.clip = title;
+        bgmPlayer.volume = bgmVolume;
         bgmPlayer.loop = true;
         bgmPlayer.Play();
     }

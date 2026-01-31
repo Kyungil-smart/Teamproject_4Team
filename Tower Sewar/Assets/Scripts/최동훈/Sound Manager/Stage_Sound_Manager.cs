@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 // 아래의 코드를 추가 해서 사운드 호출 가능
@@ -87,10 +88,7 @@ public class Stage_Sound_Manager : MonoBehaviour
         switch (state)
         {
             case "Waiting":
-                SoundPlayer.clip = waitingBgm;
-                SoundPlayer.volume = waitingVolume;
-                SoundPlayer.loop = true;
-                SoundPlayer.Play();
+                Sound(waitingBgm , waitingVolume, true);
                 break;
 
             case "Wave":
@@ -102,19 +100,21 @@ public class Stage_Sound_Manager : MonoBehaviour
                 break;
 
             case "Clear":
-                SoundPlayer.clip = clearSfx;
-                SoundPlayer.volume = clearVolume;
-                SoundPlayer.loop = false;
-                SoundPlayer.Play();
+                Sound(clearSfx, clearVolume, false);
                 break;
 
             case "Fail":
-                SoundPlayer.clip = failSfx;
-                SoundPlayer.volume = failVolume;
-                SoundPlayer.loop = false;
-                SoundPlayer.Play();
+                Sound(failSfx, failVolume, false);
                 break;
         }
+    }
+
+    private void Sound(AudioClip stageState, float stageVolume, bool isLoop)
+    {
+        SoundPlayer.clip = stageState;
+        SoundPlayer.volume = stageVolume;
+        SoundPlayer.loop = isLoop;
+        SoundPlayer.Play();
     }
     private IEnumerator SfxToBgm(AudioClip sfx, float sfxVol, AudioClip bgm, float bgmVol)
     {

@@ -65,28 +65,23 @@ public class Tower_Sound_Manager : MonoBehaviour
     public void PlaySFX(string state)
     {
         if (towerSound == null)
-            return;
 
         switch (state)
         {
             case "Attack":
-                towerSound.PlayOneShot(attackSfx);
-                towerSound.volume = attackVolume;
+                towerSound.PlayOneShot(attackSfx, attackVolume);
                 break;
 
             case "Build":
-                towerSound.PlayOneShot(buildSfx);
-                towerSound.volume = buildVolume;
+                towerSound.PlayOneShot(buildSfx, buildVolume);
                 break;
 
             case "Upgrade":
-                towerSound.PlayOneShot(UpgradeSfx);
-                towerSound.volume = upgradeVolume;
+                towerSound.PlayOneShot(UpgradeSfx, upgradeVolume);
                 break;
 
             case "Destroy":
-                towerSound.PlayOneShot(destroySfx);
-                towerSound.volume = destroyVolume;
+                towerSound.PlayOneShot(destroySfx, destroyVolume);
                 break;
         }
     }
