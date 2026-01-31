@@ -92,15 +92,11 @@ public class Stage_Sound_Manager : MonoBehaviour
                 break;
 
             case "Wave":
-                SoundPlayer.clip = waveBgm;
-                SoundPlayer.volume = waveVolume;
-                SoundPlayer.loop = true;
+                StartCoroutine(SfxToBgm(waveSfx, waveSfxVolume, waveBgm, waveVolume));
                 break;
 
             case "Boss":
-                SoundPlayer.clip = bossBgm;
-                SoundPlayer.volume = bossVolume;
-                SoundPlayer.loop = true;
+                StartCoroutine(SfxToBgm(bossWaveSfx, bossSfxVolume, bossBgm, bossVolume));
                 break;
 
             case "Clear":
@@ -123,7 +119,7 @@ public class Stage_Sound_Manager : MonoBehaviour
         if (sfx != null)
         {
             SfxPlayer.PlayOneShot(sfx, sfxVol);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.8f);
         }
 
         if (bgm != null)
@@ -134,16 +130,5 @@ public class Stage_Sound_Manager : MonoBehaviour
             SoundPlayer.Play();
         }
     }
-
-    /*switch (state)
-    {
-        case "Wave":
-            SfxPlayer.PlayOneShot(waveSfx, waveSfxVolume);
-            break;
-
-        case "Boss":
-            SfxPlayer.PlayOneShot(bossWaveSfx, bossSfxVolume);
-            break;
-    }*/
 }
 
