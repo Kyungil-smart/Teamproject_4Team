@@ -239,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 5392483976821692166, guid: fde38dacf087bd846ac591202314bfcf, type: 3}
       propertyPath: turretPrefab
       value: 
-      objectReference: {fileID: 8671637467687091871, guid: 7af02fee02504e0488b93b0fbf253f08, type: 3}
+      objectReference: {fileID: 7721282796791676266, guid: 40fbda5d151d4ab46a0f6bc2f9286b48, type: 3}
     - target: {fileID: 5392483976821692166, guid: fde38dacf087bd846ac591202314bfcf, type: 3}
       propertyPath: uiController
       value: 
@@ -279,11 +279,23 @@ MonoBehaviour:
   - {fileID: 3386543924431585837}
   UpgradeConfirmPanel:
   - {fileID: 7216208328103993035}
+  _raycaster: {fileID: 6638801309062375668}
 --- !u!4 &1139964547712981768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1812072891626710266, guid: fde38dacf087bd846ac591202314bfcf, type: 3}
   m_PrefabInstance: {fileID: 1654000868590026738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6638801309062375668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5392483976821692166, guid: fde38dacf087bd846ac591202314bfcf, type: 3}
+  m_PrefabInstance: {fileID: 1654000868590026738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331620523648270770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bf45f81c969b142a4b1975dbd7ef4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3891221130629277800
 PrefabInstance:
   m_ObjectHideFlags: 0

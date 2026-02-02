@@ -12,13 +12,15 @@ public class UIcontroller : MonoBehaviour
     // 업그레이드 확인 UI
     [SerializeField] private List<GameObject> UpgradeConfirmPanel = new List<GameObject>();
 
-    private TileRaycaster _raycaster;
+    //private TileRaycaster _raycaster;
+
+    [SerializeField] private TileRaycaster _raycaster;
     private int _selectedTower = 0;
 
-    private void Start()
-    {
-        _raycaster = GetComponent<TileRaycaster>();
-    }
+    //private void Start()
+    //{
+    //    _raycaster = GetComponent<TileRaycaster>();
+    //}
 
     // ===============================
     // 타워 선택 UI
