@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    private SphereCollider _collider;
+    [SerializeField] private float _range;
+    
     // 단계 컨트롤러
-    private Turret_Grade _gradeController;
+    Turret_Grade _gradeController;
     private int _curGrade = 0;
-    public GunTowerData _currentData { get; set; }
     
     // 타워 모델 프리팹
     [SerializeField] private Transform _towerModelParent;
@@ -27,22 +30,29 @@ public class Turret : MonoBehaviour
     private void Awake()
     {
         _gradeController = GetComponent<Turret_Grade>();
-      
+        _collider = GetComponent<SphereCollider>();
+        
         _isEnemy = false;
     }
 
     private void Start()
     {
-        if (_curGrade >= 0 && _gradeController.TowerDatas.Count > 0)
+        if (_gradeController == null) return;
+        if (_curGrade >= 0 && _gradeController._towerData.Count > 0)
         {
+            Debug.Log(_collider.radius);
+            MachineGun_Tower_Sound_Manager.instance.PlaySFX("Build");
+            _collider.radius = _gradeController._towerData[_curGrade].TowerRange;
             UpgradeTower();
         }
     }
+    
 
     private void Update()
     {
         UpdateTarget();
-
+        if(_collider != null)
+            _range = _collider.radius;
         if (_isEnemy && _currentTarget != null)
         {
             HandleFiring();
@@ -55,6 +65,8 @@ public class Turret : MonoBehaviour
     
         MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
         if (monster == null) return;
+        
+        Debug.Log(monster.name);
     
         Transform aim = monster.GetAimPoint();
         if (!_enemyList.Contains(aim))
@@ -77,13 +89,11 @@ public class Turret : MonoBehaviour
         }
     }
 
-
-
     private void HandleFiring()
     {
         _attTimer += Time.deltaTime;
 
-        if (_attTimer >= _currentData.TowerAttDelay)
+        if (_attTimer >= _gradeController._towerData[_curGrade].TowerAttDelay)
         {
             FireSequential();
             _attTimer = 0f;
@@ -94,17 +104,27 @@ public class Turret : MonoBehaviour
     {
         if (_muzzleScripts == null || _muzzleScripts.Length == 0 || _currentTarget == null) return;
         
-        _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget, _currentData);
+        _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget, _gradeController._towerData[_curGrade]);
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
-        
-        Tower_Sound_Manager.instance?.PlaySFX("Attack");
+
+        switch (_gradeController._towerData[_curGrade].TowerName)
+        {
+            case "GunTower" :
+                MachineGun_Tower_Sound_Manager.instance.PlaySFX("Attack");
+                break;
+            case "CannonTower" :
+                Cannon_Tower_Sound_Manager.instance.PlaySFX("Attack");
+                break;
+        }
     }
 
     public void Upgrade()
     {
-        if (_curGrade + 1 < _gradeController.TowerDatas.Count)
+        if (_curGrade + 1 < _gradeController._towerData.Count)
         {
+            if(_curGrade > 0)
+                MachineGun_Tower_Sound_Manager.instance.PlaySFX("Upgrade");
             _curGrade++;
             UpgradeTower();
         }
@@ -119,8 +139,6 @@ public class Turret : MonoBehaviour
     {
         if (_curGrade < 0) return;
 
-        _currentData = _gradeController.TowerDatas[_curGrade];
-
         if (_currentModel != null)
         {
             Destroy(_currentModel);
@@ -128,14 +146,24 @@ public class Turret : MonoBehaviour
 
         if (_gradeController.TowerPrefabs.Length > _curGrade && _gradeController.TowerPrefabs[_curGrade] != null)
         {
+            Debug.Log(_gradeController.TowerPrefabs[_curGrade].name);
             _currentModel = Instantiate(_gradeController.TowerPrefabs[_curGrade], _towerModelParent);
-
+            
             _currentModel.transform.localPosition = Vector3.zero;
             _currentModel.transform.localRotation = Quaternion.identity;
 
             _muzzleScripts = _currentModel.GetComponentsInChildren<Muzzle>();
             _muzzleIndex = 0;
+            
+            Debug.Log(_gradeController._towerData[_curGrade].TowerRange);
+            _collider.radius = _gradeController._towerData[_curGrade].TowerRange;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _range * 2);
     }
 
     private void UpdateTarget()
