@@ -11,6 +11,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     StageData _stageData;
 
+    //현재 Map
+    private int _currentMap;
+    public int currentMap { get { return  _currentMap; }  }
+
     //현재 Wave 단계
     private int _wave;
     public int Wave { get { return _wave; } }
@@ -92,6 +96,7 @@ public class WaveManager : MonoBehaviour
     void Init()
     {
         _wave = 0;
+        _currentMap = 0;
         _isReadyTime = true;
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
@@ -109,19 +114,19 @@ public class WaveManager : MonoBehaviour
         if (_spawnCoolTime >= _stageData.WaveDatas[_wave].SpawnDelay)
         {
             //스폰처리 !!!!!!!! enum을하든 설정을 해줘야함.
-            if (_stageData.WaveDatas[_wave].MonsterName == "박쥐")
+            if (_stageData.WaveDatas[_wave].MonsterName == "bat")
             {
                 MonsterSpawner.Instance.SpawnBat();
             }
-            else if (_stageData.WaveDatas[_wave].MonsterName == "유령")
+            else if (_stageData.WaveDatas[_wave].MonsterName == "ghost")
             {
                 MonsterSpawner.Instance.SpawnGhost();
             }
-            else if (_stageData.WaveDatas[_wave].MonsterName == "토끼")
+            else if (_stageData.WaveDatas[_wave].MonsterName == "rabbit")
             {
                 MonsterSpawner.Instance.SpawnRabbit();
             }
-            else if(_stageData.WaveDatas [_wave].MonsterName == "슬라임")
+            else if(_stageData.WaveDatas [_wave].MonsterName == "slime")
             {
                 MonsterSpawner.Instance.SpawnSlime();
             }

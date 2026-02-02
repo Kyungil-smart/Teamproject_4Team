@@ -10,28 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 726327b959ce35f4dbf60ca7cbbece44, type: 3}
-  m_Name: Stage Data
+  m_Name: StageData_1
   m_EditorClassIdentifier: 
   _waveDatas:
-  - _monsterName: "\uC2AC\uB77C\uC784"
+  - _monsterName: slime
+    _monsterType: 0
     _spawnAmount: 4
     _spawnDelay: 3
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 50
-  - _monsterName: "\uBC15\uC950"
+  - _monsterName: bat
+    _monsterType: 0
     _spawnAmount: 4
     _spawnDelay: 3
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 75
-  - _monsterName: "\uD1A0\uB07C"
+  - _monsterName: rabbit
+    _monsterType: 0
     _spawnAmount: 4
     _spawnDelay: 3
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 100
-  - _monsterName: "\uC720\uB839"
+  - _monsterName: ghost
+    _monsterType: 0
     _spawnAmount: 4
     _spawnDelay: 3
     _waveReadyTime: 3

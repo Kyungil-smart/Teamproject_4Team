@@ -80,7 +80,7 @@ public class MonsterBehavior : MonoBehaviour
         if (_wayPoint != null)
         {
             //경로설정
-            _pathPoints = _wayPoint.Maps[0].PathPoints;
+            _pathPoints = _wayPoint.PathPoints;
             _pathIndex = 0;
             //바라보는방향설정
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;

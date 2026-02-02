@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +15,8 @@ public class WaveData
     [Header("웨이브 몬스터 데이터")]
     [SerializeField] private string _monsterName;
     public string MonsterName => _monsterName;
+    [SerializeField] private string _monsterType;
+    public string MonsterType => _monsterType;
     [SerializeField] private int _spawnAmount;
     public int SpawnAmount => _spawnAmount;
     [SerializeField] private int _spawnDelay;
