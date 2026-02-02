@@ -47,7 +47,7 @@ public class UIcontroller : MonoBehaviour
     // 카드 버튼들
     // ===============================
 
-    public void GunTower()
+    public void BulletTower()
     {
         _selectedTower = (int)TowerType.GunTower;
         Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
@@ -57,13 +57,6 @@ public class UIcontroller : MonoBehaviour
     public void CannonTower()
     {
         _selectedTower = (int)TowerType.CannonTower;
-        Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
-        BuildSelect();
-    }
-
-    public void IceTower()
-    {
-        _selectedTower = (int)TowerType.IceTower;
         Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
         BuildSelect();
     }
@@ -104,7 +97,7 @@ public class UIcontroller : MonoBehaviour
         Debug.Log("✔ 설치 버튼 클릭됨");
 
         if (_raycaster != null)
-            _raycaster.ConfirmBuildFromUI();
+            _raycaster.ConfirmBuildFromUI(_selectedTower);
 
         CloseBuildConfirmUI();
         LockCursor();
@@ -156,8 +149,6 @@ public class UIcontroller : MonoBehaviour
 
         if (_raycaster != null)
             _raycaster.OnUpgradeConfirm();
-        
-        
     }
 
     // ✖ 업그레이드 NO 버튼 (OnClick에서 호출됨)
@@ -174,6 +165,5 @@ public class UIcontroller : MonoBehaviour
 public enum TowerType
 {
     GunTower,
-    CannonTower,
-    IceTower
+    CannonTower
 }

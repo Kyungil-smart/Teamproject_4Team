@@ -92,7 +92,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4528818141007908}
-  - component: {fileID: 6116417074374625798}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -117,21 +116,6 @@ Transform:
   - {fileID: 4980576054563488}
   m_Father: {fileID: 4081698564255386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6116417074374625798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025420132486370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de81864027847724ebcf926a03cbbc90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotateSpeed: 30
-  _turret: {fileID: 0}
-  _canLookAt: 0
 --- !u!1 &1247528610224002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,6 +4910,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5105,7 +5090,6 @@ GameObject:
   - component: {fileID: 4309332902545386}
   - component: {fileID: 33005568285027660}
   - component: {fileID: 23322526923859668}
-  - component: {fileID: 752623977916410948}
   m_Layer: 0
   m_Name: MissileG_Barrel02
   m_TagString: Untagged
@@ -5121,14 +5105,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656842132983088}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3657387, y: -0, z: -0, w: 0.9307176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4552130925665294}
   m_Father: {fileID: 4379325548283734}
-  m_LocalEulerAnglesHint: {x: -42.906, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33005568285027660
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5179,21 +5163,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &752623977916410948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656842132983088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e36c3fc05aa94c4fad6ba586c69c944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rocketPrefab: {fileID: 1552339098034316, guid: c13874774436a6a4c85449cab6e14fa4, type: 3}
-  _rocketPoolSize: 30
-  _FirePoint: {fileID: 4552130925665294}
 --- !u!1 &1694144554154202
 GameObject:
   m_ObjectHideFlags: 0

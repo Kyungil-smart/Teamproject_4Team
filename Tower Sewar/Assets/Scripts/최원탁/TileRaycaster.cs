@@ -18,7 +18,7 @@ public class TileRaycaster : MonoBehaviour
 
     [SerializeField] private UIcontroller uiController;
 
-    [SerializeField] private GameObject turretPrefab;
+    [SerializeField] private GameObject[] turretPrefab;
 
 
     // =========================
@@ -161,7 +161,7 @@ public class TileRaycaster : MonoBehaviour
             uiController.OpenBuildConfirmUI();
     }
 
-    public void ConfirmBuildFromUI()
+    public void ConfirmBuildFromUI(int tower)
     {
         Debug.Log("✔ 타워 설치 확정");
 
@@ -179,7 +179,7 @@ public class TileRaycaster : MonoBehaviour
             return;
         }
 
-        foundation.BuildTower(turretPrefab);
+        foundation.BuildTower(turretPrefab[tower]);
 
         ExitBuildConfirm(); // 모든 처리 끝난 뒤
     }
