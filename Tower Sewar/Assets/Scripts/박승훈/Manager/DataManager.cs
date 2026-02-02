@@ -5,6 +5,8 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance {get; private set;}
+    [SerializeField] private int _playerGold;
+    [SerializeField] private int _playerLife;
     
     // HUD 에서 골드, 목슴 연동 할 거
     public int PlayerGold { get; set; }
