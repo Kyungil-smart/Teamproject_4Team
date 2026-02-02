@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveDatas:
   - _monsterData: {fileID: 11400000, guid: 3b8345cc1d024084d8e32308ad5e47f0, type: 2}
-    _spawnAmount: 10
+    _spawnAmount: 1
     _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 15
-    _waveLimitTime: 30
+    _waveReadyTime: 1
+    _waveLimitTime: 10
     _clearGold: 50
   - _monsterData: {fileID: 11400000, guid: e877d8adb9aee3342bb47d7364f6f569, type: 2}
     _spawnAmount: 10
     _spawnDelay: 4
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 15
+    _waveReadyTime: 1
     _waveLimitTime: 30
     _clearGold: 75
   - _monsterData: {fileID: 11400000, guid: 9d1a884d58e5a09469523793f50b7756, type: 2}

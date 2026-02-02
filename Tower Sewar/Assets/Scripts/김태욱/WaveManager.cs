@@ -36,12 +36,12 @@ public class WaveManager : MonoBehaviour
             if (_isReadyTime)
             {
                 Debug.Log("Wait");
-                Stage_Sound_Manager.instance.SettingSound("Waiting");
+                Stage_Sound_Manager.instance?.SettingSound("Waiting");
             }
             else
             {
                 Debug.Log("Start");
-                Stage_Sound_Manager.instance.SettingSound("Wave");
+                Stage_Sound_Manager.instance?.SettingSound("Wave");
             }
         }
     }

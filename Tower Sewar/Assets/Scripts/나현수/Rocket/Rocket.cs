@@ -48,7 +48,7 @@ public class Rocket : MonoBehaviour
 
         if (Vector3.Distance(_target.position, transform.position) <= 0.2f)
         {
-            MonsterBehavior monster = _target.GetComponent<MonsterBehavior>();
+            MonsterBehavior monster = _target.GetComponentInParent<MonsterBehavior>();
             if (monster != null)
             {
                 monster.TakeDamage(_tempTowerData.TowerAtt);

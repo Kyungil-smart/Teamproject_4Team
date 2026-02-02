@@ -11,9 +11,11 @@ public class Rocket_Bullet : Rocket
         if (_target != null)
         {
             Vector3 direction   = (_target.position - transform.position).normalized;
+
             transform.position += direction * (_speed * Time.deltaTime);
+
             transform.forward   = direction;
-            transform.Rotate(_rotationAngle * Time.deltaTime, Space.Self);
+            //transform.Rotate(_rotationAngle * Time.deltaTime, Space.Self);
         }
     }
 }

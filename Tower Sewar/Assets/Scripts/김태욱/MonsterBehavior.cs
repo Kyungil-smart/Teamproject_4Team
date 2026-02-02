@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -31,6 +32,9 @@ public class MonsterBehavior : MonoBehaviour
             return true;
         }
     }
+
+    Transform _aimPoint;
+
 
     private void Awake()
     {
@@ -82,12 +86,16 @@ public class MonsterBehavior : MonoBehaviour
             transform.forward = dir.normalized;
             //초기위치 설정
             transform.position = _pathPoints[0];
+            //Debug.Log($"transform x {transform.position.x:0.00} y{transform.position.y:0.00} z{transform.position.z:0.00}");
+
         }
 
         //애니메이션 시작시간 랜덤
         Animator animator = GetComponent<Animator>();
         float rand = Random.Range(0f, 1f);
         animator.Play(0, 0, rand);
+
+        SetAimPoint();
 
     }
 
@@ -142,8 +150,8 @@ public class MonsterBehavior : MonoBehaviour
     {
         MonsterSpawner.Instance.DieAnimation(_monsterData, transform); //사망 애니메이션
 
-        Enemy_Sound_Manager.instance.PlaySfx(); // 몬스터 사망 사운드
-        Enemy_VFX_Manager.instance.Death(transform); //몬스터 죽음 VFX
+        Enemy_Sound_Manager.instance?.PlaySfx(); // 몬스터 사망 사운드
+        Enemy_VFX_Manager.instance?.Death(transform); //몬스터 죽음 VFX
 
         //몬스터 destroy
         MonsterSpawner.Instance.RemoveMonster(gameObject);
@@ -156,5 +164,28 @@ public class MonsterBehavior : MonoBehaviour
     public void SetWayPoint(WayPoint wayPoint)
         { _wayPoint = wayPoint; }
 
+    //asdfasdf
+    public Transform GetAimPoint()
+    {
+        return _aimPoint != null ? _aimPoint : transform;
+    }
+
+    void SetAimPoint()
+    {
+        if (_aimPoint == null)
+        {
+            GameObject ap = new GameObject("AimPoint");
+            ap.transform.SetParent(transform);
+            _aimPoint = ap.transform;
+        }
+
+        Collider col = GetComponentInChildren<Collider>();
+        if (col != null)
+        {
+            Vector3 v = new Vector3(col.bounds.center.x * transform.localScale.x, col.bounds.center.y * transform.localScale.y, col.bounds.center.z * transform.localScale.z);
+            _aimPoint.position = transform.position + v;
+            //Debug.Log($"t x {_aimPoint.position.x:0.00} y{_aimPoint.position.y:0.00} z{_aimPoint.position.z:0.00}");
+        }
+    }
     
 }
