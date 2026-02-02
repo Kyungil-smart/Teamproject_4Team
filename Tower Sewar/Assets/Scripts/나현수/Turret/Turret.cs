@@ -91,10 +91,12 @@ public class Turret : MonoBehaviour
     private void FireSequential()
     {
         if (_muzzleScripts == null || _muzzleScripts.Length == 0 || _currentTarget == null) return;
-
+        
         _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget, _currentData);
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
+        
+        Tower_Sound_Manager.instance.PlaySFX("Attack");
     }
 
     private void Upgrade()

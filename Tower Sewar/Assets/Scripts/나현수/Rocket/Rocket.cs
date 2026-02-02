@@ -8,7 +8,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] protected bool      _isLaunched;
     [SerializeField] protected float     _activeTime    = 0;
     [SerializeField] protected float     _maxActiveTime = 5;
-    [SerializeField] protected int       _speed         = 4;
+    [SerializeField] protected int       _speed         = 30;
     [SerializeField] protected int       _damage;
 
     [SerializeField] protected Vector3 _rotationAngle = new Vector3(0, 0, 500);
@@ -52,8 +52,6 @@ public class Rocket : MonoBehaviour
             if (monster != null)
             {
                 monster.TakeDamage(_tempTowerData.TowerAtt);
-                //Enemy_Sound_Manager.instance.PlaySfx() // 몬스터 사망 사운드
-                //Enemy_VFX_Manager.instance.Death()     //몬스터 죽음 VFX
             }
 
             ReturnToPool();

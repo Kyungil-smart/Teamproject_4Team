@@ -38,7 +38,8 @@ public class Tower_Sound_Manager : MonoBehaviour
     public void PlaySFX(string state)
     {
         if (towerSound == null)
-
+            return;
+        
         switch (state)
         {
             case "Attack":
