@@ -58,11 +58,12 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
-        Init();
+        
     }
 
     void Start()
     {
+        Init();
         Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
     }
 

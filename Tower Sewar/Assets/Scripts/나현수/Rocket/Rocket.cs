@@ -4,7 +4,7 @@ public class Rocket : MonoBehaviour
 {
     protected GunTowerData _tempTowerData;
 
-    [SerializeField] protected Transform _target; // protected로 변경
+    [SerializeField] protected Transform _target;
     [SerializeField] protected bool      _isLaunched;
     [SerializeField] protected float     _activeTime    = 0;
     [SerializeField] protected float     _maxActiveTime = 5;
@@ -31,9 +31,6 @@ public class Rocket : MonoBehaviour
             ReturnToPool();
             return;
         }
-
-        // 공통 기능인 피격 확인은 여기서 수행
-        HitEnemy();
     }
 
     protected void ReturnToPool()

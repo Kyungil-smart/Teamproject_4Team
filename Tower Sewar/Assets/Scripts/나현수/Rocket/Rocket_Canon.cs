@@ -22,11 +22,18 @@ public class Rocket_Canon : Rocket
 
         if (_target == null) return;
 
+        RocketMove();
+
+        HitEnemy();
+    }
+
+    protected void RocketMove()
+    {
         _elapsedTime += Time.deltaTime;
 
         Vector3 moveDirection;
-        
-        if(_elapsedTime < _launchTime)
+
+        if (_elapsedTime < _launchTime)
         {
             moveDirection = (transform.forward).normalized;
 
@@ -41,6 +48,27 @@ public class Rocket_Canon : Rocket
         if (moveDirection != Vector3.zero)
         {
             transform.forward = moveDirection;
+        }
+    }
+
+    protected void HitEnemy()
+    {
+        if (Vector3.Distance(_target.position, transform.position) <= 0.2f)
+        {
+            float explosionRadius = 3.0f;
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
+
+            foreach (var hitCollider in hitColliders)
+            {
+                MonsterBehavior monster = hitCollider.GetComponent<MonsterBehavior>();
+
+                if (monster != null)
+                {
+                    monster.TakeDamage(_tempTowerData.TowerAtt);
+                }
+            }
+
+            ReturnToPool();
         }
     }
 }
