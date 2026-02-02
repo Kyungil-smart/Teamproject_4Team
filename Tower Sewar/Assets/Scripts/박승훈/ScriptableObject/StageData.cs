@@ -19,8 +19,8 @@ public class WaveData
     [Header("몹 스폰 조절")]
     [SerializeField] private int _spawnAmount;
     public int SpawnAmount => _spawnAmount;
-    [SerializeField] private int _spawnDelay;
-    public int SpawnDelay => _spawnDelay;
+    [SerializeField] private float _spawnDelay;
+    public float SpawnDelay => _spawnDelay;
     [SerializeField] bool spawn_Left;
     public bool Spawn_Left => spawn_Left;
     [SerializeField] bool spawn_Right;
