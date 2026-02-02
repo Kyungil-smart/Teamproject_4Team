@@ -4,27 +4,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class  BulletTurret_Grade : MonoBehaviour
+public class  BulletTurret_Grade : Turret_Grade
 {
-    [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(5);
-    public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }
-
-    [SerializeField] private GameObject[] _towerPrefabs; 
-    public GameObject[] TowerPrefabs => _towerPrefabs;
-
-    private void Awake()
+    protected void Awake()
     {
+        base.Awake();
+
         Init();
     }
 
-    private void Init()
+    protected override void Init()
     {
-        if (_towerData.Count > 0) return;
-
         _towerData.Clear();
 
         GunTowerData lv0 = ScriptableObject.CreateInstance<GunTowerData>();
-        lv0.TowerName = "Lv0";
+        lv0.TowerName      = "Lv0";
         lv0.TowerBuildCost = 0;
         lv0.TowerUpCost    = 0;
         lv0.TowerAtt       = 0;
@@ -51,21 +45,21 @@ public class  BulletTurret_Grade : MonoBehaviour
         _towerData.Add(lv2);
 
         GunTowerData lv3 = ScriptableObject.CreateInstance<GunTowerData>();
-        lv3.TowerName = "Lv3";
+        lv3.TowerName      = "Lv3";
         lv3.TowerBuildCost = 10000000;
-        lv3.TowerUpCost = 100;
-        lv3.TowerAtt = 20.0f;
-        lv3.TowerAttDelay = 0.1f;
-        lv3.TowerRange = 1500.0f;
+        lv3.TowerUpCost    = 100;
+        lv3.TowerAtt       = 20.0f;
+        lv3.TowerAttDelay  = 0.1f;
+        lv3.TowerRange     = 1500.0f;
         _towerData.Add(lv3);
 
         GunTowerData lv4 = ScriptableObject.CreateInstance<GunTowerData>();
-        lv4.TowerName = "Lv4";
+        lv4.TowerName      = "Lv4";
         lv4.TowerBuildCost = 10000000;
-        lv4.TowerUpCost = 100;
-        lv4.TowerAtt = 20.0f;
-        lv4.TowerAttDelay = 0.1f;
-        lv4.TowerRange = 1500.0f;
+        lv4.TowerUpCost    = 100;
+        lv4.TowerAtt       = 20.0f;
+        lv4.TowerAttDelay  = 0.1f;
+        lv4.TowerRange     = 1500.0f;
         _towerData.Add(lv4);
     }
 }

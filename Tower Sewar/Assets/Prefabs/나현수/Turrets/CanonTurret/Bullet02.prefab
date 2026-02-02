@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4389153839620792}
-  - component: {fileID: -7699135291291681522}
+  - component: {fileID: -6235456633507401643}
   m_Layer: 0
   m_Name: Bullet02
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Transform:
   - {fileID: 4127498776530826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7699135291291681522
+--- !u!114 &-6235456633507401643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,13 +125,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552339098034316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ab17226b3bba84fb2424aa7bccecaa, type: 3}
+  m_Script: {fileID: 11500000, guid: efc0e1faf52989a49a492fd7cb913692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _isLaunched: 0
   _activeTime: 0
   _maxActiveTime: 5
-  _speed: 20
+  _speed: 4
   _damage: 0
   _rotationAngle: {x: 0, y: 0, z: 500}

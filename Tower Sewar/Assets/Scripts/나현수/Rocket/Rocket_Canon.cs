@@ -10,9 +10,9 @@ public class Rocket_Canon : Rocket
 
         if (_target != null)
         {
-            Vector3 direction = (_target.position - transform.position).normalized;
+            Vector3 direction   = (_target.position - transform.position).normalized;
             transform.position += direction * _speed * Time.deltaTime;
-            transform.forward = direction;
+            transform.forward   = direction;
             transform.Rotate(_rotationAngle * Time.deltaTime, Space.Self);
         }
     }

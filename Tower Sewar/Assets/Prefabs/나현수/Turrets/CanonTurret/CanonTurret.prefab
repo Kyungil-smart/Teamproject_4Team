@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2238933793632857456}
   - component: {fileID: 1325278480625945482}
-  - component: {fileID: 2837748841166470456}
   - component: {fileID: 4277330335028471791}
+  - component: {fileID: 1985273785335279014}
   m_Layer: 0
   m_Name: CanonTurret
   m_TagString: Untagged
@@ -49,24 +49,6 @@ MonoBehaviour:
   _towerModelParent: {fileID: 2238933793632857456}
   _enemyList: []
   _isEnemy: 0
---- !u!114 &2837748841166470456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721282796791676266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6cc2c0a916f164a846b5deeae00399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerData: []
-  _towerPrefabs:
-  - {fileID: 1299966950634140910, guid: f12b66bc3eed1ad45bf0a583036db2a8, type: 3}
-  - {fileID: 1498501323785604, guid: def8b52e5e3714e43adcb23d43073949, type: 3}
-  - {fileID: 1370505811353800, guid: 5abcbaa4c20adb04895a997e3d70772d, type: 3}
-  - {fileID: 1791165765685050, guid: 16356cdf71fc4b0499d0b7fd3d6c0cd9, type: 3}
 --- !u!135 &4277330335028471791
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -88,3 +70,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1985273785335279014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721282796791676266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0525bbc68319c4fa9f3fffb5760a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerData: []
+  _towerPrefabs:
+  - {fileID: 1833988619539146, guid: 9318a11cd670f3d4f924ff92fe7b0c77, type: 3}
+  - {fileID: 1498501323785604, guid: def8b52e5e3714e43adcb23d43073949, type: 3}
+  - {fileID: 1370505811353800, guid: 5abcbaa4c20adb04895a997e3d70772d, type: 3}
+  - {fileID: 1791165765685050, guid: 16356cdf71fc4b0499d0b7fd3d6c0cd9, type: 3}

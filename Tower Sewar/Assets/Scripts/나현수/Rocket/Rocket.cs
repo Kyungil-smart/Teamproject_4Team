@@ -5,11 +5,11 @@ public class Rocket : MonoBehaviour
     protected GunTowerData _tempTowerData;
 
     [SerializeField] protected Transform _target; // protected로 변경
-    [SerializeField] protected bool _isLaunched;
-    [SerializeField] protected float _activeTime = 0;
-    [SerializeField] protected float _maxActiveTime = 5;
-    [SerializeField] protected int _speed = 4;
-    [SerializeField] protected int _damage;
+    [SerializeField] protected bool      _isLaunched;
+    [SerializeField] protected float     _activeTime    = 0;
+    [SerializeField] protected float     _maxActiveTime = 5;
+    [SerializeField] protected int       _speed         = 4;
+    [SerializeField] protected int       _damage;
 
     [SerializeField] protected Vector3 _rotationAngle = new Vector3(0, 0, 500);
 
