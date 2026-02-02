@@ -138,4 +138,4 @@ MonoBehaviour:
   _launchTime: 2
   _launchSpeed: 1
   _downSpeed: 30
-  explosionRadius: 19.94
+  explosionRadius: 5

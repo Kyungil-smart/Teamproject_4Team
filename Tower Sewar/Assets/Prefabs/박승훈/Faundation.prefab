@@ -50,8 +50,6 @@ GameObject:
   - component: {fileID: 5233131899731754249}
   - component: {fileID: 518100076331673982}
   - component: {fileID: 683998522331056091}
-  - component: {fileID: 3753647802273033452}
-  - component: {fileID: 2524176215428462272}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -217,34 +215,6 @@ MonoBehaviour:
   _towerModelParent: {fileID: 2471996584872747109}
   _enemyList: []
   _isEnemy: 0
---- !u!114 &3753647802273033452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5799718508937958424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6cc2c0a916f164a846b5deeae00399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerData: []
-  _towerPrefabs: []
---- !u!114 &2524176215428462272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5799718508937958424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0525bbc68319c4fa9f3fffb5760a83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerData: []
-  _towerPrefabs: []
 --- !u!1 &7391110680167845810
 GameObject:
   m_ObjectHideFlags: 0

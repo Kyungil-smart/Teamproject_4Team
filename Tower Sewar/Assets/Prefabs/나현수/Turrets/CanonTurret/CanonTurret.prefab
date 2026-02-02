@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2238933793632857456}
   - component: {fileID: 1325278480625945482}
   - component: {fileID: 4277330335028471791}
-  - component: {fileID: 1985273785335279014}
+  - component: {fileID: 8428444366966892991}
   m_Layer: 0
   m_Name: CanonTurret
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.230714, y: 0, z: -5.0284963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22cf450a9278f749a3a4618a8e80f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _range: 0
   _towerModelParent: {fileID: 2238933793632857456}
   _enemyList: []
   _isEnemy: 0
@@ -70,7 +71,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1985273785335279014
+--- !u!114 &8428444366966892991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,10 +80,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7721282796791676266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0525bbc68319c4fa9f3fffb5760a83, type: 3}
+  m_Script: {fileID: 11500000, guid: f03da98e07c6e724c877885295a115ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerData: []
+  _towerData:
+  - {fileID: 11400000, guid: 56b847a498f95cb41a725ecbac38dc92, type: 2}
+  - {fileID: 11400000, guid: c8363f00b8e92df4b863c2c79a8f9ed7, type: 2}
   _towerPrefabs:
   - {fileID: 1498501323785604, guid: def8b52e5e3714e43adcb23d43073949, type: 3}
   - {fileID: 1370505811353800, guid: 5abcbaa4c20adb04895a997e3d70772d, type: 3}

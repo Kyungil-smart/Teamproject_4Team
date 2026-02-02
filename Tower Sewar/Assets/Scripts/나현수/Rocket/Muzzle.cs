@@ -18,7 +18,7 @@ public class Muzzle : MonoBehaviour
             _rockets.Add(tempObejct);
         }
     }
-    public void SetRocket(Transform target, GunTowerData turretData)
+    public void SetRocket(Transform target, TowerData turretData)
     {
         GameObject _curRocket = GetPooledRocket();
 
