@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Gun Tower Data", menuName = "Scriptable Object/Tower/Gun Tower Data", order = 0)]
-public class GunTowerData : ScriptableObject
+[CreateAssetMenu(fileName = "Tower Data", menuName = "Scriptable Object/Tower/Tower Data", order = 0)]
+public class TowerData : ScriptableObject
 {
     [Header("UI 이미지")]
     [SerializeField] private Sprite _towerIcon;

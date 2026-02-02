@@ -2,7 +2,7 @@
 
 public class Rocket : MonoBehaviour
 {
-    protected GunTowerData _tempTowerData;
+    protected TowerData _tempTowerData;
 
     [SerializeField] protected Transform _target;
     [SerializeField] protected bool      _isLaunched;
@@ -13,7 +13,7 @@ public class Rocket : MonoBehaviour
 
     [SerializeField] protected Vector3 _rotationAngle = new Vector3(0, 0, 500);
 
-    public virtual void Launch(Transform target, GunTowerData towerData)
+    public virtual void Launch(Transform target, TowerData towerData)
     {
         _tempTowerData = towerData;
         _target        = target;

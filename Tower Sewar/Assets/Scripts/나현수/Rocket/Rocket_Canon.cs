@@ -12,7 +12,7 @@ public class Rocket_Canon : Rocket
 
     private float _elapsedTime = 0f;
 
-    public override void Launch(Transform target, GunTowerData towerData)
+    public override void Launch(Transform target, TowerData towerData)
     {
         base.Launch(target, towerData);
         _elapsedTime = 0f;
