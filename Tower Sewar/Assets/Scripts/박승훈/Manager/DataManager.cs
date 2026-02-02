@@ -30,7 +30,7 @@ public class DataManager : MonoBehaviour
 
     private void Init()
     {
-        PlayerGold = 111;
-        PlayerLife = 222;
+        PlayerGold = 150;
+        PlayerLife = 10;
     }
 }

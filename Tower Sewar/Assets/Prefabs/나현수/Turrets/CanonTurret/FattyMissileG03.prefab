@@ -5158,7 +5158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343741383682628}
   m_Layer: 0
-  m_Name: ShootPoint02
+  m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5190,7 +5190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4820736348818312}
   m_Layer: 0
-  m_Name: ShootPoint01
+  m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5225,7 +5225,7 @@ GameObject:
   - component: {fileID: 23371092638395824}
   - component: {fileID: 5282972482181522209}
   m_Layer: 0
-  m_Name: MissileG_Barrel01
+  m_Name: MissileG_Barrel02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
