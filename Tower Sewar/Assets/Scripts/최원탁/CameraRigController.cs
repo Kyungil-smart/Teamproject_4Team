@@ -53,7 +53,7 @@ public class CameraRigController : MonoBehaviour
         HandleMouseLockInput();
         HandleOrbit();
         HandleZoom();
-        
+
     }
 
     private void LateUpdate()
@@ -110,9 +110,9 @@ public class CameraRigController : MonoBehaviour
         }
     }
 
-    
 
-    
+
+
 
     // 마우스 휠로 카메라 줌을 처리한다
     private void HandleZoom()

@@ -203,6 +203,66 @@ public class TileRaycaster : MonoBehaviour
         Debug.Log("▶ 설치 모드 진입 (락 해제 + 타워 선택 UI 오픈)");
     }
 
+    // ===============================
+    // UIcontroller에서 호출하는 함수들
+    // ===============================
+
+    /// <summary>
+    /// 타워 카드 선택이 끝났음을 UI가 알려줄 때 호출
+    /// (지금 단계에서는 확인 UI를 띄우기 위한 중간 지점)
+    /// </summary>
+    public void OnTowerSelectedFromUI()
+    {
+        Debug.Log("▶ 타워 선택 완료 (UI → Raycaster)");
+
+        // [추가] 확인 UI 열기
+        if (uiController != null)
+            uiController.OpenBuildConfirmUI();
+    }
+
+    /// <summary>
+    /// 확인 UI의 ✔ 버튼에서 호출
+    /// </summary>
+    public void ConfirmBuildFromUI()
+    {
+        Debug.Log("✔ 타워 설치 확정");
+
+        // TODO: 실제 타워 설치 로직
+    }
+
+    /// <summary>
+    /// 확인 UI의 ✖ 버튼에서 호출
+    /// </summary>
+    public void CancelBuildFromUI()
+    {
+        Debug.Log("✖ 타워 설치 취소");
+
+        ExitBuildMode();
+        // TODO: 취소 처리 (UI 닫기 / 상태 복귀)
+    }
+
+    // 마우스로 취소 버튼 클릭했을 경우
+    private void ExitBuildMode()
+    {
+        // 설치 관련 상태 완전 초기화
+        currentState = PlayerInteractionState.Normal;
+        SelectedObject = null;
+
+        // UI 닫기
+        if (uiController != null)
+        {
+            uiController.CloseBuildConfirmUI();
+        }
+
+        // 커서 원래대로
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Debug.Log("◀ 설치 모드 종료 → 일반 상태 복귀");
+    }
+
+
+
     /// <summary>
     /// 설치 모드 취소
     /// - 설치 취소 호출
