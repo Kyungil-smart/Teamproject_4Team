@@ -74,10 +74,10 @@ public class Rocket_Canon : Rocket
                 if (monster != null)
                 {
                     Debug.Log(_tempTowerData.TowerAtt);
+                    Cannon_Tower_Sound_Manager.instance.PlaySFX("Explosion");
                     monster.TakeDamage(_tempTowerData.TowerAtt);
                 }
             }
-
             ReturnToPool();
         }
     }

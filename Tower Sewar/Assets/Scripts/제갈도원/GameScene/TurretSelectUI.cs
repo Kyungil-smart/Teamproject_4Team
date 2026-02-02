@@ -91,17 +91,17 @@ public class TurretSelectUI : MonoBehaviour
     }
 
     // 패널 열기
-    public void OpenPanel()
-    {
-        if (selectPanel != null) selectPanel.SetActive(true);
-        if (checkPanel != null) checkPanel.SetActive(false);
-        selectedIndex = -1;
-        
-        for (int i = 0; i < buttonImages.Length; i++)
-        {
-            buttonImages[i].color = normalColor;
-        }
-    }
+    // public void OpenPanel()
+    // {
+    //     if (selectPanel != null) selectPanel.SetActive(true);
+    //     if (checkPanel != null) checkPanel.SetActive(false);
+    //     selectedIndex = -1;
+    //     
+    //     for (int i = 0; i < buttonImages.Length; i++)
+    //     {
+    //         buttonImages[i].color = normalColor;
+    //     }
+    // }
 
     // 모든 패널 닫기
     public void CloseAll()

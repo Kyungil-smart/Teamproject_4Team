@@ -39,6 +39,5 @@ public class UI_SFX_Manager : MonoBehaviour
     public void PopExitSound()
     {
         sfxPlayer.PlayOneShot(exitSound);
-        
     }
 }
