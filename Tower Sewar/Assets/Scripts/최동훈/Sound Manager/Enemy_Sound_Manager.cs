@@ -6,8 +6,10 @@ using UnityEngine;
 // Enemy_Sound_Manager.instance.PlaySfx() 몬스터 죽음
 public class Enemy_Sound_Manager : MonoBehaviour
 {
+    // 싱글톤 패턴
     public static Enemy_Sound_Manager instance;
 
+    // 인스펙터 생성
     [Header("Sound Player")]
     public AudioSource SfxPlayer;
 
@@ -25,6 +27,7 @@ public class Enemy_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+    // 몬스터 사망시 사운드 출력 메서드
     public void PlaySfx()
     {
         if (deathSfx != null && SfxPlayer != null)

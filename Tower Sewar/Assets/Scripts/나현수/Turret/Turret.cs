@@ -22,8 +22,7 @@ public class Turret : MonoBehaviour
     private int _muzzleIndex = 0;   
 
     [Header("Firing Settings")]
-    private float _attDelay  = 0.5f; 
-    private float _attTimer = 0f;
+    private float _attTimer = 10.0f;
 
     private void Awake()
     {
@@ -48,40 +47,43 @@ public class Turret : MonoBehaviour
         {
             HandleFiring();
         }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Upgrade();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (!other.CompareTag("Enemy")) return;
+    
+        MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
+        if (monster == null) return;
+    
+        Transform aim = monster.GetAimPoint();
+        if (!_enemyList.Contains(aim))
         {
-            if (!_enemyList.Contains(other.transform))
-            {
-                _enemyList.Add(other.transform);
-            }
+            _enemyList.Add(aim);
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+    
+        MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
+        if (monster == null) return;
+    
+        Transform aim = monster.GetAimPoint();
+        if (_enemyList.Contains(aim))
+        {
+            _enemyList.Remove(aim);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            if (_enemyList.Contains(other.transform))
-            {
-                _enemyList.Remove(other.transform);
-            }
-        }
-    }
+
 
     private void HandleFiring()
     {
         _attTimer += Time.deltaTime;
 
-        if (_attTimer >= _attDelay)
+        if (_attTimer >= _currentData.TowerAttDelay)
         {
             FireSequential();
             _attTimer = 0f;
@@ -96,10 +98,10 @@ public class Turret : MonoBehaviour
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
         
-        Tower_Sound_Manager.instance.PlaySFX("Attack");
+        Tower_Sound_Manager.instance?.PlaySFX("Attack");
     }
 
-    private void Upgrade()
+    public void Upgrade()
     {
         if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {

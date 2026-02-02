@@ -84,7 +84,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerData: []
   _towerPrefabs:
-  - {fileID: 1833988619539146, guid: 9318a11cd670f3d4f924ff92fe7b0c77, type: 3}
   - {fileID: 1498501323785604, guid: def8b52e5e3714e43adcb23d43073949, type: 3}
   - {fileID: 1370505811353800, guid: 5abcbaa4c20adb04895a997e3d70772d, type: 3}
-  - {fileID: 1791165765685050, guid: 16356cdf71fc4b0499d0b7fd3d6c0cd9, type: 3}
