@@ -6,14 +6,12 @@ using UnityEngine;
 
 public class  BulletTurret_Grade : Turret_Grade
 {
-    protected void Awake()
+    protected override void Awake()
     {
-        base.Awake();
-
         Init();
     }
 
-    protected override void Init()
+    protected void Init()
     {
         _towerData.Clear();
 

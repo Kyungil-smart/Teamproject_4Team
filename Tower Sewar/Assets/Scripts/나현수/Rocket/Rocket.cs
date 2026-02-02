@@ -13,12 +13,12 @@ public class Rocket : MonoBehaviour
 
     [SerializeField] protected Vector3 _rotationAngle = new Vector3(0, 0, 500);
 
-    public void Launch(Transform target, GunTowerData towerData)
+    public virtual void Launch(Transform target, GunTowerData towerData)
     {
         _tempTowerData = towerData;
-        _target = target;
-        _isLaunched = true;
-        _activeTime = 0;
+        _target        = target;
+        _isLaunched    = true;
+        _activeTime    = 0;
     }
     protected virtual void Update()
     {

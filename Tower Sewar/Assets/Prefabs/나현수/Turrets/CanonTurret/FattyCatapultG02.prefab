@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4355913087392092}
   - component: {fileID: 33450266860076986}
   - component: {fileID: 23669589091123604}
+  - component: {fileID: 1612010308146701600}
   m_Layer: 0
   m_Name: CatapultG_Arm02
   m_TagString: Untagged
@@ -84,6 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1612010308146701600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054238891274224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e36c3fc05aa94c4fad6ba586c69c944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rocketPrefab: {fileID: 1162392375372998, guid: 3e5b0980d9cc7a94bbb93263b9c6228d, type: 3}
+  _rocketPoolSize: 30
+  _FirePoint: {fileID: 4059261464750596}
 --- !u!1 &1154339778050348
 GameObject:
   m_ObjectHideFlags: 0
