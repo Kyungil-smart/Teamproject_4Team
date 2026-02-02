@@ -22,8 +22,7 @@ public class Turret : MonoBehaviour
     private int _muzzleIndex = 0;   
 
     [Header("Firing Settings")]
-    private float _attDelay  = 0.5f; 
-    private float _attTimer = 0f;
+    private float _attTimer = 10.0f;
 
     private void Awake()
     {
@@ -47,11 +46,6 @@ public class Turret : MonoBehaviour
         if (_isEnemy && _currentTarget != null)
         {
             HandleFiring();
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Upgrade();
         }
     }
 
@@ -81,7 +75,7 @@ public class Turret : MonoBehaviour
     {
         _attTimer += Time.deltaTime;
 
-        if (_attTimer >= _attDelay)
+        if (_attTimer >= _currentData.TowerAttDelay)
         {
             FireSequential();
             _attTimer = 0f;
@@ -99,7 +93,7 @@ public class Turret : MonoBehaviour
         Tower_Sound_Manager.instance.PlaySFX("Attack");
     }
 
-    private void Upgrade()
+    public void Upgrade()
     {
         if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {
