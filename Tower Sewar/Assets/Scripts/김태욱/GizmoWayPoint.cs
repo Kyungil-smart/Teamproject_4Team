@@ -5,21 +5,24 @@ using UnityEngine;
 
 public class GizmoWayPoint : MonoBehaviour
 {
+    [Header("Scene 미 실행시 표현할 경로의 맵 index")]
     [SerializeField]
-    WayPoint _wayPoint;
+    int _index;
 
     [SerializeField]
-    int _mapIndex;
+    List<WayPoint> _wayPoints;
 
-    private void Awake()
-    {
-        _mapIndex = 0;
-    }
 
     private void OnDrawGizmos()
     {
-        var paths = _wayPoint.Maps[_mapIndex].PathPoints;
+        
+        var paths = _wayPoints[_index].PathPoints;
+        if (WaveManager._instance != null)
+        {
+            paths = _wayPoints[WaveManager._instance.currentMap].PathPoints;
+        }
         if (paths == null) return;
+        
 
         for(int i=0; i< paths.Count -1; i++)
         {

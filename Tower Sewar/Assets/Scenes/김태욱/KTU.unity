@@ -154,8 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6986ff9091bfc438acf159a7019b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayPoint: {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
-  _mapIndex: 0
+  _wayPoints:
+  - {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
+  - {fileID: 11400000, guid: 0b1a851b41df9fe4192b4ab5aa8e0e09, type: 2}
+  - {fileID: 11400000, guid: adfc463d31f407c4c8c785008baa35f6, type: 2}
 --- !u!65 &486333560
 BoxCollider:
   m_ObjectHideFlags: 0
