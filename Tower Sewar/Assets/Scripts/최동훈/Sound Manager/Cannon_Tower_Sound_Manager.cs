@@ -8,6 +8,7 @@ using UnityEngine;
 // Cannon_Tower_Sound_Manager.instance.PlaySFX("Build"); 타워 설치 시
 // Cannon_Tower_Sound_Manager.instance.PlaySFX("Upgrade"); 타워 업그레이드 시
 // Cannon_Tower_Sound_Manager.instance.PlaySFX("Destroy"); 타워 철거 시
+// Cannon_Tower_Sound_Manager.instance.PlaySFX("Explosion"); 공격 적중 시
 
 public class Cannon_Tower_Sound_Manager : MonoBehaviour
 {
@@ -23,12 +24,14 @@ public class Cannon_Tower_Sound_Manager : MonoBehaviour
     [Range(0f, 1f)] public float buildVolume = 0.35f;
     [Range(0f, 1f)] public float upgradeVolume = 0.2f;
     [Range(0f, 1f)] public float destroyVolume = 0.15f;
+    [Range(0f, 1f)] public float explosionVolume = 0.15f;
 
     [Header("Tower Clip")]
     public AudioClip attackSfx;
     public AudioClip buildSfx;
     public AudioClip UpgradeSfx;
     public AudioClip destroySfx;
+    public AudioClip explosionSfx;
 
     private void Awake()
     {
@@ -59,6 +62,10 @@ public class Cannon_Tower_Sound_Manager : MonoBehaviour
 
             case "Destroy":
                 towerSound.PlayOneShot(destroySfx, destroyVolume);
+                break;
+
+            case "Explosion":
+                towerSound.PlayOneShot(explosionSfx, explosionVolume);
                 break;
         }
     }
