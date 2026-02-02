@@ -9,7 +9,12 @@ public class Turret : MonoBehaviour
     
     // 단계 컨트롤러
     Turret_Grade _gradeController;
+    public Turret_Grade gradeController => _gradeController;
     private int _curGrade = 0;
+    public int CurGrade
+    {
+        get { return _curGrade;}  private set  { _curGrade = value;}
+    }
     
     // 타워 모델 프리팹
     [SerializeField] private Transform _towerModelParent;
@@ -123,9 +128,9 @@ public class Turret : MonoBehaviour
     {
         if (_curGrade + 1 < _gradeController._towerData.Count)
         {
+            _curGrade++;
             if(_curGrade > 0)
                 MachineGun_Tower_Sound_Manager.instance.PlaySFX("Upgrade");
-            _curGrade++;
             UpgradeTower();
         }
         else

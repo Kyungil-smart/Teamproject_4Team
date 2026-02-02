@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIcontroller : MonoBehaviour
 {
@@ -25,12 +26,14 @@ public class UIcontroller : MonoBehaviour
     // ===============================
     // 타워 선택 UI
     // ===============================
+    
 
     public void OpenTowerSelection()
     {
         foreach (GameObject g in TowerSelectionPanel)
             g.SetActive(true);
 
+        Debug.Log("UI open");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

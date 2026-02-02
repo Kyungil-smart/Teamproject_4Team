@@ -15,6 +15,7 @@ public class TileRaycaster : MonoBehaviour
     private RaycastHit hit;
 
     private Turret selectedTurret;
+    public Turret SelectedTurret => selectedTurret;
 
     [SerializeField] private UIcontroller uiController;
 
