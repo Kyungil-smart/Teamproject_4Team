@@ -9,13 +9,18 @@ public class UIcontroller : MonoBehaviour
     // 설치 확인 UI (CheckPanel)
     [SerializeField] private List<GameObject> BuildConfirmPanel = new List<GameObject>();
 
-    private TileRaycaster _raycaster;
+    // 업그레이드 확인 UI
+    [SerializeField] private List<GameObject> UpgradeConfirmPanel = new List<GameObject>();
+
+    //private TileRaycaster _raycaster;
+
+    [SerializeField] private TileRaycaster _raycaster;
     private int _selectedTower = 0;
 
-    private void Start()
-    {
-        _raycaster = GetComponent<TileRaycaster>();
-    }
+    //private void Start()
+    //{
+    //    _raycaster = GetComponent<TileRaycaster>();
+    //}
 
     // ===============================
     // 타워 선택 UI
@@ -122,6 +127,48 @@ public class UIcontroller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    // ===============================
+    // 업그레이드 확인 UI
+    // ===============================
+    public void OpenUpgradeConfirmUI()
+    {
+        foreach (GameObject g in UpgradeConfirmPanel)
+            g.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void CloseUpgradeConfirmUI()
+    {
+        foreach (GameObject g in UpgradeConfirmPanel)
+            g.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    // ✔ 업그레이드 YES 버튼 (OnClick에서 호출됨)
+    public void OnUpgradeYesButton()
+    {
+        Debug.Log("✔ 업그레이드 YES 클릭");
+
+        if (_raycaster != null)
+            _raycaster.OnUpgradeConfirm();
+        
+        
+    }
+
+    // ✖ 업그레이드 NO 버튼 (OnClick에서 호출됨)
+    public void OnUpgradeNoButton()
+    {
+        Debug.Log("✖ 업그레이드 NO 클릭");
+
+        if (_raycaster != null)
+            _raycaster.OnUpgradeCancel();
+    }
+
 }
 
 public enum TowerType

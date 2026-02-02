@@ -5,7 +5,7 @@ public class Foundation : MonoBehaviour
     [Header("Tower Build Settings")]
     [SerializeField] private Transform buildPoint;   // 타워 생성 위치
     [SerializeField] private GameObject builtTower;  // 생성된 타워 참조 (부모 아님)
-
+    public Turret BuiltTurret { get; private set; }
     /// <summary>
     /// 이 파운데이션에 타워를 지을 수 있는지
     /// </summary>
@@ -39,6 +39,8 @@ public class Foundation : MonoBehaviour
             spawnTransform.position,
             spawnTransform.rotation
         );
+
+        BuiltTurret = turret.GetComponent<Turret>();
 
         builtTower = turret;
     }

@@ -14,6 +14,8 @@ public class TileRaycaster : MonoBehaviour
 
     private RaycastHit hit;
 
+    private Turret selectedTurret;
+
     [SerializeField] private UIcontroller uiController;
 
     [SerializeField] private GameObject turretPrefab;
@@ -24,17 +26,18 @@ public class TileRaycaster : MonoBehaviour
     // =========================
     private bool isBuildMode = false;          // 설치 모드 여부
     private bool isBuildConfirmUIOpen = false; // 확인 UI 여부
+    private bool isUpgradeUIOpen = false; // 업그레이드 여부
 
     private void Update()
     {
         // Ray / Gizmo 시각 피드백은 항상 유지
         HandleRaycast();
 
-        // 🔒 확인 UI가 떠 있으면 키보드 입력 완전 차단
-        if (isBuildConfirmUIOpen)
+        // 확인 UI가 떠 있으면 키보드 입력 완전 차단
+        if (isBuildConfirmUIOpen || isUpgradeUIOpen)
             return;
 
-        // 🔓 ESC 이후 자유 마우스 상태에서 좌클릭 → 다시 락온
+        // ESC 이후 자유 마우스 상태에서 좌클릭 → 다시 락온
         if (!isBuildMode && Cursor.lockState == CursorLockMode.None)
         {
             if (Input.GetMouseButtonDown(0))
@@ -92,6 +95,27 @@ public class TileRaycaster : MonoBehaviour
 
         if (CurrentHoverObject == null)
             return;
+
+        // ===============================
+        // ⭐ 설치된 타워만 → 업그레이드 UI
+        // ===============================
+        if (CurrentHoverObject.TryGetComponent<Foundation>(out var foundation))
+        {
+            // Foundation에 이미 타워가 설치된 경우만
+            if (!foundation.CanBuild())
+            {
+                selectedTurret = foundation.BuiltTurret;
+
+                isUpgradeUIOpen = true;
+
+                UnlockCursor();
+
+                if (uiController != null)
+                    uiController.OpenUpgradeConfirmUI();
+
+                return;
+            }
+        }
 
         if (!CurrentHoverObject.TryGetComponent<IPlayerInteractable>(out var interactable))
             return;
@@ -157,7 +181,7 @@ public class TileRaycaster : MonoBehaviour
 
         foundation.BuildTower(turretPrefab);
 
-        ExitBuildConfirm(); // ✅ 모든 처리 끝난 뒤
+        ExitBuildConfirm(); // 모든 처리 끝난 뒤
     }
 
 
@@ -167,6 +191,44 @@ public class TileRaycaster : MonoBehaviour
 
         ExitBuildConfirm();
     }
+
+    // =========================
+    // 업그레이드 UI → Raycaster
+    // =========================
+    public void OnUpgradeConfirm()
+    {
+        Debug.Log("▶ 업그레이드 CONFIRM 처리");
+
+        selectedTurret.Upgrade();
+
+        selectedTurret = null;
+        CloseUpgradeUI();
+    }
+
+    public void OnUpgradeCancel()
+    {
+        Debug.Log("▶ 업그레이드 CANCEL 처리");
+
+        CloseUpgradeUI();
+    }
+
+    private void CloseUpgradeUI()
+    {
+        isUpgradeUIOpen = false;
+
+        // 업그레이드 UI 끄기
+        if (uiController != null)
+            uiController.CloseUpgradeConfirmUI();
+
+        // 상태 정리
+        isBuildMode = false;
+        isBuildConfirmUIOpen = false;
+        SelectedObject = null;
+
+        // 커서 복구
+        LockCursor();
+    }
+
 
     private void ExitBuildConfirm()
     {
