@@ -98,7 +98,6 @@ public class Turret : MonoBehaviour
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
         
-        Tower_Sound_Manager.instance?.PlaySFX("Attack");
     }
 
     public void Upgrade()

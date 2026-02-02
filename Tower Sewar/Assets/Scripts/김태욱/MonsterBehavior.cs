@@ -59,6 +59,8 @@ public class MonsterBehavior : MonoBehaviour
         {
             //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
+            // TODO : 골드 추가 했습니다. - 제갈도원 -
+            DataManager.Instance.PlayerGold += _dropGold;
             Die();
         }
     }
@@ -110,7 +112,8 @@ public class MonsterBehavior : MonoBehaviour
         {
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+            // TODO : 플레이어 체력 감소 추가 -제갈도원-
+            DataManager.Instance.PlayerGold -= 1;
             Die();
 
             return;
