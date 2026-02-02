@@ -103,11 +103,11 @@ public class CameraRigController : MonoBehaviour
 
         // 마우스 락 해제
         // UI 조작 가능 상태
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        // }
     }
 
 

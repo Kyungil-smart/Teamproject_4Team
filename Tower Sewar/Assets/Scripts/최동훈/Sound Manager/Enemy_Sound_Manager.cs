@@ -25,15 +25,6 @@ public class Enemy_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            PlaySfx();
-            Debug.Log("몬스터 죽음");
-        }
-    }
     public void PlaySfx()
     {
         if (deathSfx != null && SfxPlayer != null)

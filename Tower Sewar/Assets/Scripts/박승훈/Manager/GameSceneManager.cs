@@ -8,9 +8,6 @@ public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager Instance {get; private set;}
     
-    [SerializeField] private string titleSceneName =  "TitleScene_JGDW";
-    [SerializeField] private string gameSceneName =  "TestGameScene_dw";
-    
     
     private void Awake()
     {
@@ -28,13 +25,13 @@ public class GameSceneManager : MonoBehaviour
     public void LoadGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(gameSceneName);
+        SceneManager.LoadScene(1);
     }
     
     // 타이틀 씬 이동
     public void LoadTitle()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(titleSceneName);
+        SceneManager.LoadScene(0);
     }
 }
