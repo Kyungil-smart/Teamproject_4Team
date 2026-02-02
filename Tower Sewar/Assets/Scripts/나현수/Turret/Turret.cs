@@ -99,7 +99,7 @@ public class Turret : MonoBehaviour
         Tower_Sound_Manager.instance.PlaySFX("Attack");
     }
 
-    private void Upgrade()
+    public void Upgrade()
     {
         if (_curGrade + 1 < _gradeController.TowerDatas.Count)
         {

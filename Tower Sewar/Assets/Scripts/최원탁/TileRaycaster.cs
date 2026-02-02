@@ -199,13 +199,7 @@ public class TileRaycaster : MonoBehaviour
     {
         Debug.Log("▶ 업그레이드 CONFIRM 처리");
 
-        if (selectedTurret != null) // 업그레이드 함수 호출
-        {
-            selectedTurret.SendMessage(
-                "Upgrade",
-                SendMessageOptions.DontRequireReceiver
-            );
-        }
+        selectedTurret.Upgrade();
 
         selectedTurret = null;
         CloseUpgradeUI();

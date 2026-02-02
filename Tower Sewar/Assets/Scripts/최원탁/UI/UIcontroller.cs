@@ -154,6 +154,8 @@ public class UIcontroller : MonoBehaviour
 
         if (_raycaster != null)
             _raycaster.OnUpgradeConfirm();
+        
+        
     }
 
     // ✖ 업그레이드 NO 버튼 (OnClick에서 호출됨)
