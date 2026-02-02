@@ -26,7 +26,25 @@ public class WaveManager : MonoBehaviour
 
     //준비(휴식)시간인지?
     private bool _isReadyTime;
-    public bool IsReadyTime {  get { return _isReadyTime; } }
+
+    public bool IsReadyTime
+    {
+        get { return _isReadyTime; }
+        set
+        {
+            _isReadyTime = value;
+            if (_isReadyTime)
+            {
+                Debug.Log("Wait");
+                Stage_Sound_Manager.instance.SettingSound("Waiting");
+            }
+            else
+            {
+                Debug.Log("Start");
+                Stage_Sound_Manager.instance.SettingSound("Wave");
+            }
+        }
+    }
 
     //스폰 주기를 조절하기위한 변수
     private float _spawnCoolTime;
@@ -41,7 +59,6 @@ public class WaveManager : MonoBehaviour
     {
         _instance = this;
         Init();
-
     }
 
     void Start()
@@ -62,7 +79,7 @@ public class WaveManager : MonoBehaviour
         //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
         {
-            _isReadyTime = !_isReadyTime;
+            IsReadyTime = !_isReadyTime;
 
             //다음Wave로 전환을위해 초기화작업
             if (_isReadyTime)
@@ -97,7 +114,7 @@ public class WaveManager : MonoBehaviour
     void Init()
     {
         _wave = 0;
-        _isReadyTime = true;
+        IsReadyTime = true;
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;

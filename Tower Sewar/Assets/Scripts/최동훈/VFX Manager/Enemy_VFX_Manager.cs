@@ -20,6 +20,7 @@ public class Enemy_VFX_Manager : MonoBehaviour
     public void Death(Transform target)
     {
         GameObject enemyVfx = Instantiate(_deathVfxPrefab, target.position, target.rotation);
+        enemyVfx.transform.localScale = new Vector3(5f, 5f, 5f);
         Destroy(enemyVfx, 0.5f);
     }
 }

@@ -43,39 +43,6 @@ public class Stage_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SettingSound("Waiting");
-            Debug.Log("대기 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SettingSound("Wave");
-            Debug.Log("웨이브 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SettingSound("Boss");
-            Debug.Log("보스 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SettingSound("Clear");
-            Debug.Log("클리어 SFX");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SettingSound("Fail");
-            Debug.Log("패배 SFX");
-        }
-    }
     public void SettingSound(string state)
     {
         if (SoundPlayer == null || SfxPlayer == null)
@@ -88,10 +55,12 @@ public class Stage_Sound_Manager : MonoBehaviour
         switch (state)
         {
             case "Waiting":
+                Debug.Log("준비시간");
                 Sound(waitingBgm , waitingVolume, true);
                 break;
 
             case "Wave":
+                Debug.Log("디펜스");
                 StartCoroutine(SfxToBgm(waveSfx, waveSfxVolume, waveBgm, waveVolume));
                 break;
 

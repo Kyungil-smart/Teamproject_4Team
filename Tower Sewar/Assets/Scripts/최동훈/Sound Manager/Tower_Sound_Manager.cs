@@ -35,33 +35,6 @@ public class Tower_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PlaySFX("Attack");
-            Debug.Log("공격 SFX");
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            PlaySFX("Build");
-            Debug.Log("건설 SFX");
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            PlaySFX("Upgrade");
-            Debug.Log("업그레이드 SFX");
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            PlaySFX("Destroy");
-            Debug.Log("철거 SFX");
-        }
-    }
-
     public void PlaySFX(string state)
     {
         if (towerSound == null)
