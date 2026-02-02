@@ -60,7 +60,8 @@ public class Rocket_Canon : Rocket
 
             foreach (var hitCollider in hitColliders)
             {
-                MonsterBehavior monster = hitCollider.GetComponent<MonsterBehavior>();
+                MonsterBehavior monster = _target.GetComponentInParent<MonsterBehavior>();
+
 
                 if (monster != null)
                 {
