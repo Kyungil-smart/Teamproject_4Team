@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6464993472308017945}
   - component: {fileID: 2741275531828306095}
-  - component: {fileID: 724268436730403448}
+  - component: {fileID: 8729626081235255934}
   m_Layer: 0
   m_Name: Test Cannon
   m_TagString: Untagged
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &724268436730403448
+--- !u!114 &8729626081235255934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884647219693895724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1335d64eadb2f8448b5a45c2111201d, type: 3}
+  m_Script: {fileID: 11500000, guid: e42f5bb6b5d14834490eaf24b7ae423e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerSound: {fileID: 2741275531828306095}
@@ -148,5 +148,5 @@ MonoBehaviour:
   destroyVolume: 0.15
   attackSfx: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   buildSfx: {fileID: 8300000, guid: f39bb14a4d0c8bb4f9c5123138bab39c, type: 3}
-  UpgradeSfx: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
-  destroySfx: {fileID: 8300000, guid: 958408b32ccf3714ea02821877b0870c, type: 3}
+  UpgradeSfx: {fileID: 8300000, guid: 958408b32ccf3714ea02821877b0870c, type: 3}
+  destroySfx: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
