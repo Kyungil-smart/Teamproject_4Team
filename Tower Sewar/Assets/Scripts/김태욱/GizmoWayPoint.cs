@@ -5,25 +5,16 @@ using UnityEngine;
 
 public class GizmoWayPoint : MonoBehaviour
 {
-    [Header("Scene 미 실행시 표현할 경로의 맵 index")]
     [SerializeField]
-    int _index;
-
+    WayPoint _wayPoint1;
     [SerializeField]
-    List<WayPoint> _wayPoints;
+    WayPoint _wayPoint2;
 
 
     private void OnDrawGizmos()
     {
-        
-        var paths = _wayPoints[_index].PathPoints;
-        if (WaveManager._instance != null)
-        {
-            paths = _wayPoints[WaveManager._instance.currentMap].PathPoints;
-        }
-        if (paths == null) return;
-        
-
+        if (_wayPoint1 == null) return;
+        var paths = _wayPoint1.PathPoints;
         for(int i=0; i< paths.Count -1; i++)
         {
             Gizmos.color = Color.yellow;
@@ -33,6 +24,21 @@ public class GizmoWayPoint : MonoBehaviour
             Gizmos.DrawSphere(paths[i], 0.3f);
         }
         Gizmos.DrawSphere(paths[paths.Count - 1], 0.3f);
+
+        if (_wayPoint2 == null) return;
+        paths = _wayPoint2.PathPoints;
+
+        for (int i = 0; i < paths.Count - 1; i++)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(paths[i], paths[i + 1]);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(paths[i], 0.3f);
+        }
+        Gizmos.DrawSphere(paths[paths.Count - 1], 0.3f);
+
+
     }
 
 }

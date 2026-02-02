@@ -11,10 +11,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     StageData _stageData;
 
-    //현재 Map
-    private int _currentMap;
-    public int currentMap { get { return  _currentMap; }  }
-
     //현재 Wave 단계
     private int _wave;
     public int Wave { get { return _wave; } }
@@ -66,10 +62,10 @@ public class WaveManager : MonoBehaviour
             //다음Wave로 전환을위해 초기화작업
             if (_isReadyTime)
             {
-                //스테이지를 모두 깼다면 클리어 처리
+                //웨이브를 모두 깼다면 클리어 처리
                 if (_wave == _stageData.WaveDatas.Count - 1)
                 {
-                    Debug.Log("스테이지 올클리어");
+                    Debug.Log("웨이브 올클리어");
                     //TODO: 씬전환필요함
 
                     return;
@@ -96,7 +92,6 @@ public class WaveManager : MonoBehaviour
     void Init()
     {
         _wave = 0;
-        _currentMap = 0;
         _isReadyTime = true;
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
