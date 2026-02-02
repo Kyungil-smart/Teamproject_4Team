@@ -27,7 +27,14 @@ public class GameManager : MonoBehaviour
         GenerateManager<DataManager>();
         GenerateManager<SoundManager>();
         GenerateManager<InputManager>();
+        GenerateManager<Title_BGM_Manager>();
         GenerateManager<UIManager>();
+        GenerateManager<UI_SFX_Manager>();
+        GenerateManager<Enemy_Sound_Manager>();
+        GenerateManager<Enemy_VFX_Manager>();
+        GenerateManager<Stage_Sound_Manager>();
+        GenerateManager<Base_Sound_Manager>();
+        GenerateManager<Base_VFX_Manager>();
     }
 
     private void GenerateManager<T>() where T : Component

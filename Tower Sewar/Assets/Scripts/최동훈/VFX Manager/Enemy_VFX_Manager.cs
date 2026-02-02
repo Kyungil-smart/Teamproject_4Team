@@ -9,7 +9,6 @@ public class Enemy_VFX_Manager : MonoBehaviour
     public static Enemy_VFX_Manager instance;
 
     [SerializeField] private GameObject _deathVfxPrefab;
-    [SerializeField] private Transform _death;
 
     private void Awake()
     {
@@ -18,18 +17,9 @@ public class Enemy_VFX_Manager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Update()
+    public void Death(Transform target)
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Death();
-        }
-    }
-
-    public void Death()
-    {
-        GameObject enemyVfx = Instantiate(_deathVfxPrefab, _death.position, _death.rotation);
+        GameObject enemyVfx = Instantiate(_deathVfxPrefab, target.position, target.rotation);
         Destroy(enemyVfx, 0.5f);
     }
 }
