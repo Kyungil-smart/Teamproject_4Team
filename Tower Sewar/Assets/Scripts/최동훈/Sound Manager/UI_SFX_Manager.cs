@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class UI_SFX_Manager : MonoBehaviour
 {
+    // 싱글톤 패턴
     public static UI_SFX_Manager instance;
 
+    // 인스펙터 생성
     [Header("Sound Player")]
     public AudioSource sfxPlayer;
 
@@ -19,7 +21,7 @@ public class UI_SFX_Manager : MonoBehaviour
         {
             instance = this;
 
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // 씬 전환시 파괴 방지
         }
 
         else
@@ -28,6 +30,7 @@ public class UI_SFX_Manager : MonoBehaviour
         }
     }
 
+    // Ui 버튼 클릭시 일회성 사운드 호출 메서드
     public void PopButtonSound()
     {
         sfxPlayer.PlayOneShot(normalSound);

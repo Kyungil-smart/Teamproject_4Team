@@ -8,8 +8,10 @@ using UnityEngine;
 // Base_Sound_Manager.instance.BaseSFX("Destroy"); 베이스 파괴 시
 public class Base_Sound_Manager : MonoBehaviour
 {
+    // 싱글톤 패턴
     public static Base_Sound_Manager instance;
 
+    // 인스펙터 생성
     [Header("Sound Player")]
     public AudioSource baseSound;
 
@@ -29,6 +31,7 @@ public class Base_Sound_Manager : MonoBehaviour
         }
     }
 
+    // Base 상태에 따라 사운드 출력 메서드
     public void BaseSFX(string state)
     {
         if (baseSound == null)
