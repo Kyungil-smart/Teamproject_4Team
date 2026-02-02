@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010213081396}
   - component: {fileID: 95000012068901072}
+  - component: {fileID: 3857142454917122091}
   m_Layer: 0
   m_Name: Ghost_Brown_Die
   m_TagString: Untagged
@@ -119,6 +120,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3857142454917122091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011148102054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571db8a11ae046845b33bbad70857d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000011199946392
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
-  m_Name: Bat Data
+  m_Name: Rabbit_Red
   m_EditorClassIdentifier: 
-  _name: "\uBC15\uC950"
-  _hp: 85
-  _moveSpeed: 5
-  _dropGold: 25
-  _scale: {x: 32, y: 32, z: 32}
+  _monsterType: Rabbit
+  _monsterPrefab: {fileID: 1000013767804016, guid: e06eaf96185c3f84bb35574794109ae9, type: 3}
+  _deadMonsterPrefab: {fileID: 1000013767804016, guid: 23341dd58a16fcc4da769c428369f275, type: 3}
+  _hp: 350
+  _moveSpeed: 2.5
+  _dropGold: 35
+  _scale: {x: 50, y: 50, z: 50}

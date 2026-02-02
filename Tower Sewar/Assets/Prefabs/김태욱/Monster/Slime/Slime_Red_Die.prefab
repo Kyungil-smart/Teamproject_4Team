@@ -387,6 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011550217864}
   - component: {fileID: 95000010450722992}
+  - component: {fileID: -2968335926504236313}
   m_Layer: 0
   m_Name: Slime_Red_Die
   m_TagString: Untagged
@@ -432,6 +433,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2968335926504236313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571db8a11ae046845b33bbad70857d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000013341563594
 GameObject:
   m_ObjectHideFlags: 0

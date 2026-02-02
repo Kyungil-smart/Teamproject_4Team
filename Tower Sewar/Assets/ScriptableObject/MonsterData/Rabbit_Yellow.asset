@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
-  m_Name: Rabbit Data
+  m_Name: Rabbit_Yellow
   m_EditorClassIdentifier: 
-  _name: "\uD1A0\uB07C"
+  _monsterType: Rabbit
+  _monsterPrefab: {fileID: 1000011046516534, guid: e3132b97463c67c489bc2af4790a25f2, type: 3}
+  _deadMonsterPrefab: {fileID: 1000011046516534, guid: 54355f6ec9a2d344d94abc1333697f8c, type: 3}
   _hp: 350
   _moveSpeed: 2.5
   _dropGold: 35

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
+  m_Name: Ghost_White
+  m_EditorClassIdentifier: 
+  _monsterType: Ghost
+  _monsterPrefab: {fileID: 1000011659465104, guid: 73452d4e7b9e00643b80af7fb705274b, type: 3}
+  _deadMonsterPrefab: {fileID: 1000011659465104, guid: 2ee2a13a7d9f363458b57d8691059b43, type: 3}
+  _hp: 200
+  _moveSpeed: 4.5
+  _dropGold: 25
+  _scale: {x: 50, y: 50, z: 50}
