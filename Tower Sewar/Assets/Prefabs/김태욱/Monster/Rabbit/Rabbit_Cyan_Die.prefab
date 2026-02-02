@@ -778,6 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000014191901042}
   - component: {fileID: 95000013350495782}
+  - component: {fileID: 2323762762441308672}
   m_Layer: 0
   m_Name: Rabbit_Cyan_Die
   m_TagString: Untagged
@@ -823,6 +824,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2323762762441308672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014069041812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571db8a11ae046845b33bbad70857d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000014181304996
 GameObject:
   m_ObjectHideFlags: 0
