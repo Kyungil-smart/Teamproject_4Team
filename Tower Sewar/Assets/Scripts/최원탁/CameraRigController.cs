@@ -53,7 +53,7 @@ public class CameraRigController : MonoBehaviour
         HandleMouseLockInput();
         HandleOrbit();
         HandleZoom();
-        
+
     }
 
     private void LateUpdate()
@@ -103,16 +103,16 @@ public class CameraRigController : MonoBehaviour
 
         // 마우스 락 해제
         // UI 조작 가능 상태
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        // }
     }
 
-    
 
-    
+
+
 
     // 마우스 휠로 카메라 줌을 처리한다
     private void HandleZoom()

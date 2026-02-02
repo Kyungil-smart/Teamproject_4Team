@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,23 +12,27 @@ public class StageData : ScriptableObject
 [System.Serializable]
 public class WaveData
 {
-    [Header("웨이브 몬스터 데이터")]
-    [SerializeField] private string _monsterName;
-    public string MonsterName => _monsterName;
+    [Header("몬스터 데이터")]
+    [SerializeField] private MonsterData _monsterData;
+    public MonsterData MonsterData => _monsterData;
+
+    [Header("몹 스폰 조절")]
     [SerializeField] private int _spawnAmount;
     public int SpawnAmount => _spawnAmount;
-    [SerializeField] private int _spawnDelay;
-    public int SpawnDelay => _spawnDelay;
-    
-    [Space(15)]
-    [Header("웨이브 시간 데이터")]
+    [SerializeField] private float _spawnDelay;
+    public float SpawnDelay => _spawnDelay;
+    [SerializeField] bool spawn_Left;
+    public bool Spawn_Left => spawn_Left;
+    [SerializeField] bool spawn_Right;
+    public bool Spawn_Right => spawn_Right;
+
+    [Header("웨이브 시간")]
     [SerializeField] private int _waveReadyTime;
     public int WaveReadyTime => _waveReadyTime;
     [SerializeField] private int _waveLimitTime;
     public int WaveLimitTime => _waveLimitTime;
 
-    [Space(15)]
-    [Header("웨이브 데이터")]
+    [Header("웨이브 클리어 골드")]
     [SerializeField] private int _clearGold;
     public int ClearGold => _clearGold;
 }

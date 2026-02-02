@@ -6,17 +6,13 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     //몬스터 data 참조
-    [SerializeField]
     MonsterData _monsterData;
 
     //맵의 wayPoint 참조
-    [SerializeField]
     WayPoint _wayPoint;
 
-    //몬스터 종류
-    string _monsterType;
 
-    //몬스터 현재체력
+    //몬스터 현재체력 //임시 serializeField로 해둠
     [SerializeField]
     float _hp;
     //몬스터 현재속도
@@ -38,13 +34,13 @@ public class MonsterBehavior : MonoBehaviour
 
     private void Awake()
     {
-        Init();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Init();
 
     }
 
@@ -59,8 +55,7 @@ public class MonsterBehavior : MonoBehaviour
         {
             //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
-            MonsterSpawner.Instance.RemoveMonster(gameObject);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -75,13 +70,12 @@ public class MonsterBehavior : MonoBehaviour
             _hp = _monsterData.Hp;
             _velocity = _monsterData.MoveSpeed;
             _dropGold = _monsterData.DropGold;
-            _monsterType = _monsterData.Name;
         }
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
         if (_wayPoint != null)
         {
             //경로설정
-            _pathPoints = _wayPoint.Maps[0].PathPoints;
+            _pathPoints = _wayPoint.PathPoints;
             _pathIndex = 0;
             //바라보는방향설정
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
@@ -109,9 +103,7 @@ public class MonsterBehavior : MonoBehaviour
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-            //끝까지 살아남은 몬스터는 죽는모션 없이 일단은 바로 없애는걸로 하자. 
-            MonsterSpawner.Instance.RemoveMonster(gameObject);
-            Destroy(gameObject);
+            Die();
 
             return;
         }
@@ -145,18 +137,13 @@ public class MonsterBehavior : MonoBehaviour
         _hp -= damage;
     }
 
-    //바로 destroy후 애니메이션 연출용 객체생성
+    //몬스터 객체는 사망시 애니메이션 연출용 객체생성후, 바로 destroy .
     void Die()
     {
-        //애니메이션 객체 생성
-        if (_monsterType == "박쥐")
-            MonsterSpawner.Instance.DieAnimationBat(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "토끼")
-            MonsterSpawner.Instance.DieAnimationRabbit(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "유령")
-            MonsterSpawner.Instance.DieAnimationGhost(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "슬라임")
-            MonsterSpawner.Instance.DieAnimationSlime(transform.localScale, transform.position, transform.forward);
+        MonsterSpawner.Instance.DieAnimation(_monsterData, transform); //사망 애니메이션
+
+        Enemy_Sound_Manager.instance.PlaySfx(); // 몬스터 사망 사운드
+        Enemy_VFX_Manager.instance.Death(transform); //몬스터 죽음 VFX
 
         //몬스터 destroy
         MonsterSpawner.Instance.RemoveMonster(gameObject);
@@ -164,23 +151,10 @@ public class MonsterBehavior : MonoBehaviour
 
     }
 
-    //Die()호출을 하면 실행되는 루틴(방식변경으로 현재 안씀)
-    IEnumerator DieRoutine()
-    {
+    public void SetMonsterData(MonsterData data)
+        { _monsterData = data; }
+    public void SetWayPoint(WayPoint wayPoint)
+        { _wayPoint = wayPoint; }
 
-        //Die 트리거를 설정하고
-        Animator animator = GetComponent<Animator>();
-        animator.SetTrigger("Die");
-
-        //한프레임 기다림(애니메이션 전환)
-        yield return null;
-
-        //죽는 애니메이션시간 가져오고 그만큼 기다림
-        float dieTime = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(dieTime);
-
-        //제거
-        MonsterSpawner.Instance.RemoveMonster(gameObject);
-        Destroy(gameObject);
-    }
+    
 }

@@ -5,6 +5,8 @@ public class Turret_Rotate : MonoBehaviour
     [SerializeField] private float _rotateSpeed = 30.0f;
     [SerializeField] private Turret _turret;
 
+    [SerializeField] private bool _canLookAt = true;
+
     void Awake()
     {
         _turret = GetComponentInParent<Turret>();
@@ -20,7 +22,17 @@ public class Turret_Rotate : MonoBehaviour
 
         if (_turret.IsEnemy && _turret._currentTarget != null)
         {
-            transform.LookAt(_turret._currentTarget);
+            Vector3 targetPos = _turret._currentTarget.position;
+
+            if (_canLookAt)
+            {
+                transform.LookAt(targetPos + (Vector3.up * 0.7f));
+            }
+            else
+            {
+                targetPos.y = transform.position.y;
+                transform.LookAt(targetPos);
+            }
         }
         else
         {

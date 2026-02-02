@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager Instance {get; private set;}
+    
     
     private void Awake()
     {
@@ -18,9 +20,18 @@ public class GameSceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // 씬 전환
-    public void LoadScene()
+    
+    // 게임 씬 이동
+    public void LoadGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+    }
+    
+    // 타이틀 씬 이동
+    public void LoadTitle()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

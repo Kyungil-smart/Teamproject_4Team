@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Tile
   - Tower
-  - Ghost
+  - Faundation
   - Enemy
   - Obstacle
   - 
@@ -28,9 +28,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Bat
+  - Rabbit
+  - Slime
   - 
   - 
   - 

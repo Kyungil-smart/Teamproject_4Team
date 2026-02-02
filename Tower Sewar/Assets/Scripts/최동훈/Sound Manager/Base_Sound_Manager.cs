@@ -28,20 +28,6 @@ public class Base_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            BaseSFX("Taken_Damage");
-            Debug.Log("베이스 피격");
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            BaseSFX("Destroy");
-            Debug.Log("베이스 부서짐");
-        }
-    }
 
     public void BaseSFX(string state)
     {

@@ -17,32 +17,52 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     
     [Header("Right Area")]
-    [SerializeField] private Button stopButton;
+    [SerializeField] private GameObject stopPanel;
     
     private bool isPaused = false;
 
     private void Start()
     {
-        if (stopButton != null)
+        // 시작할 때 StopPanel 숨기기
+        if (stopPanel != null)
         {
-            stopButton.onClick.AddListener(TogglePause);
+            stopPanel.SetActive(false);
         }
     }
 
+    // Stop 버튼에서 호출
     public void TogglePause()
     {
         isPaused = !isPaused;
         
         if (isPaused)
         {
-            Time.timeScale = 0f;  // 게임 정지
+            Time.timeScale = 0f;
+            if (stopPanel != null) stopPanel.SetActive(true);
             Debug.Log("게임 일시정지");
         }
         else
         {
-            Time.timeScale = 1f;  // 게임 재개
+            Time.timeScale = 1f;
+            if (stopPanel != null) stopPanel.SetActive(false);
             Debug.Log("게임 재개");
         }
+    }
+
+    // ResumeButton에서 호출 (Unity Event)
+    public void ResumeGame()
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+        if (stopPanel != null) stopPanel.SetActive(false);
+        Debug.Log("게임 재개");
+    }
+
+    // HomeButton에서 호출 (Unity Event)
+    public void GoToTitle()
+    {
+        Time.timeScale = 1f;
+        GameSceneManager.Instance.LoadTitle();
     }
 
     private void LateUpdate()
@@ -58,7 +78,7 @@ public class HUDManager : MonoBehaviour
         int seconds = (int)(time % 60);
         timeText.text = $"{minutes:00}:{seconds:00}";
 
-        // monsterCountText - MonsterSpawner도 필요함 합치면 해결 될 듯
+        // monsterCountText
         try
         {
             monsterCountText.text = $"{WaveManager._instance.NumsOfMonsters}";

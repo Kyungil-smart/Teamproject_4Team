@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 // 아래의 코드를 추가 해서 사운드 호출 가능
-// Stage_Sound_Manager.instance.ChangeBGM("Wave"); 웨이브 시작
-// Stage_Sound_Manager.instance.ChangeBGM("Boss"); 보스 등장 시
-// Stage_Sound_Manager.instance.ChangeBGM("Waiting"); 대기 시간
-// Stage_Sound_Manager.instance.ChangeBGM("Clear"); 클리어시
-// Stage_Sound_Manager.instance.ChangeBGM("Fail"); 실패시
+// Stage_Sound_Manager.instance.SettingSound("Wave"); 웨이브 시작
+// Stage_Sound_Manager.instance.SettingSound("Boss"); 보스 등장 시
+// Stage_Sound_Manager.instance.SettingSound("Waiting"); 대기 시간
+// Stage_Sound_Manager.instance.SettingSound("Clear"); 클리어시
+// Stage_Sound_Manager.instance.SettingSound("Fail"); 실패시
 
 public class Stage_Sound_Manager : MonoBehaviour
 {
@@ -42,88 +43,54 @@ public class Stage_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SettingSound("Waiting");
-            Debug.Log("대기 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SettingSound("Wave");
-            Debug.Log("웨이브 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SettingSound("Boss");
-            Debug.Log("보스 BGM");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SettingSound("Clear");
-            Debug.Log("클리어 SFX");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SettingSound("Fail");
-            Debug.Log("패배 SFX");
-        }
-    }
     public void SettingSound(string state)
     {
         if (SoundPlayer == null || SfxPlayer == null)
             return;
 
+        StopAllCoroutines();
         SoundPlayer.Stop();
+        SfxPlayer.Stop();
 
         switch (state)
         {
             case "Waiting":
-                SoundPlayer.clip = waitingBgm;
-                SoundPlayer.volume = waitingVolume;
-                SoundPlayer.loop = true;
-                SoundPlayer.Play();
+                Debug.Log("준비시간");
+                Sound(waitingBgm , waitingVolume, true);
                 break;
 
             case "Wave":
-                SoundPlayer.clip = waveBgm;
-                SoundPlayer.volume = waveVolume;
-                SoundPlayer.loop = true;
+                Debug.Log("디펜스");
+                StartCoroutine(SfxToBgm(waveSfx, waveSfxVolume, waveBgm, waveVolume));
                 break;
 
             case "Boss":
-                SoundPlayer.clip = bossBgm;
-                SoundPlayer.volume = bossVolume;
-                SoundPlayer.loop = true;
+                StartCoroutine(SfxToBgm(bossWaveSfx, bossSfxVolume, bossBgm, bossVolume));
                 break;
 
             case "Clear":
-                SoundPlayer.clip = clearSfx;
-                SoundPlayer.volume = clearVolume;
-                SoundPlayer.loop = false;
-                SoundPlayer.Play();
+                Sound(clearSfx, clearVolume, false);
                 break;
 
             case "Fail":
-                SoundPlayer.clip = failSfx;
-                SoundPlayer.volume = failVolume;
-                SoundPlayer.loop = false;
-                SoundPlayer.Play();
+                Sound(failSfx, failVolume, false);
                 break;
         }
+    }
+
+    private void Sound(AudioClip stageState, float stageVolume, bool isLoop)
+    {
+        SoundPlayer.clip = stageState;
+        SoundPlayer.volume = stageVolume;
+        SoundPlayer.loop = isLoop;
+        SoundPlayer.Play();
     }
     private IEnumerator SfxToBgm(AudioClip sfx, float sfxVol, AudioClip bgm, float bgmVol)
     {
         if (sfx != null)
         {
             SfxPlayer.PlayOneShot(sfx, sfxVol);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.8f);
         }
 
         if (bgm != null)
@@ -134,16 +101,5 @@ public class Stage_Sound_Manager : MonoBehaviour
             SoundPlayer.Play();
         }
     }
-
-    /*switch (state)
-    {
-        case "Wave":
-            SfxPlayer.PlayOneShot(waveSfx, waveSfxVolume);
-            break;
-
-        case "Boss":
-            SfxPlayer.PlayOneShot(bossWaveSfx, bossSfxVolume);
-            break;
-    }*/
 }
 
