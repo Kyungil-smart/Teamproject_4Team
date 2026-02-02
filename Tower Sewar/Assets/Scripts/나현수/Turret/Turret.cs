@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
     private Turret_Grade _gradeController;
     private int _curGrade = 0;
     public GunTowerData _currentData { get; set; }
-
+    
     // 타워 모델 프리팹
     [SerializeField] private Transform _towerModelParent;
     private GameObject _currentModel;
@@ -116,11 +116,6 @@ public class Turret : MonoBehaviour
         if (_curGrade < 0) return;
 
         _currentData = _gradeController.TowerDatas[_curGrade];
-
-        // 수치 조정
-        _attDelay = _currentData.TowerAttDelay;
-
-        Debug.Log($"{_currentData.TowerName}, 데미지 : {_currentData.TowerAtt}");
 
         if (_currentModel != null)
         {
