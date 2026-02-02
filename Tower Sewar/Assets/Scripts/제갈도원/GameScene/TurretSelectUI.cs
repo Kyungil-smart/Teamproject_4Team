@@ -4,97 +4,110 @@ using UnityEngine.UI;
 public class TurretSelectUI : MonoBehaviour
 {
     [Header("Turret Buttons")]
-    [SerializeField] private Button[] turretButtons;  // 터렛 버튼 3개
-    [SerializeField] private Image[] buttonImages;    // 버튼 이미지 (선택 표시용)
+    [SerializeField] private Button[] turretButtons;
+    [SerializeField] private Image[] buttonImages;
     
-    [Header("Control Buttons")]
-    [SerializeField] private Button confirmButton;    // 확인 버튼
-    [SerializeField] private Button cancelButton;     // 취소 버튼
+    [Header("Panels")]
+    [SerializeField] private GameObject selectPanel;    // SelectTurretPanel
+    [SerializeField] private GameObject checkPanel;     // CheckPanel
     
-    [Header("Panel")]
-    [SerializeField] private GameObject panel;        // CenterPanel
+    [Header("Check Panel Buttons")]
+    [SerializeField] private Button confirmButton;      // ✓ 버튼
+    [SerializeField] private Button cancelButton;       // ✕ 버튼
     
     [Header("Select Highlight")]
     [SerializeField] private Color normalColor = Color.white;
     [SerializeField] private Color selectedColor = Color.yellow;
     
-    private int selectedIndex = -1;  // 선택된 터렛 인덱스
+    private int selectedIndex = -1;
 
     private void Start()
     {
-        // 터렛 버튼 클릭 이벤트 연결
+        // 터렛 버튼 클릭 이벤트
         for (int i = 0; i < turretButtons.Length; i++)
         {
-            int index = i;  // 클로저 문제 방지
+            int index = i;
             turretButtons[i].onClick.AddListener(() => SelectTurret(index));
         }
         
-        // 확인/취소 버튼 이벤트 연결
-        confirmButton.onClick.AddListener(OnConfirm);
-        cancelButton.onClick.AddListener(OnCancel);
+        // CheckPanel 버튼 이벤트
+        if (confirmButton != null)
+            confirmButton.onClick.AddListener(OnConfirm);
+        
+        if (cancelButton != null)
+            cancelButton.onClick.AddListener(OnCancel);
         
         // 시작 시 패널 숨기기
-        panel.SetActive(false);
+        if (selectPanel != null) selectPanel.SetActive(false);
+        if (checkPanel != null) checkPanel.SetActive(false);
     }
 
-    // 터렛 선택
+    // 터렛 선택 → CheckPanel 열기
     public void SelectTurret(int index)
     {
         selectedIndex = index;
         
-        // 모든 버튼 색상 초기화
+        // 하이라이트
         for (int i = 0; i < buttonImages.Length; i++)
         {
             buttonImages[i].color = normalColor;
         }
-        
-        // 선택된 버튼 하이라이트
         buttonImages[index].color = selectedColor;
         
         Debug.Log($"터렛 {index + 1} 선택됨");
+        
+        // CheckPanel 열기
+        if (checkPanel != null)
+            checkPanel.SetActive(true);
     }
 
-    // 확인 버튼
+    // ✓ 확인 버튼
     public void OnConfirm()
     {
-        if (selectedIndex < 0)
-        {
-            Debug.Log("터렛을 선택해주세요!");
-            return;
-        }
+        if (selectedIndex < 0) return;
         
         Debug.Log($"터렛 {selectedIndex + 1} 설치!");
         
-        // TODO: 여기에 터렛 설치 로직 연결
-        // 예: TurretManager.Instance.BuildTurret(selectedIndex);
+        // TODO: 터렛 설치 로직
         
-        ClosePanel();
+        CloseAll();
     }
 
-    // 취소 버튼
+    // ✕ 취소 버튼
     public void OnCancel()
     {
         Debug.Log("취소");
-        ClosePanel();
-    }
-
-    // 패널 열기 (F 키에서 호출)
-    public void OpenPanel()
-    {
-        panel.SetActive(true);
-        selectedIndex = -1;
         
-        // 색상 초기화
+        // CheckPanel만 닫고 SelectPanel은 유지? 아니면 둘 다 닫기?
+        if (checkPanel != null)
+            checkPanel.SetActive(false);
+        
+        // 선택 초기화
+        selectedIndex = -1;
         for (int i = 0; i < buttonImages.Length; i++)
         {
             buttonImages[i].color = normalColor;
         }
     }
 
-    // 패널 닫기
-    public void ClosePanel()
+    // 패널 열기
+    public void OpenPanel()
     {
-        panel.SetActive(false);
+        if (selectPanel != null) selectPanel.SetActive(true);
+        if (checkPanel != null) checkPanel.SetActive(false);
+        selectedIndex = -1;
+        
+        for (int i = 0; i < buttonImages.Length; i++)
+        {
+            buttonImages[i].color = normalColor;
+        }
+    }
+
+    // 모든 패널 닫기
+    public void CloseAll()
+    {
+        if (selectPanel != null) selectPanel.SetActive(false);
+        if (checkPanel != null) checkPanel.SetActive(false);
         selectedIndex = -1;
     }
 }
