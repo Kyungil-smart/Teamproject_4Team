@@ -442,7 +442,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000011593962288}
@@ -482,8 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3652592e3e39b46afdc22e98b9f5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterData: {fileID: 11400000, guid: e877d8adb9aee3342bb47d7364f6f569, type: 2}
-  _wayPoint: {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
+  _hp: 0
 --- !u!54 &5151915357535131639
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -533,7 +532,7 @@ CapsuleCollider:
   m_Radius: 0.01
   m_Height: 0.01
   m_Direction: 1
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!1 &1000012161483196
 GameObject:
   m_ObjectHideFlags: 0

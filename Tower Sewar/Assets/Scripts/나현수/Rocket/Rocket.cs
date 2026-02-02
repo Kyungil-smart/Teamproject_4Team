@@ -38,4 +38,20 @@ public class Rocket : MonoBehaviour
         _isLaunched = false;
         gameObject.SetActive(false);
     }
+
+    protected void HitEnemy()
+    {
+        if (_target == null) return;
+
+        if (Vector3.Distance(_target.position, transform.position) <= 0.2f)
+        {
+            MonsterBehavior monster = _target.GetComponentInParent<MonsterBehavior>();
+            if (monster != null)
+            {
+                monster.TakeDamage(_tempTowerData.TowerAtt);
+            }
+
+            ReturnToPool();
+        }
+    }
 }

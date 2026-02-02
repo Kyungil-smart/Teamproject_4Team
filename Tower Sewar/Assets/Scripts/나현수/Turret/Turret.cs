@@ -51,25 +51,33 @@ public class Turret : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (!other.CompareTag("Enemy")) return;
+    
+        MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
+        if (monster == null) return;
+    
+        Transform aim = monster.GetAimPoint();
+        if (!_enemyList.Contains(aim))
         {
-            if (!_enemyList.Contains(other.transform))
-            {
-                _enemyList.Add(other.transform);
-            }
+            _enemyList.Add(aim);
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+    
+        MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
+        if (monster == null) return;
+    
+        Transform aim = monster.GetAimPoint();
+        if (_enemyList.Contains(aim))
+        {
+            _enemyList.Remove(aim);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            if (_enemyList.Contains(other.transform))
-            {
-                _enemyList.Remove(other.transform);
-            }
-        }
-    }
+
 
     private void HandleFiring()
     {
@@ -90,7 +98,7 @@ public class Turret : MonoBehaviour
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
         
-        Tower_Sound_Manager.instance.PlaySFX("Attack");
+        Tower_Sound_Manager.instance?.PlaySFX("Attack");
     }
 
     public void Upgrade()
