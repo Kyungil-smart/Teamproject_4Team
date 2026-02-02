@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Turret_Grade : MonoBehaviour
+public class  BulletTurret_Grade : MonoBehaviour
 {
     [SerializeField] List<GunTowerData> _towerData = new List<GunTowerData>(5);
     public List<GunTowerData> TowerDatas { get => _towerData; set => _towerData = value; }

@@ -4,9 +4,9 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     // 단계 컨트롤러
-    private Turret_Grade _gradeController;
+    private BulletTurret_Grade _gradeController;
     private int _curGrade = 0;
-    private GunTowerData _currentData;
+    public GunTowerData _currentData { get; set; }
 
     // 타워 모델 프리팹
     [SerializeField] private Transform _towerModelParent;
@@ -25,9 +25,10 @@ public class Turret : MonoBehaviour
     private float _attDelay  = 0.5f; 
     private float _attTimer = 0f;
 
+
     private void Awake()
     {
-        _gradeController = GetComponent<Turret_Grade>();
+        _gradeController = GetComponent<BulletTurret_Grade>();
 
         _isEnemy = false;
     }
@@ -92,7 +93,7 @@ public class Turret : MonoBehaviour
     {
         if (_muzzleScripts == null || _muzzleScripts.Length == 0 || _currentTarget == null) return;
 
-        _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget);
+        _muzzleScripts[_muzzleIndex].SetRocket(_currentTarget, _currentData);
 
         _muzzleIndex = (_muzzleIndex + 1) % _muzzleScripts.Length;
     }

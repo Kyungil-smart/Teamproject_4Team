@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2837748841166470456}
   - component: {fileID: 4277330335028471791}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: BulletTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,6 @@ MonoBehaviour:
   _towerModelParent: {fileID: 2238933793632857456}
   _enemyList: []
   _isEnemy: 0
-  _fireRate: 0.5
 --- !u!114 &2837748841166470456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,10 +64,10 @@ MonoBehaviour:
   _towerData: []
   _towerPrefabs:
   - {fileID: 1299966950634140910, guid: f12b66bc3eed1ad45bf0a583036db2a8, type: 3}
-  - {fileID: 6600623658154420595, guid: 374c6ba29fb69ea4b9065368a821b03d, type: 3}
-  - {fileID: 2507857462180137906, guid: 4b4461f01395c5e44a0db5e4e2876a1a, type: 3}
-  - {fileID: 8671637467687091871, guid: be1167cb067f8aa45a253aac76da2d29, type: 3}
-  - {fileID: 2549582001120558232, guid: 309a44090c67f2b4093333abfd2dc1fa, type: 3}
+  - {fileID: 6600623658154420595, guid: 10cbbc8d7867ce642b666d3ae26e6831, type: 3}
+  - {fileID: 2507857462180137906, guid: c29e23e0c93a4f448922b74d374de38d, type: 3}
+  - {fileID: 8671637467687091871, guid: 52ca464a4f824b34f92b7ff5f29a88b4, type: 3}
+  - {fileID: 2549582001120558232, guid: 9f083ac9ae3dcae44819b9cf682c6cc5, type: 3}
 --- !u!135 &4277330335028471791
 SphereCollider:
   m_ObjectHideFlags: 0
