@@ -100,6 +100,6 @@ MonoBehaviour:
   _isLaunched: 0
   _activeTime: 0
   _maxActiveTime: 5
-  _speed: 4
+  _speed: 30
   _damage: 0
   _rotationAngle: {x: 0, y: 0, z: 500}

@@ -6,10 +6,8 @@ using UnityEngine;
 
 public class CanonTurret_Grade : Turret_Grade
 {
-    protected void Awake()
+    protected override void Awake()
     {
-        base.Awake();
-
         Init();
     }
 
@@ -52,14 +50,5 @@ public class CanonTurret_Grade : Turret_Grade
         lv3.TowerAttDelay  = 0.1f;
         lv3.TowerRange     = 1500.0f;
         _towerData.Add(lv3);
-
-        GunTowerData lv4 = ScriptableObject.CreateInstance<GunTowerData>();
-        lv4.TowerName      = "Lv4";
-        lv4.TowerBuildCost = 10000000;
-        lv4.TowerUpCost    = 100;
-        lv4.TowerAtt       = 20.0f;
-        lv4.TowerAttDelay  = 0.1f;
-        lv4.TowerRange     = 1500.0f;
-        _towerData.Add(lv4);
     }
 }

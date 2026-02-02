@@ -135,15 +135,24 @@ public class WaveManager : MonoBehaviour
             if (d.Spawn_Left || d.Spawn_Right)
             {
                 if (d.Spawn_Left)
+                {
                     MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
+                    _numsOfSpawnMonster++;
+                }
                 if (d.Spawn_Right)
+                {
                     MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint2);
+                    _numsOfSpawnMonster++;
+                }
             }
             //일반적인 스폰이라면 그냥 스폰.
             else
+            {
                 MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
+                _numsOfSpawnMonster++;
+            }
 
-            _numsOfSpawnMonster++;
+            
             _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
         }
         return;

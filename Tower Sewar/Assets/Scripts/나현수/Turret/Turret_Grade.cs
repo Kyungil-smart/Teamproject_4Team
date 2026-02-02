@@ -12,11 +12,5 @@ public class Turret_Grade : MonoBehaviour
 
     protected virtual void Awake()
     {
-        Init();
-    }
-
-    protected virtual void Init()
-    {
-        if (_towerData.Count > 0) return;
     }
 }

@@ -26,7 +26,7 @@ public class Turret_Rotate : MonoBehaviour
 
             if (_canLookAt)
             {
-                transform.LookAt(targetPos);
+                transform.LookAt(targetPos + (Vector3.up * 0.7f));
             }
             else
             {
