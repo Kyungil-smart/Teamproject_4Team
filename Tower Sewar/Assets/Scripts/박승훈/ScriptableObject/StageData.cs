@@ -21,7 +21,11 @@ public class WaveData
     public int SpawnAmount => _spawnAmount;
     [SerializeField] private int _spawnDelay;
     public int SpawnDelay => _spawnDelay;
-    
+    [SerializeField] bool spawn_Left;
+    public bool Spawn_Left => spawn_Left;
+    [SerializeField] bool spawn_Right;
+    public bool Spawn_Right => spawn_Right;
+
     [Header("웨이브 시간")]
     [SerializeField] private int _waveReadyTime;
     public int WaveReadyTime => _waveReadyTime;

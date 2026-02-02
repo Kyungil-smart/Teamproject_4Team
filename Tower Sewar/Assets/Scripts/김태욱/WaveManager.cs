@@ -113,27 +113,18 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime += Time.deltaTime;
         if (_spawnCoolTime >= _stageData.WaveDatas[_wave].SpawnDelay)
         {
-
-            MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
-
-            //스폰처리 !!!!!!!! enum을하든 설정을 해줘야함.
-            // if (_stageData.WaveDatas[_wave].MonsterName == "bat")
-            // {
-            //     MonsterSpawner.Instance.SpawnBat(null, _wayPoint1);
-            // }
-            // else if (_stageData.WaveDatas[_wave].MonsterName == "ghost")
-            // {
-            //     MonsterSpawner.Instance.SpawnGhost(null, _wayPoint1);
-            // }
-            // else if (_stageData.WaveDatas[_wave].MonsterName == "rabbit")
-            // {
-            //     MonsterSpawner.Instance.SpawnRabbit(null, _wayPoint1);
-            // }
-            // }
-            // else if(_stageData.WaveDatas [_wave].MonsterName == "slime")
-            // {
-            //     MonsterSpawner.Instance.SpawnSlime(null, _wayPoint1);
-            // }
+            //Spawn 위치가 지정되어있으면 그에 맞게 스폰.
+            var d = _stageData.WaveDatas[_wave];
+            if (d.Spawn_Left || d.Spawn_Right)
+            {
+                if (d.Spawn_Left)
+                    MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
+                if (d.Spawn_Right)
+                    MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint2);
+            }
+            //일반적인 스폰이라면 그냥 스폰.
+            else
+                MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
 
             _numsOfSpawnMonster++;
             _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
