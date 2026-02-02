@@ -140,7 +140,10 @@ public class MonsterBehavior : MonoBehaviour
     //몬스터 객체는 사망시 애니메이션 연출용 객체생성후, 바로 destroy .
     void Die()
     {
-        MonsterSpawner.Instance.DieAnimation(_monsterData, transform);
+        MonsterSpawner.Instance.DieAnimation(_monsterData, transform); //사망 애니메이션
+
+        Enemy_Sound_Manager.instance.PlaySfx(); // 몬스터 사망 사운드
+        Enemy_VFX_Manager.instance.Death(); //몬스터 죽음 VFX
 
         //몬스터 destroy
         MonsterSpawner.Instance.RemoveMonster(gameObject);
