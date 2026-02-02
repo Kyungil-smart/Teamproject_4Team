@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c9128b574323d4096991d84537d136, type: 3}
   m_Name: GunTower_Tier4
   m_EditorClassIdentifier: 
-  _towerIcon: {fileID: 0}
+  _towerIcon: {fileID: 21300000, guid: 2cab31549cfa2dd4ea874accd286dba4, type: 3}
   _towerName: GunTower
   _towerBuildCost: 0
   _towerUpCost: 250

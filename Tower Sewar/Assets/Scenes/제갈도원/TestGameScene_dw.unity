@@ -1072,6 +1072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeTurretPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 456443553473561098, guid: 7d814c0007138d948a662951a9ebe10b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3798488235447984812, guid: 7d814c0007138d948a662951a9ebe10b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

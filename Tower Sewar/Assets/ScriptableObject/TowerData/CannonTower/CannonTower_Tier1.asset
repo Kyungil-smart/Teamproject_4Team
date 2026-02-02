@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c9128b574323d4096991d84537d136, type: 3}
   m_Name: CannonTower_Tier1
   m_EditorClassIdentifier: 
-  _towerIcon: {fileID: 0}
+  _towerIcon: {fileID: 21300000, guid: 38b02a74bd2b0914480741d29ebad4b6, type: 3}
   _towerName: CannonTower
   _towerBuildCost: 300
   _towerUpCost: 300
