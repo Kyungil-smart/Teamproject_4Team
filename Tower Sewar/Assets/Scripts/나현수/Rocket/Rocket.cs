@@ -2,32 +2,25 @@
 
 public class Rocket : MonoBehaviour
 {
-    // 데이터
-    private GunTowerData _tempTowerData;
+    protected GunTowerData _tempTowerData;
 
-    // 
-    [SerializeField] Transform _target;
-    [SerializeField] bool  _isLaunched;
-    [SerializeField] float _activeTime    = 0;
-    [SerializeField] float _maxActiveTime = 5;
-    [SerializeField] int   _speed         = 20;
-    [SerializeField] int   _damage;
+    [SerializeField] protected Transform _target; // protected로 변경
+    [SerializeField] protected bool _isLaunched;
+    [SerializeField] protected float _activeTime = 0;
+    [SerializeField] protected float _maxActiveTime = 5;
+    [SerializeField] protected int _speed = 4;
+    [SerializeField] protected int _damage;
 
-    // 자기회전
-    [SerializeField] private Vector3 _rotationAngle = new Vector3(0, 0, 500); // Z축(앞방향)으로 회전
-
-    // 스탯
+    [SerializeField] protected Vector3 _rotationAngle = new Vector3(0, 0, 500);
 
     public void Launch(Transform target, GunTowerData towerData)
     {
         _tempTowerData = towerData;
-
-        _target     = target;
+        _target = target;
         _isLaunched = true;
         _activeTime = 0;
     }
-
-    private void Update()
+    protected virtual void Update()
     {
         if (!_isLaunched) return;
 
@@ -39,37 +32,30 @@ public class Rocket : MonoBehaviour
             return;
         }
 
-        Vector3 direction = (_target.position - transform.position).normalized;
-
-        transform.position += direction * _speed * Time.deltaTime;
-        transform.forward   = direction;
-
-        transform.Rotate(_rotationAngle * Time.deltaTime, Space.Self);
-
-        // 피격 확인
+        // 공통 기능인 피격 확인은 여기서 수행
         HitEnemy();
     }
 
-    private void ReturnToPool()
+    protected void ReturnToPool()
     {
         _isLaunched = false;
         gameObject.SetActive(false);
     }
 
-    private void HitEnemy()
+    protected void HitEnemy()
     {
         if (_target == null) return;
 
-        if (Vector3.Distance(_target.position, this.transform.position) <= 0.2f)
+        if (Vector3.Distance(_target.position, transform.position) <= 0.2f)
         {
             MonsterBehavior monster = _target.GetComponent<MonsterBehavior>();
-
             if (monster != null)
             {
                 monster.TakeDamage(_tempTowerData.TowerAtt);
+                //Enemy_Sound_Manager.instance.PlaySfx() // 몬스터 사망 사운드
+                //Enemy_VFX_Manager.instance.Death()     //몬스터 죽음 VFX
             }
 
-            _isLaunched = false;
             ReturnToPool();
         }
     }
