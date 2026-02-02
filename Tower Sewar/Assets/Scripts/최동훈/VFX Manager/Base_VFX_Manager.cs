@@ -17,18 +17,10 @@ public class Base_VFX_Manager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Update()
+    // 베이스 피격시 피격 위치에서 피격 VFX 생성 및 이펙트 크기 증가
+    public void TakenDamage(Transform target)
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            TakenDamage();
-        }
-    }
-
-    public void TakenDamage()
-    {
-        GameObject baseVfx = Instantiate(_damageVfxPrefab, _damage.position, _damage.rotation);
+        GameObject baseVfx = Instantiate(_damageVfxPrefab, target.position, target.rotation);
         Destroy(baseVfx, 0.5f);
     }
 }

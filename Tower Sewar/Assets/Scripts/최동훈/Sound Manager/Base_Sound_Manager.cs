@@ -34,6 +34,7 @@ public class Base_Sound_Manager : MonoBehaviour
         if (baseSound == null)
             return;
 
+        // Base 상태에 따라 사운드 출력
         switch (state)
         {
             case "Taken_Damage":

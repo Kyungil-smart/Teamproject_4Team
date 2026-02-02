@@ -191,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f346ac84d67ef443a56412382814750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageVfxPrefab: {fileID: 4371574358465749826, guid: a4e76a0f922f92041afcc2d890f6a4cc, type: 3}
+  _damageVfxPrefab: {fileID: 85941164691198867, guid: bad3cf055489f0e4e9cd51bd9cdb7008, type: 3}
   _damage: {fileID: 5791465320877278829}

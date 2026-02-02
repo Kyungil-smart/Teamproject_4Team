@@ -32,6 +32,7 @@ public class Title_BGM_Manager : MonoBehaviour
         }
     }
 
+    // BGM 호출 함수
     public void PlayBGM(AudioClip title, float bgmVolume)
     {
         bgmPlayer.clip = title;

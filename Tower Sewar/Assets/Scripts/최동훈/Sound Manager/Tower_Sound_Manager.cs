@@ -40,6 +40,7 @@ public class Tower_Sound_Manager : MonoBehaviour
         if (towerSound == null)
             return;
         
+        // Tower 상태에 따라 사운드 호출
         switch (state)
         {
             case "Attack":

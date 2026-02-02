@@ -25,6 +25,7 @@ public class Enemy_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+    // 몬스터 사망시 몬스터 사망 사운드 출력
     public void PlaySfx()
     {
         if (deathSfx != null && SfxPlayer != null)

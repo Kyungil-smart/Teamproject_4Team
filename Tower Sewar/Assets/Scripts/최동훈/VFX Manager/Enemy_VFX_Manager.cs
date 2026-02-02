@@ -17,6 +17,7 @@ public class Enemy_VFX_Manager : MonoBehaviour
             instance = this;
         }
     }
+    // 몬스터 사망시 몬스터 위치에서 사망 VFX 생성 및 이펙트 크기 증가
     public void Death(Transform target)
     {
         GameObject enemyVfx = Instantiate(_deathVfxPrefab, target.position, target.rotation);

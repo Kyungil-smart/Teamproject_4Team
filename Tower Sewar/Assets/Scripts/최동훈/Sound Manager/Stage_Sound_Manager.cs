@@ -43,6 +43,8 @@ public class Stage_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+
+    // 사운드 호출 메서드
     public void SettingSound(string state)
     {
         if (SoundPlayer == null || SfxPlayer == null)
@@ -52,6 +54,7 @@ public class Stage_Sound_Manager : MonoBehaviour
         SoundPlayer.Stop();
         SfxPlayer.Stop();
 
+        // 게임 상태에 따라 사운드 호출
         switch (state)
         {
             case "Waiting":
@@ -78,6 +81,7 @@ public class Stage_Sound_Manager : MonoBehaviour
         }
     }
 
+    // 사운드 관리 메서드
     private void Sound(AudioClip stageState, float stageVolume, bool isLoop)
     {
         SoundPlayer.clip = stageState;
@@ -85,6 +89,8 @@ public class Stage_Sound_Manager : MonoBehaviour
         SoundPlayer.loop = isLoop;
         SoundPlayer.Play();
     }
+
+    // 코루틴 사운드 관리 메서드
     private IEnumerator SfxToBgm(AudioClip sfx, float sfxVol, AudioClip bgm, float bgmVol)
     {
         if (sfx != null)
