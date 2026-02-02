@@ -3,6 +3,11 @@
 [CreateAssetMenu(fileName = "Gun Tower Data", menuName = "Scriptable Object/Tower/Gun Tower Data", order = 0)]
 public class GunTowerData : ScriptableObject
 {
+    [Header("UI 이미지")]
+    [SerializeField] private Sprite _towerIcon;
+    public Sprite TowerIcon { get => _towerIcon; set => _towerIcon = value; }
+    
+    
     [Header("기본 생성 정보")]
     [SerializeField] private string _towerName;
     public string TowerName { get => _towerName; set => _towerName = value; }
