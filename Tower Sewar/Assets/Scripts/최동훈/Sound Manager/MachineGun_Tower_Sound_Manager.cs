@@ -27,7 +27,7 @@ public class MachineGun_Tower_Sound_Manager : MonoBehaviour
     [Header("Tower Clip")]
     public AudioClip attackSfx;
     public AudioClip buildSfx;
-    public AudioClip UpgradeSfx;
+    public AudioClip upgradeSfx;
     public AudioClip destroySfx;
 
     private void Awake()
@@ -54,7 +54,7 @@ public class MachineGun_Tower_Sound_Manager : MonoBehaviour
                 break;
 
             case "Upgrade":
-                towerSound.PlayOneShot(UpgradeSfx, upgradeVolume);
+                towerSound.PlayOneShot(upgradeSfx, upgradeVolume);
                 break;
 
             case "Destroy":

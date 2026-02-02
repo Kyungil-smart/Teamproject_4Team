@@ -20,9 +20,6 @@ public class DataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
-    
-
     private void Start()
     {
         Init();
