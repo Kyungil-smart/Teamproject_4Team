@@ -26,7 +26,7 @@ public class MainMenuController : MonoBehaviour
     // Start 버튼
     public void StartButton()
     {
-        GameSceneManager.Instance.LoadScene();
+        GameSceneManager.Instance.LoadGame();
     }
 
     public void HowToButton() => Show(TitleType.HowTo);

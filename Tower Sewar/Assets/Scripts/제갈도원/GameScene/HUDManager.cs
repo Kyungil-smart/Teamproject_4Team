@@ -18,6 +18,9 @@ public class HUDManager : MonoBehaviour
     
     [Header("Right Area")]
     [SerializeField] private Button stopButton;
+    [SerializeField] private GameObject stopPanel;
+    [SerializeField] private Button resumeButton;
+    [SerializeField] private Button homeButton;
     
     private bool isPaused = false;
 
@@ -44,6 +47,13 @@ public class HUDManager : MonoBehaviour
             Debug.Log("게임 재개");
         }
     }
+
+    public void GoToTitle()
+    {
+        Time.timeScale = 1f;
+        GameSceneManager.Instance.LoadTitle();
+    }
+    
 
     private void LateUpdate()
     {

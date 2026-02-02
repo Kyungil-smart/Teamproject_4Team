@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager Instance {get; private set;}
+    
+    [SerializeField] private string titleSceneName =  "TitleScene_JGDW";
+    [SerializeField] private string gameSceneName =  "TestGameScene_dw";
+    
     
     private void Awake()
     {
@@ -18,9 +23,18 @@ public class GameSceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // 씬 전환
-    public void LoadScene()
+    
+    // 게임 씬 이동
+    public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(gameSceneName);
+    }
+    
+    // 타이틀 씬 이동
+    public void LoadTitle()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(titleSceneName);
     }
 }

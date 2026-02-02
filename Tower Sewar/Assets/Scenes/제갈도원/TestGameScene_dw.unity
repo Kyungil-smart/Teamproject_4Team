@@ -723,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155637125109716734, guid: 7b67ab20d4616eb4cb2baf8f3be9283c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8828723575898622191, guid: 7b67ab20d4616eb4cb2baf8f3be9283c, type: 3}
       propertyPath: m_Pivot.x
@@ -1033,6 +1033,10 @@ PrefabInstance:
     - target: {fileID: 456443553473561098, guid: 7d814c0007138d948a662951a9ebe10b, type: 3}
       propertyPath: m_Name
       value: UpgradeTurretPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 456443553473561098, guid: 7d814c0007138d948a662951a9ebe10b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3798488235447984812, guid: 7d814c0007138d948a662951a9ebe10b, type: 3}
       propertyPath: m_Pivot.x
