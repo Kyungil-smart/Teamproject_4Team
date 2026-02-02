@@ -6,9 +6,13 @@ using UnityEngine;
 public class MonsterData : ScriptableObject
 {
     [Header("기본 생성 데이터")]
-    [SerializeField] private string _name;
-    public string Name {get => _name;}
-    
+    [SerializeField] private string _monsterType;
+    public string MonsterType { get => _monsterType; }
+    [SerializeField] private GameObject _monsterPrefab;
+    public GameObject MonsterPrefab { get => _monsterPrefab; }
+    [SerializeField] private GameObject _deadMonsterPrefab;
+    public GameObject DeadMonsterPrefab { get => _deadMonsterPrefab; }
+
     [Space(20)]
     [SerializeField] private float _hp;
     public float Hp => _hp;

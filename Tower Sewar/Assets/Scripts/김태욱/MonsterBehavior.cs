@@ -6,15 +6,11 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     //몬스터 data 참조
-    [SerializeField]
     MonsterData _monsterData;
 
     //맵의 wayPoint 참조
-    [SerializeField]
     WayPoint _wayPoint;
 
-    //몬스터 종류
-    string _monsterType;
 
     //몬스터 현재체력 //임시 serializeField로 해둠
     [SerializeField]
@@ -38,13 +34,13 @@ public class MonsterBehavior : MonoBehaviour
 
     private void Awake()
     {
-        Init();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Init();
 
     }
 
@@ -74,7 +70,6 @@ public class MonsterBehavior : MonoBehaviour
             _hp = _monsterData.Hp;
             _velocity = _monsterData.MoveSpeed;
             _dropGold = _monsterData.DropGold;
-            _monsterType = _monsterData.Name;
         }
         //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
         if (_wayPoint != null)
@@ -142,24 +137,21 @@ public class MonsterBehavior : MonoBehaviour
         _hp -= damage;
     }
 
-    //바로 destroy후 애니메이션 연출용 객체생성
+    //몬스터 객체는 사망시 애니메이션 연출용 객체생성후, 바로 destroy .
     void Die()
     {
-        //애니메이션 객체 생성
-        if (_monsterType == "박쥐")
-            MonsterSpawner.Instance.DieAnimationBat(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "토끼")
-            MonsterSpawner.Instance.DieAnimationRabbit(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "유령")
-            MonsterSpawner.Instance.DieAnimationGhost(transform.localScale, transform.position, transform.forward);
-        else if (_monsterType == "슬라임")
-            MonsterSpawner.Instance.DieAnimationSlime(transform.localScale, transform.position, transform.forward);
+        MonsterSpawner.Instance.DieAnimation(_monsterData, transform);
 
         //몬스터 destroy
         MonsterSpawner.Instance.RemoveMonster(gameObject);
         Destroy(gameObject);
 
     }
+
+    public void SetMonsterData(MonsterData data)
+        { _monsterData = data; }
+    public void SetWayPoint(WayPoint wayPoint)
+        { _wayPoint = wayPoint; }
 
     
 }

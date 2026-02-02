@@ -9,14 +9,6 @@ public class MonsterSpawner : MonoBehaviour
     //소환된 몬스터 관리를 위한 배열
     private List<GameObject> _monsterList;
 
-    //몬스터 프리팹
-    [SerializeField]
-    MonsterPrefabList _monsterPrefabList;
-
-    //몬스터 사망애니메이션 프리팹
-    [SerializeField]
-    MonsterPrefabList _monsterDieAnimationList;
-
     public int MonsterCount
     {
         get { return _monsterList.Count; }
@@ -35,56 +27,27 @@ public class MonsterSpawner : MonoBehaviour
         _monsterList.Remove(monster);
     }
 
-    //일단은 몬스터마다 스폰메서드 만드는걸로.
+    public void SpawnMonster(MonsterData data, WayPoint wayPoint)
+    {
+        if(data == null || wayPoint == null)
+        {
+            Debug.Log($"Spawn Monster Null 에러!");
+            return;
+        }
 
-    public void SpawnBat()
-    {
-        _monsterList.Add(Instantiate(_monsterPrefabList.List[0]));
-    }
-    public void SpawnGhost()
-    {
-        _monsterList.Add(Instantiate(_monsterPrefabList.List[4]));
-    }
-    public void SpawnRabbit()
-    {
-        _monsterList.Add(Instantiate(_monsterPrefabList.List[8]));
-    }
-    public void SpawnSlime()
-    {
-        _monsterList.Add(Instantiate(_monsterPrefabList.List[12]));
+        GameObject o = Instantiate(data.MonsterPrefab);
+        _monsterList.Add(o);
+        MonsterBehavior m = o.GetComponent<MonsterBehavior>();
+        m.SetMonsterData(data);
+        m.SetWayPoint(wayPoint);
     }
 
     //죽는애니메이션 연출하는 객체 생성
-    public void DieAnimationBat(Vector3 localScale, Vector3 position, Vector3 forward)
+    public void DieAnimation(MonsterData data,Transform t)
     {
-        if (_monsterDieAnimationList.List[0] == null) return;
-        GameObject o = Instantiate(_monsterDieAnimationList.List[0]);
-        o.transform.localScale = localScale;
-        o.transform.position = position;
-        o.transform.forward = forward;
-    }
-    public void DieAnimationGhost(Vector3 localScale, Vector3 position, Vector3 forward)
-    {
-        if (_monsterDieAnimationList.List[4] == null) return;
-        GameObject o = Instantiate(_monsterDieAnimationList.List[4]);
-        o.transform.localScale = localScale;
-        o.transform.position = position;
-        o.transform.forward = forward;
-    }
-    public void DieAnimationRabbit(Vector3 localScale, Vector3 position, Vector3 forward)
-    {
-        if (_monsterDieAnimationList.List[8] == null) return;
-        GameObject o = Instantiate(_monsterDieAnimationList.List[8]);
-        o.transform.localScale = localScale;
-        o.transform.position = position;
-        o.transform.forward = forward;
-    }
-    public void DieAnimationSlime(Vector3 localScale, Vector3 position, Vector3 forward)
-    {
-        if (_monsterDieAnimationList.List[12] == null) return;
-        GameObject o = Instantiate(_monsterDieAnimationList.List[12]);
-        o.transform.localScale = localScale;
-        o.transform.position = position;
-        o.transform.forward = forward;
+        GameObject o = Instantiate(data.DeadMonsterPrefab);
+        o.transform.localScale = t.localScale;
+        o.transform.position = t.position;
+        o.transform.forward = t.forward;
     }
 }

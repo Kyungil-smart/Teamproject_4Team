@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2939484b1b32464fb3d287269d2b358, type: 3}
+  m_Name: Slime_Yellow
+  m_EditorClassIdentifier: 
+  _monsterType: Slime
+  _monsterPrefab: {fileID: 1000014251014320, guid: 12860c2fc660a694a9ccf477be0c51fa, type: 3}
+  _deadMonsterPrefab: {fileID: 1000014251014320, guid: 8e747fede8ea2204cafe470d2f5477b1, type: 3}
+  _hp: 100
+  _moveSpeed: 2.5
+  _dropGold: 20
+  _scale: {x: 50, y: 50, z: 50}

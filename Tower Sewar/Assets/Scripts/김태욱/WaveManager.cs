@@ -11,6 +11,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     StageData _stageData;
 
+    [SerializeField]
+    WayPoint _wayPoint1;
+    [SerializeField]
+    WayPoint _wayPoint2;
+
     //현재 Wave 단계
     private int _wave;
     public int Wave { get { return _wave; } }
@@ -108,27 +113,61 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime += Time.deltaTime;
         if (_spawnCoolTime >= _stageData.WaveDatas[_wave].SpawnDelay)
         {
+
+            MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
+
             //스폰처리 !!!!!!!! enum을하든 설정을 해줘야함.
-            if (_stageData.WaveDatas[_wave].MonsterName == "bat")
-            {
-                MonsterSpawner.Instance.SpawnBat();
-            }
-            else if (_stageData.WaveDatas[_wave].MonsterName == "ghost")
-            {
-                MonsterSpawner.Instance.SpawnGhost();
-            }
-            else if (_stageData.WaveDatas[_wave].MonsterName == "rabbit")
-            {
-                MonsterSpawner.Instance.SpawnRabbit();
-            }
-            else if(_stageData.WaveDatas [_wave].MonsterName == "slime")
-            {
-                MonsterSpawner.Instance.SpawnSlime();
-            }
+            // if (_stageData.WaveDatas[_wave].MonsterName == "bat")
+            // {
+            //     MonsterSpawner.Instance.SpawnBat(null, _wayPoint1);
+            // }
+            // else if (_stageData.WaveDatas[_wave].MonsterName == "ghost")
+            // {
+            //     MonsterSpawner.Instance.SpawnGhost(null, _wayPoint1);
+            // }
+            // else if (_stageData.WaveDatas[_wave].MonsterName == "rabbit")
+            // {
+            //     MonsterSpawner.Instance.SpawnRabbit(null, _wayPoint1);
+            // }
+            // }
+            // else if(_stageData.WaveDatas [_wave].MonsterName == "slime")
+            // {
+            //     MonsterSpawner.Instance.SpawnSlime(null, _wayPoint1);
+            // }
 
             _numsOfSpawnMonster++;
             _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
         }
         return;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_wayPoint1 == null) return;
+        var paths = _wayPoint1.PathPoints;
+        for (int i = 0; i < paths.Count - 1; i++)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(paths[i], paths[i + 1]);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(paths[i], 0.3f);
+        }
+        Gizmos.DrawSphere(paths[paths.Count - 1], 0.3f);
+
+        if (_wayPoint2 == null) return;
+        paths = _wayPoint2.PathPoints;
+
+        for (int i = 0; i < paths.Count - 1; i++)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(paths[i], paths[i + 1]);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(paths[i], 0.3f);
+        }
+        Gizmos.DrawSphere(paths[paths.Count - 1], 0.3f);
+
+
     }
 }
