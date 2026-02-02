@@ -4,15 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 // 아래의 코드를 추가 해서 사운드 호출 가능
-// Tower_Sound_Manager.instance.PlaySFX("Attack"); 공격 시
-// Tower_Sound_Manager.instance.PlaySFX("Build"); 타워 설치 시
-// Tower_Sound_Manager.instance.PlaySFX("Upgrade"); 타워 업그레이드 시
-// Tower_Sound_Manager.instance.PlaySFX("Destroy"); 타워 철거 시
+// MachineGun_Tower_Sound_Manager.instance.PlaySFX("Attack"); 공격 시
+// MachineGun_Tower_Sound_Manager.instance.PlaySFX("Build"); 타워 설치 시
+// MachineGun_Tower_Sound_Manager.instance.PlaySFX("Upgrade"); 타워 업그레이드 시
+// MachineGun_Tower_Sound_Manager.instance.PlaySFX("Destroy"); 타워 철거 시
 
-public class Tower_Sound_Manager : MonoBehaviour
+public class MachineGun_Tower_Sound_Manager : MonoBehaviour
 {
     // 싱글톤 패턴
-    public static Tower_Sound_Manager instance;
+    public static MachineGun_Tower_Sound_Manager instance;
 
     // 인스펙터 생성
     [Header("Sound Player")]
