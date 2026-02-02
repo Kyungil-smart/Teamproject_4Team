@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Rocket_Canon : Rocket
 {
     [SerializeField] private float _launchTime = 2.0f;
     [SerializeField] private float _launchSpeed = 1.0f;
     [SerializeField] private float _downSpeed = 30.0f;
+    
+    
+    [SerializeField] private float explosionRadius = 3.0f;
 
     private float _elapsedTime = 0f;
 
@@ -37,12 +41,12 @@ public class Rocket_Canon : Rocket
         {
             moveDirection = (transform.forward).normalized;
 
-            transform.position += moveDirection * (_speed * _launchSpeed) * Time.deltaTime;
+            transform.position += moveDirection * ((_speed * _launchSpeed) * Time.deltaTime);
         }
         else
         {
             moveDirection = (_target.position - transform.position).normalized;
-            transform.position += moveDirection * _downSpeed * Time.deltaTime;
+            transform.position += moveDirection * (_downSpeed * Time.deltaTime);
         }
 
         if (moveDirection != Vector3.zero)
@@ -51,20 +55,25 @@ public class Rocket_Canon : Rocket
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, explosionRadius);
+    }
+
     protected void HitEnemy()
     {
         if (Vector3.Distance(_target.position, transform.position) <= 0.2f)
         {
-            float explosionRadius = 3.0f;
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
             foreach (var hitCollider in hitColliders)
             {
-                MonsterBehavior monster = _target.GetComponentInParent<MonsterBehavior>();
-
+                MonsterBehavior monster = hitCollider.GetComponentInParent<MonsterBehavior>();
 
                 if (monster != null)
                 {
+                    Debug.Log(_tempTowerData.TowerAtt);
                     monster.TakeDamage(_tempTowerData.TowerAtt);
                 }
             }

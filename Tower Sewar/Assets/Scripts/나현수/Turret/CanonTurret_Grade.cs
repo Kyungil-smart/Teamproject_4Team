@@ -15,20 +15,11 @@ public class CanonTurret_Grade : Turret_Grade
     {
         _towerData.Clear();
 
-        GunTowerData lv0 = ScriptableObject.CreateInstance<GunTowerData>();
-        lv0.TowerName      = "Lv0";
-        lv0.TowerBuildCost = 0;
-        lv0.TowerUpCost    = 0;
-        lv0.TowerAtt       = 0;
-        lv0.TowerAttDelay  = 0;
-        lv0.TowerRange     = 0;
-        _towerData.Add(lv0);
-
         GunTowerData lv1 = ScriptableObject.CreateInstance<GunTowerData>();
         lv1.TowerName      = "Lv1";
         lv1.TowerBuildCost = 100;
         lv1.TowerUpCost    = 100;
-        lv1.TowerAtt       = 10.0f;
+        lv1.TowerAtt       = 1000.0f;
         lv1.TowerAttDelay  = 3f;
         lv1.TowerRange     = 1000.0f;
         _towerData.Add(lv1);
