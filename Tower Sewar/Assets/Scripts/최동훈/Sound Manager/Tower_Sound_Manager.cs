@@ -11,8 +11,10 @@ using UnityEngine;
 
 public class Tower_Sound_Manager : MonoBehaviour
 {
+    // 싱글톤 패턴
     public static Tower_Sound_Manager instance;
 
+    // 인스펙터 생성
     [Header("Sound Player")]
     public AudioSource towerSound;
 
@@ -35,6 +37,7 @@ public class Tower_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+    // 타워 상태에 따라 사운드 호출  메서드
     public void PlaySFX(string state)
     {
         if (towerSound == null)

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3951060768984435135}
   - component: {fileID: 4275466275149912561}
   m_Layer: 0
-  m_Name: Base Test
+  m_Name: Base Sound Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f346ac84d67ef443a56412382814750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageVfxPrefab: {fileID: 4371574358465749826, guid: a4e76a0f922f92041afcc2d890f6a4cc, type: 3}
+  _damageVfxPrefab: {fileID: 85941164691198867, guid: bad3cf055489f0e4e9cd51bd9cdb7008, type: 3}
   _damage: {fileID: 5791465320877278829}
