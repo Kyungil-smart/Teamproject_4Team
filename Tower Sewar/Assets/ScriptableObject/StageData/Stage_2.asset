@@ -16,24 +16,32 @@ MonoBehaviour:
   - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
     _spawnAmount: 4
     _spawnDelay: 3
+    spawn_Left: 1
+    spawn_Right: 0
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 50
   - _monsterData: {fileID: 11400000, guid: 6cb7d7bbb03366949ad3e0674002c07e, type: 2}
     _spawnAmount: 4
     _spawnDelay: 3
+    spawn_Left: 0
+    spawn_Right: 1
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 75
   - _monsterData: {fileID: 11400000, guid: bd9e43a31965899499a8a2a5e816e2f6, type: 2}
     _spawnAmount: 4
     _spawnDelay: 3
+    spawn_Left: 1
+    spawn_Right: 1
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 100
   - _monsterData: {fileID: 11400000, guid: e975c264fe123914d9ba6f6bdf17ed12, type: 2}
     _spawnAmount: 4
     _spawnDelay: 3
+    spawn_Left: 1
+    spawn_Right: 1
     _waveReadyTime: 3
     _waveLimitTime: 10
     _clearGold: 125
