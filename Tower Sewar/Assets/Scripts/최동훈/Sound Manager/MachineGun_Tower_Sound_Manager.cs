@@ -37,6 +37,7 @@ public class MachineGun_Tower_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+    
     // 타워 상태에 따라 사운드 호출  메서드
     public void PlaySFX(string state)
     {

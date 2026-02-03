@@ -17,5 +17,5 @@ MonoBehaviour:
   _deadMonsterPrefab: {fileID: 1000013849561652, guid: 1390fc2ebfc601e4fb89364698ccadd2, type: 3}
   _hp: 85
   _moveSpeed: 4
-  _dropGold: 25
+  _dropGold: 17
   _scale: {x: 60, y: 60, z: 60}
