@@ -46,8 +46,8 @@ public class TileRaycaster : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isBuildMode + "빌드모드");
-        Debug.Log(isBuildConfirmUIOpen + "UI open");
+        Debug.Log(isBuildMode + " : 빌드모드");
+        Debug.Log(isBuildConfirmUIOpen + " : UI open");
         // =========================
         // UI 위를 클릭 중이면
         // 게임 입력 처리하지 않는다
@@ -157,12 +157,14 @@ public class TileRaycaster : MonoBehaviour
                 Debug.Log("이미 설치됨");
                 selectedTurret = foundation.BuiltTurret;
 
+                Debug.Log($"BuiltTurret: {foundation.BuiltTurret}, CanBuild: {foundation.CanBuild()}");
+
                 isUpgradeUIOpen = true;
 
                 UnlockCursor();
 
                 controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI);
-                uiController?.OpenBuildConfirmUI();
+                uiController?.OpenUpgradeConfirmUI();
 
                 return;
             }
@@ -196,9 +198,8 @@ public class TileRaycaster : MonoBehaviour
         isBuildMode = true;
 
         UnlockCursor();
-        
+
         controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI);
-        
         uiController?.OpenTowerSelection();
     }
 
@@ -326,6 +327,8 @@ public class TileRaycaster : MonoBehaviour
 
         // 커서 복구
         LockCursor();
+
+        controlStateManager?.SetState(ControlStateManager.ControlState.GamePlay);
     }
 
 

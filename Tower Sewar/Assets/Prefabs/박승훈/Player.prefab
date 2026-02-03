@@ -767,7 +767,7 @@ MonoBehaviour:
     m_Bits: 1408
   collisionRadius: 0.45
   collisionHeight: 1.8
-  moveSpeed: 5
+  moveSpeed: 6
   mapBoundary: {fileID: 0}
 --- !u!114 &5944004887278916367
 MonoBehaviour:
