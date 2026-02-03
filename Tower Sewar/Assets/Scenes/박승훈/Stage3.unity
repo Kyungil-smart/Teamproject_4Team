@@ -3152,7 +3152,7 @@ PrefabInstance:
     - target: {fileID: 6569072135470931288, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
       propertyPath: _stageData
       value: 
-      objectReference: {fileID: 11400000, guid: ebfc1e8e10e41bf43afd76927579677f, type: 2}
+      objectReference: {fileID: 11400000, guid: d154a1207e2db9643b2b38cb6c7b04cc, type: 2}
     - target: {fileID: 6569072135470931288, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
       propertyPath: _wayPoint1
       value: 
@@ -5612,6 +5612,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6602400384154549578, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785881090325596763, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
