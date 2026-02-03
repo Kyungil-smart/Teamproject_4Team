@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerSound: {fileID: 3694357992993013988}
-  attackVolume: 0.25
+  attackVolume: 0.18
   buildVolume: 0.6
   upgradeVolume: 0.2
   destroyVolume: 0.15

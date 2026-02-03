@@ -3314,6 +3314,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 155427385989040930, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 155427385989040930, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155427385989040930, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 155427385989040930, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 410487850277742924, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 793776688779333809, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
@@ -3381,6 +3401,22 @@ PrefabInstance:
     - target: {fileID: 1090759676059794915, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183455311202153603, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183455311202153603, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183455311202153603, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183455311202153603, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3199822421195629606, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_IsActive
@@ -3518,6 +3554,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4291192887447397059, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291192887447397059, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291192887447397059, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291192887447397059, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449538563432624747, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449538563432624747, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449538563432624747, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449538563432624747, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4595136212712900020, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_text
       value: 
@@ -3537,6 +3605,38 @@ PrefabInstance:
     - target: {fileID: 4997529381646425907, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -324
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254388899730100688, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254388899730100688, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254388899730100688, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254388899730100688, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408924717133109217, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408924717133109217, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408924717133109217, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408924717133109217, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5967048338386430808, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_IsActive
@@ -3801,6 +3901,22 @@ PrefabInstance:
     - target: {fileID: 7886052917354903427, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214730033291574590, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214730033291574590, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214730033291574590, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214730033291574590, guid: 2a63a248f1a6bcf4faeb70cff5fb06a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

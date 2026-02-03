@@ -135,7 +135,7 @@ MonoBehaviour:
   _speed: 30
   _damage: 0
   _rotationAngle: {x: 0, y: 0, z: 500}
-  _launchTime: 0.6
+  _launchTime: 1
   _launchSpeed: 0.3
   _downSpeed: 50
-  explosionRadius: 5
+  explosionRadius: 7

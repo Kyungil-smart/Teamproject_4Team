@@ -15,7 +15,7 @@ MonoBehaviour:
   _monsterType: Rabbit
   _monsterPrefab: {fileID: 1000013767804016, guid: e06eaf96185c3f84bb35574794109ae9, type: 3}
   _deadMonsterPrefab: {fileID: 1000013767804016, guid: 23341dd58a16fcc4da769c428369f275, type: 3}
-  _hp: 350
-  _moveSpeed: 3
-  _dropGold: 15
-  _scale: {x: 115, y: 115, z: 115}
+  _hp: 800
+  _moveSpeed: 3.6
+  _dropGold: 80
+  _scale: {x: 125, y: 125, z: 125}

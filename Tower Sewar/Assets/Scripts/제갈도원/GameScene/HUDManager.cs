@@ -27,7 +27,14 @@ public class HUDManager : MonoBehaviour
     private bool isDefeated = false;
 
     private bool isPaused = false;
+    
+    [SerializeField] private ControlStateManager controlStateManager;
 
+    private void Awake()
+    {
+        controlStateManager = GetComponentInParent<ControlStateManager>();
+    }
+    
     private void Start()
     {
         // StopPanel 숨기기
@@ -84,6 +91,8 @@ public class HUDManager : MonoBehaviour
         isDefeated = false;
         isVictory = false;
         isPaused = false;
+        
+        DataManager.Instance.InitLife();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -127,6 +136,7 @@ public class HUDManager : MonoBehaviour
             Time.timeScale = 1f;
             if (stopPanel != null) stopPanel.SetActive(false);
 
+
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -143,6 +153,8 @@ public class HUDManager : MonoBehaviour
 
         if (stopPanel != null) stopPanel.SetActive(false);
 
+        controlStateManager.SetState(ControlStateManager.ControlState.GamePlay);
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -175,6 +187,7 @@ public class HUDManager : MonoBehaviour
 
         if (DataManager.Instance.PlayerLife <= 0)
         {
+            Base_Sound_Manager.instance.BaseSFX("Destroy");
             ShowDefeatPanel();
         }
     }
@@ -193,5 +206,6 @@ public class HUDManager : MonoBehaviour
 
         Debug.Log("패배!");
         Stage_Sound_Manager.instance?.SettingSound("Fail");
+        
     }
 }

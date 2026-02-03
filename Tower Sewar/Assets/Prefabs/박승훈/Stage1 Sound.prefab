@@ -85,6 +85,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3951060768984435135, guid: 961b5db1a9278b84ba5b38f8a8f804b9, type: 3}
+      propertyPath: destroyVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951060768984435135, guid: 961b5db1a9278b84ba5b38f8a8f804b9, type: 3}
+      propertyPath: takenDamageVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5468719300863771499, guid: 961b5db1a9278b84ba5b38f8a8f804b9, type: 3}
       propertyPath: m_Name
       value: Base Sound Manager

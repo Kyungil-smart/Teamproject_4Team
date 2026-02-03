@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerIcon: {fileID: 21300000, guid: 38b02a74bd2b0914480741d29ebad4b6, type: 3}
   _towerName: CannonTower
-  _towerBuildCost: 500
+  _towerBuildCost: 450
   _towerUpCost: 500
-  _towerAtt: 50
-  _towerAttDelay: 5
+  _towerAtt: 100
+  _towerAttDelay: 4
   _towerRange: 10

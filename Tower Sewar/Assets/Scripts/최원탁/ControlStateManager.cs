@@ -16,11 +16,11 @@ public class ControlStateManager : MonoBehaviour
 
     // 플레이어 이동이 가능한지 여부
     // PlayerMovement에서 이 값을 조회한다
-    public bool CanMove { get; private set; }
+    public bool CanMove { get; set; }
 
     // 카메라 시점 회전이 가능한지 여부
     // CameraRigController에서 이 값을 조회한다
-    public bool CanLook { get; private set; }
+    public bool CanLook { get; set; }
 
     private void Start()
     {

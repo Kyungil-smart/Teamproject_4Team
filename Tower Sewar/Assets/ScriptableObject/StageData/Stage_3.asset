@@ -12,69 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726327b959ce35f4dbf60ca7cbbece44, type: 3}
   m_Name: Stage_3
   m_EditorClassIdentifier: 
-  _startGold: 650
+  _startGold: 40000
   _waveDatas:
   - _monsterData: {fileID: 11400000, guid: b292f931574cd014bac9f46ac8575284, type: 2}
-    _spawnAmount: 10
-    _spawnDelay: 3
+    _spawnAmount: 35
+    _spawnDelay: 1.2
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 50
+    _waveReadyTime: 10
+    _waveLimitTime: 45
+    _clearGold: 200
   - _monsterData: {fileID: 11400000, guid: abcebec5cb308144c9391012c2501bf2, type: 2}
-    _spawnAmount: 10
-    _spawnDelay: 3
+    _spawnAmount: 30
+    _spawnDelay: 1.5
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 75
-  - _monsterData: {fileID: 11400000, guid: ba15c4c1a1596af4aae7542c66f845a3, type: 2}
-    _spawnAmount: 10
-    _spawnDelay: 3
-    spawn_Left: 0
-    spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 75
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 200
   - _monsterData: {fileID: 11400000, guid: 3895207eb6f9b064cbd17d7a1919473f, type: 2}
-    _spawnAmount: 10
+    _spawnAmount: 25
+    _spawnDelay: 1.6
+    spawn_Left: 0
+    spawn_Right: 0
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 225
+  - _monsterData: {fileID: 11400000, guid: ba15c4c1a1596af4aae7542c66f845a3, type: 2}
+    _spawnAmount: 14
     _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 100
-  - _monsterData: {fileID: 11400000, guid: b292f931574cd014bac9f46ac8575284, type: 2}
-    _spawnAmount: 20
-    _spawnDelay: 1.5
-    spawn_Left: 0
-    spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 100
-  - _monsterData: {fileID: 11400000, guid: abcebec5cb308144c9391012c2501bf2, type: 2}
-    _spawnAmount: 20
-    _spawnDelay: 1.5
-    spawn_Left: 0
-    spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 125
-  - _monsterData: {fileID: 11400000, guid: ba15c4c1a1596af4aae7542c66f845a3, type: 2}
-    _spawnAmount: 20
-    _spawnDelay: 1.5
-    spawn_Left: 0
-    spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 125
-  - _monsterData: {fileID: 11400000, guid: 3895207eb6f9b064cbd17d7a1919473f, type: 2}
-    _spawnAmount: 20
-    _spawnDelay: 1.5
-    spawn_Left: 0
-    spawn_Right: 0
-    _waveReadyTime: 20
-    _waveLimitTime: 40
-    _clearGold: 150
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 225

@@ -15,7 +15,7 @@ MonoBehaviour:
   _monsterType: Bat
   _monsterPrefab: {fileID: 1000013849561652, guid: 5589c9fad797b7f43a2ed0adb89dc48c, type: 3}
   _deadMonsterPrefab: {fileID: 1000013849561652, guid: 1390fc2ebfc601e4fb89364698ccadd2, type: 3}
-  _hp: 45
-  _moveSpeed: 8
-  _dropGold: 12
+  _hp: 150
+  _moveSpeed: 9
+  _dropGold: 30
   _scale: {x: 50, y: 50, z: 50}

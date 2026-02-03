@@ -114,14 +114,10 @@ public class MonsterBehavior : MonoBehaviour
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // TODO : 플레이어 체력 감소 추가 -제갈도원-
             DataManager.Instance.PlayerLife -= 1;
-            if(DataManager.Instance.PlayerLife <= 0)
-            {
-                // 체력 0이되면 타이틀 가는걸로.
-                DataManager.Instance.Init();
-                GameSceneManager.Instance.LoadTitle();
-            }
             Die();
-
+            
+            Base_Sound_Manager.instance.BaseSFX("Taken_Damage");
+            
             return;
         }
         
@@ -138,9 +134,6 @@ public class MonsterBehavior : MonoBehaviour
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
             transform.forward = dir.normalized;
         }
-
-        
-
     }
 
     //몬스터에게 데미지를 입힘

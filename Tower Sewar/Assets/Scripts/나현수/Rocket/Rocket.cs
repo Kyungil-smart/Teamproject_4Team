@@ -38,6 +38,4 @@ public class Rocket : MonoBehaviour
         _isLaunched = false;
         gameObject.SetActive(false);
     }
-
-    
 }

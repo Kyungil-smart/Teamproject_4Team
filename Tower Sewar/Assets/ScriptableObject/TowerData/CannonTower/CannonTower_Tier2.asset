@@ -16,6 +16,6 @@ MonoBehaviour:
   _towerName: CannonTower
   _towerBuildCost: 0
   _towerUpCost: 0
-  _towerAtt: 75
-  _towerAttDelay: 5
-  _towerRange: 15
+  _towerAtt: 200
+  _towerAttDelay: 2
+  _towerRange: 13

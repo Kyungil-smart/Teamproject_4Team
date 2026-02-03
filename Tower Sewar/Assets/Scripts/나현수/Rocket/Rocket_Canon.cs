@@ -10,9 +10,12 @@ public class Rocket_Canon : Rocket
     [SerializeField] private float explosionRadius = 3.0f;
     private float _elapsedTime = 0f;
 
+    private Transform targetTransform;
+
     public override void Launch(Transform target, TowerData towerData)
     {
         base.Launch(target, towerData);
+        targetTransform = target;
         _elapsedTime = 0f;
     }
 
@@ -43,7 +46,7 @@ public class Rocket_Canon : Rocket
         }
         else
         {
-            moveDirection = (_target.position - transform.position).normalized;
+            moveDirection = (targetTransform.position - transform.position).normalized;
             transform.position += moveDirection * (_downSpeed * Time.deltaTime);
         }
 
@@ -56,7 +59,7 @@ public class Rocket_Canon : Rocket
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 
     protected void HitEnemy()

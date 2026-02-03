@@ -99,7 +99,7 @@ public class TileRaycaster : MonoBehaviour
             {
                 // 빌드 모드가 아닌 평소 상태에서도 ESC로 락온 해제
                 UnlockCursor();
-                controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI); // 이동 막기
+                controlStateManager?.SetState(ControlStateManager.ControlState.PauseMenu); // 이동 막기
             }
         }
     }

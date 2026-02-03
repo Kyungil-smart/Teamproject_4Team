@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,17 @@ public class DataManager : MonoBehaviour
     
     // HUD 에서 골드, 목슴 연동 할 거
     public int PlayerGold { get; set; }
-    public int PlayerLife { get; set; }
+
+    public int PlayerLife
+    {
+        get  { return _playerLife; } 
+        set { _playerLife = value; }
+    }
+
+    public void InitLife()
+    {
+        _playerLife = 10;
+    }
 
     private void Awake()
     {
@@ -21,13 +32,9 @@ public class DataManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        Init();
-    }
-    private void Start()
-    {
     }
 
-    public void Init()
+    private void Start()
     {
         PlayerLife = 10;
     }

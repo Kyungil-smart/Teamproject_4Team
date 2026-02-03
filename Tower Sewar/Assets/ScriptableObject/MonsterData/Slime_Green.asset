@@ -15,7 +15,7 @@ MonoBehaviour:
   _monsterType: Slime
   _monsterPrefab: {fileID: 1000012979649092, guid: 2c979ad550a8d154eb605754d3f42357, type: 3}
   _deadMonsterPrefab: {fileID: 1000012979649092, guid: 8d63a9d24a11b2849a443796afdd8157, type: 3}
-  _hp: 25
-  _moveSpeed: 4
-  _dropGold: 10
+  _hp: 45
+  _moveSpeed: 5
+  _dropGold: 25
   _scale: {x: 100, y: 100, z: 100}
