@@ -158,9 +158,9 @@ RectTransform:
   - {fileID: 1625179730}
   m_Father: {fileID: 136360536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 864, y: -324}
   m_SizeDelta: {x: 300, y: 390}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63185454
@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2878360065138583804, guid: 8d031ac7670809f478c70a9bc51b9906, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 288
       objectReference: {fileID: 0}
     - target: {fileID: 2878360065138583804, guid: 8d031ac7670809f478c70a9bc51b9906, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5675444611291517929, guid: 8d031ac7670809f478c70a9bc51b9906, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6205688923180634945, guid: 8d031ac7670809f478c70a9bc51b9906, type: 3}
       propertyPath: mapBoundary

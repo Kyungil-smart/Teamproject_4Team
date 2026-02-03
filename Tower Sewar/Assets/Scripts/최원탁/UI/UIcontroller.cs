@@ -40,6 +40,7 @@ public class UIcontroller : MonoBehaviour
 
     public void CloseTowerSelection()
     {
+        Debug.Log("진입");
         foreach (GameObject g in TowerSelectionPanel)
             g.SetActive(false);
 
