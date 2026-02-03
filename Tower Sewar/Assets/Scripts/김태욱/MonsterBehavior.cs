@@ -77,7 +77,7 @@ public class MonsterBehavior : MonoBehaviour
             _velocity = _monsterData.MoveSpeed;
             _dropGold = _monsterData.DropGold;
         }
-        //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
+
         if (_wayPoint != null)
         {
             //경로설정
@@ -113,7 +113,13 @@ public class MonsterBehavior : MonoBehaviour
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // TODO : 플레이어 체력 감소 추가 -제갈도원-
-            DataManager.Instance.PlayerGold -= 1;
+            DataManager.Instance.PlayerLife -= 1;
+            if(DataManager.Instance.PlayerLife <= 0)
+            {
+                // 체력 0이되면 타이틀 가는걸로.
+                DataManager.Instance.Init();
+                GameSceneManager.Instance.LoadTitle();
+            }
             Die();
 
             return;

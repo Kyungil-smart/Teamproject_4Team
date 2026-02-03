@@ -85,11 +85,25 @@ public class WaveManager : MonoBehaviour
             //다음Wave로 전환을위해 초기화작업
             if (_isReadyTime)
             {
+                //웨이브 클리어 골드 추가
+                DataManager.Instance.PlayerGold += _stageData.WaveDatas[_wave].ClearGold;
+
                 //웨이브를 모두 깼다면 클리어 처리
                 if (_wave == _stageData.WaveDatas.Count - 1)
                 {
-                    Debug.Log("웨이브 올클리어");
-                    //TODO: 씬전환필요함
+                    //Scene전환
+                    
+                    if(_numsOfSpawnMonster != 0)
+                    {
+                        Debug.Log($"버그 ~ {_numsOfSpawnMonster}마리의 몬스터가 남아있습니다!!");
+                        //DataManager.Instance.PlayerLife -= _numsOfSpawnMonster;
+                    }
+
+
+                    GameSceneManager.Instance.LoadNextStage();
+                    Debug.Log("스테이지의 모든 웨이브가 진행되었습니다. 다음 Scene으로 넘어갑니다.");
+                    
+
 
                     return;
                 }
@@ -119,6 +133,7 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
+        DataManager.Instance.PlayerGold = _stageData.StartGold;
     }
 
     void SpawnMonster()
