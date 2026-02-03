@@ -25,6 +25,8 @@ public class TileRaycaster : MonoBehaviour
 
     private ControlStateManager controlStateManager;
 
+    private Vector3 rayOrigin;
+    private Ray ray;
 
     // =========================
     // 상태 플래그 (기존 구조 유지)
@@ -38,6 +40,10 @@ public class TileRaycaster : MonoBehaviour
         controlStateManager = FindObjectOfType<ControlStateManager>();
     }
 
+    private void Start()
+    {
+    }
+
     private void Update()
     {
         Debug.Log(isBuildMode + "빌드모드");
@@ -47,12 +53,20 @@ public class TileRaycaster : MonoBehaviour
         // 게임 입력 처리하지 않는다
         // =========================
         if (Time.timeScale == 0) return;
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
+        bool Pointer = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+        //Debug.Log($"OverUI:{Pointer}, Hover:{(CurrentHoverObject ? CurrentHoverObject.name : "null")}, ui:{(uiController? "OK":"NULL")}");
+        // if (Physics.Raycast(ray, out hit, rayDistance))
+        //     Debug.Log("HIT: " + hit.collider.name + " layer=" + hit.collider.gameObject.layer);
+        // else
+        //     Debug.Log("NO HIT");
+        
 
-
+            
         // Ray / Gizmo 시각 피드백은 항상 유지
         HandleRaycast();
+
+        if (Cursor.lockState == CursorLockMode.None && Pointer)
+            return;
 
         // 확인 UI가 떠 있으면 키보드 입력 완전 차단
         if (isBuildConfirmUIOpen || isUpgradeUIOpen)
@@ -85,8 +99,7 @@ public class TileRaycaster : MonoBehaviour
             {
                 // 빌드 모드가 아닌 평소 상태에서도 ESC로 락온 해제
                 UnlockCursor();
-                if (controlStateManager != null)
-                    controlStateManager.SetState(ControlStateManager.ControlState.TowerUI); // 이동 막기
+                controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI); // 이동 막기
             }
         }
     }
@@ -96,8 +109,8 @@ public class TileRaycaster : MonoBehaviour
     // =========================
     private void HandleRaycast()
     {
-        Vector3 rayOrigin = transform.position + Vector3.up * rayHeightOffset;
-        Ray ray = new Ray(rayOrigin, transform.forward);
+        rayOrigin = transform.position + Vector3.up * rayHeightOffset;
+        ray = new Ray(rayOrigin, transform.forward);
 
         Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red);
 
@@ -148,15 +161,9 @@ public class TileRaycaster : MonoBehaviour
 
                 UnlockCursor();
 
-                if (uiController != null)
-                    uiController.OpenUpgradeConfirmUI();
+                controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI);
+                uiController?.OpenBuildConfirmUI();
 
-                return;
-            }
-            else 
-            {
-                SelectedObject = CurrentHoverObject;
-                EnterBuildMode();
                 return;
             }
         }
@@ -189,9 +196,10 @@ public class TileRaycaster : MonoBehaviour
         isBuildMode = true;
 
         UnlockCursor();
-
-        if (uiController != null)
-            uiController.OpenTowerSelection();
+        
+        controlStateManager?.SetState(ControlStateManager.ControlState.TowerUI);
+        
+        uiController?.OpenTowerSelection();
     }
 
     // =========================
@@ -235,7 +243,6 @@ public class TileRaycaster : MonoBehaviour
             }
             DataManager.Instance.PlayerGold -= buildCost;
             //Debug.Log($"타워 설치! 비용: {buildCost}, 남은 골드: {DataManager.Instance.PlayerGold}");
-        
         }
 
         foundation.BuildTower(turretPrefab[tower]);
@@ -339,13 +346,10 @@ public class TileRaycaster : MonoBehaviour
         if (!isBuildConfirmUIOpen)
             SelectedObject = null;
 
-        if (uiController != null)
-        {
-            uiController.CloseBuildConfirmUI();
-            uiController.CloseTowerSelection();
-        }
-
+        uiController?.CloseBuildConfirmUI();
+        uiController?.CloseTowerSelection();
         LockCursor();
+        controlStateManager?.SetState(ControlStateManager.ControlState.GamePlay);
     }
 
     // =========================

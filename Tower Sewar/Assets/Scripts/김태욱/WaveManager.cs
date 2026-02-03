@@ -35,12 +35,12 @@ public class WaveManager : MonoBehaviour
             _isReadyTime = value;
             if (_isReadyTime)
             {
-                Debug.Log("Wait");
+                // Debug.Log("Wait");
                 Stage_Sound_Manager.instance?.SettingSound("Waiting");
             }
             else
             {
-                Debug.Log("Start");
+                // Debug.Log("Start");
                 Stage_Sound_Manager.instance?.SettingSound("Wave");
             }
         }
@@ -66,7 +66,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         Init();
-        Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
+        // Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
     }
 
     void Update()
@@ -109,12 +109,12 @@ public class WaveManager : MonoBehaviour
                 _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
                 _numsOfSpawnMonster = 0;
                 _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
-                Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
+                // Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
             }
             else
             {
                 _waveTimer = _stageData.WaveDatas[_wave].WaveLimitTime;
-                Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
+                // Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
             }
 
             IsReadyTime = !IsReadyTime;

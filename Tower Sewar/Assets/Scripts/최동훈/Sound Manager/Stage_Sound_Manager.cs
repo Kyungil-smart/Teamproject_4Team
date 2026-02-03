@@ -58,12 +58,12 @@ public class Stage_Sound_Manager : MonoBehaviour
         switch (state)
         {
             case "Waiting":
-                Debug.Log("준비시간");
+                // Debug.Log("준비시간");
                 Sound(waitingBgm , waitingVolume, true);
                 break;
 
             case "Wave":
-                Debug.Log("디펜스");
+                // Debug.Log("디펜스");
                 StartCoroutine(SfxToBgm(waveSfx, waveSfxVolume, waveBgm, waveVolume));
                 break;
 
