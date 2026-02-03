@@ -946,14 +946,14 @@ PrefabInstance:
     - target: {fileID: 7359442403796930940, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 547676526}
+      objectReference: {fileID: 834060966}
     - target: {fileID: 7359442403796930940, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PopExitSound
+      value: PopButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 7359442403796930940, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7359442403796930940, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
