@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +27,7 @@ public class DataManager : MonoBehaviour
         Init();
     }
 
-    private void Init()
+    public void Init()
     {
         PlayerGold = 150;
         PlayerLife = 10;
