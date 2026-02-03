@@ -14,34 +14,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveDatas:
   - _monsterData: {fileID: 11400000, guid: 3b8345cc1d024084d8e32308ad5e47f0, type: 2}
-    _spawnAmount: 1
+    _spawnAmount: 10
     _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 1
-    _waveLimitTime: 10
+    _waveReadyTime: 15
+    _waveLimitTime: 45
     _clearGold: 50
   - _monsterData: {fileID: 11400000, guid: e877d8adb9aee3342bb47d7364f6f569, type: 2}
     _spawnAmount: 10
-    _spawnDelay: 4
+    _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
-    _waveReadyTime: 1
-    _waveLimitTime: 30
+    _waveReadyTime: 15
+    _waveLimitTime: 45
     _clearGold: 75
   - _monsterData: {fileID: 11400000, guid: 9d1a884d58e5a09469523793f50b7756, type: 2}
     _spawnAmount: 10
-    _spawnDelay: 5.5
+    _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
     _waveReadyTime: 15
-    _waveLimitTime: 30
-    _clearGold: 100
+    _waveLimitTime: 45
+    _clearGold: 75
   - _monsterData: {fileID: 11400000, guid: bcb781bc76f32a340af76a711fc4a4c5, type: 2}
-    _spawnAmount: 8
-    _spawnDelay: 6
+    _spawnAmount: 10
+    _spawnDelay: 3
     spawn_Left: 0
     spawn_Right: 0
     _waveReadyTime: 15
-    _waveLimitTime: 30
+    _waveLimitTime: 45
+    _clearGold: 100
+  - _monsterData: {fileID: 11400000, guid: 3b8345cc1d024084d8e32308ad5e47f0, type: 2}
+    _spawnAmount: 20
+    _spawnDelay: 1.5
+    spawn_Left: 0
+    spawn_Right: 0
+    _waveReadyTime: 15
+    _waveLimitTime: 45
+    _clearGold: 100
+  - _monsterData: {fileID: 11400000, guid: e877d8adb9aee3342bb47d7364f6f569, type: 2}
+    _spawnAmount: 20
+    _spawnDelay: 1.5
+    spawn_Left: 0
+    spawn_Right: 0
+    _waveReadyTime: 15
+    _waveLimitTime: 45
     _clearGold: 125
+  - _monsterData: {fileID: 11400000, guid: 9d1a884d58e5a09469523793f50b7756, type: 2}
+    _spawnAmount: 20
+    _spawnDelay: 1.5
+    spawn_Left: 0
+    spawn_Right: 0
+    _waveReadyTime: 15
+    _waveLimitTime: 45
+    _clearGold: 125
+  - _monsterData: {fileID: 11400000, guid: bcb781bc76f32a340af76a711fc4a4c5, type: 2}
+    _spawnAmount: 20
+    _spawnDelay: 1.5
+    spawn_Left: 0
+    spawn_Right: 0
+    _waveReadyTime: 15
+    _waveLimitTime: 45
+    _clearGold: 150
