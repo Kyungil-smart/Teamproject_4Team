@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Rocket_Canon : Rocket
 {
-    [SerializeField] private float _launchTime  = 0.7f;
-    [SerializeField] private float _launchSpeed = 1.0f;
+    [SerializeField] private float _launchTime  = 0.1f;
+    [SerializeField] private float _launchSpeed = 0.5f;
     [SerializeField] private float _downSpeed   = 45.0f;
     
     [SerializeField] private float explosionRadius = 3.0f;

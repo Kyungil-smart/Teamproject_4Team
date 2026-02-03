@@ -15,7 +15,7 @@ MonoBehaviour:
   _towerIcon: {fileID: 21300000, guid: 367e822c2097aaa45aa47ce515e4f868, type: 3}
   _towerName: GunTower
   _towerBuildCost: 0
-  _towerUpCost: 200
-  _towerAtt: 17
-  _towerAttDelay: 0.5
+  _towerUpCost: 250
+  _towerAtt: 20
+  _towerAttDelay: 0.45
   _towerRange: 5

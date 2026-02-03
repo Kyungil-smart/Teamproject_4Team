@@ -280,7 +280,7 @@ public class TileRaycaster : MonoBehaviour
             var field = typeof(Turret).GetField("_curGrade", 
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             int currentGrade = field != null ? (int)field.GetValue(selectedTurret) : 0;
-            int nextGrade = currentGrade + 1;
+            int nextGrade = currentGrade;
         
             if (nextGrade < gradeController._towerData.Count)
             {

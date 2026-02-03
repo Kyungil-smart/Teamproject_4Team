@@ -18,8 +18,12 @@ public class UpgradCost : MonoBehaviour
         if (_turret != null)
         {
             if (_turret.CurGrade + 1 >= _turret.gradeController._towerData.Count)
+            {
+                _raycaster = null;
+                _turret = null;
                 return;
-            _text.text = $"{_turret.gradeController._towerData[_turret.CurGrade + 1].TowerUpCost}";
+            }
+            _text.text = $"{_turret.gradeController._towerData[_turret.CurGrade].TowerUpCost}";
         }
     }
 }

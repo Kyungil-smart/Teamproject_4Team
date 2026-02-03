@@ -21,7 +21,7 @@ public class TurretSelectUI : MonoBehaviour
     
     private int selectedIndex = -1;
 
-    private void Start()
+    private void start()
     {
         // 터렛 버튼 클릭 이벤트
         for (int i = 0; i < turretButtons.Length; i++)

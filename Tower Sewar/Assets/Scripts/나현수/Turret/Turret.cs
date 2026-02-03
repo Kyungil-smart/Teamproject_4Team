@@ -127,8 +127,8 @@ public class Turret : MonoBehaviour
     public void Upgrade()
     {
         if (_curGrade + 1 < _gradeController._towerData.Count)
-        {
-            _curGrade++;
+        { 
+            CurGrade++;
             if(_curGrade > 0)
                 MachineGun_Tower_Sound_Manager.instance.PlaySFX("Upgrade");
             UpgradeTower();
