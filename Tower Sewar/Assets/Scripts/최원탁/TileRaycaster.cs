@@ -77,10 +77,10 @@ public class TileRaycaster : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
              // 추가 한거임
-             if (isBuildMode)
-             {
-            HandleCancelInput();
-             }
+            if (isBuildMode)
+            {
+                HandleCancelInput();
+            }
             if (Cursor.lockState == CursorLockMode.Locked)
             {
                 // 빌드 모드가 아닌 평소 상태에서도 ESC로 락온 해제
