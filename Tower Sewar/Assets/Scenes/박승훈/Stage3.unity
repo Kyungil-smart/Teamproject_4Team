@@ -5013,19 +5013,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8475315839711181492, guid: 659eca251082cb046a2b54510291cc26, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5051697589202302571, guid: 659eca251082cb046a2b54510291cc26, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 2063502103}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659eca251082cb046a2b54510291cc26, type: 3}
---- !u!4 &1443824555 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5051697589202302571, guid: 659eca251082cb046a2b54510291cc26, type: 3}
+--- !u!114 &1443824556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3019813509299030562, guid: 659eca251082cb046a2b54510291cc26, type: 3}
   m_PrefabInstance: {fileID: 1443824554}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679b04ff53e79034eac5015be3209a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1450567831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5514,14 +5516,14 @@ PrefabInstance:
     - target: {fileID: 2998982910983101993, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1615677131}
+      objectReference: {fileID: 1443824556}
     - target: {fileID: 2998982910983101993, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PopExitSound
       objectReference: {fileID: 0}
     - target: {fileID: 2998982910983101993, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2998982910983101993, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5578,14 +5580,14 @@ PrefabInstance:
     - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1615677131}
+      objectReference: {fileID: 1443824556}
     - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PopButtonSound
+      value: PopExitSound
       objectReference: {fileID: 0}
     - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5598,14 +5600,14 @@ PrefabInstance:
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1615677131}
+      objectReference: {fileID: 1443824556}
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PopButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5622,14 +5624,14 @@ PrefabInstance:
     - target: {fileID: 6923003849941893588, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1615677131}
+      objectReference: {fileID: 1443824556}
     - target: {fileID: 6923003849941893588, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PopButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 6923003849941893588, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6923003849941893588, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5638,14 +5640,14 @@ PrefabInstance:
     - target: {fileID: 8625508042056013716, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1615677131}
+      objectReference: {fileID: 1443824556}
     - target: {fileID: 8625508042056013716, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PopExitSound
       objectReference: {fileID: 0}
     - target: {fileID: 8625508042056013716, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI_SFX_Manager, Assembly-CSharp
+      value: UI_SFX_Manager2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8625508042056013716, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6952,72 +6954,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8259867319992412203, guid: 617e12d238f02d24ab2a3c94c146faea, type: 3}
   m_PrefabInstance: {fileID: 2048883829}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2063502102
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1443824555}
-    m_Modifications:
-    - target: {fileID: 1409161889584235900, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: clearVolume
-      value: 0.634
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102800510367138446, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_Name
-      value: Stage3 Wave Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.24208575
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0139009
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.566296
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
---- !u!4 &2063502103 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9120702942722484558, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
-  m_PrefabInstance: {fileID: 2063502102}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2077144464
 PrefabInstance:
