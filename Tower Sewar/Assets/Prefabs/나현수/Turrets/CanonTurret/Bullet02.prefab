@@ -132,10 +132,10 @@ MonoBehaviour:
   _isLaunched: 0
   _activeTime: 0
   _maxActiveTime: 5
-  _speed: 10
+  _speed: 30
   _damage: 0
   _rotationAngle: {x: 0, y: 0, z: 500}
-  _launchTime: 2
+  _launchTime: 0.7
   _launchSpeed: 1
-  _downSpeed: 30
-  explosionRadius: 5
+  _downSpeed: 45
+  explosionRadius: 3
