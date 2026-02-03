@@ -34,6 +34,11 @@ public class GameSceneManager : MonoBehaviour
     {
         nowStage++;
         Time.timeScale = 1f;
+        if( nowStage == 4 )
+        {
+            nowStage = 1;
+            LoadTitle();
+        }
         SceneManager.LoadScene(nowStage);
     }
     
