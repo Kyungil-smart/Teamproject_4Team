@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TileRaycaster : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class TileRaycaster : MonoBehaviour
 
     [SerializeField] private GameObject[] turretPrefab;
 
+    private ControlStateManager controlStateManager;
+
 
     // =========================
     // 상태 플래그 (기존 구조 유지)
@@ -29,8 +32,23 @@ public class TileRaycaster : MonoBehaviour
     private bool isBuildConfirmUIOpen = false; // 확인 UI 여부
     private bool isUpgradeUIOpen = false; // 업그레이드 여부
 
+    private void Awake()
+    {
+        controlStateManager = FindObjectOfType<ControlStateManager>();
+    }
+
     private void Update()
     {
+
+        // =========================
+        // UI 위를 클릭 중이면
+        // 게임 입력 처리하지 않는다
+        // =========================
+        if (Time.timeScale == 0) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
+
         // Ray / Gizmo 시각 피드백은 항상 유지
         HandleRaycast();
 
@@ -44,15 +62,31 @@ public class TileRaycaster : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 LockCursor();
+                if (controlStateManager != null)
+                    controlStateManager.SetState(ControlStateManager.ControlState.GamePlay);
                 return;
             }
         }
+
 
         if (Input.GetKeyDown(KeyCode.F))
             HandleInteractInput();
 
         if (Input.GetKeyDown(KeyCode.Escape))
-            HandleCancelInput();
+        {
+            // 추가 한거임
+            if (isBuildMode)
+            {
+                HandleCancelInput();
+            }
+            else if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                // 빌드 모드가 아닌 평소 상태에서도 ESC로 락온 해제
+                UnlockCursor();
+                if (controlStateManager != null)
+                    controlStateManager.SetState(ControlStateManager.ControlState.TowerUI); // 이동 막기
+            }
+        }
     }
 
     // =========================
@@ -178,6 +212,21 @@ public class TileRaycaster : MonoBehaviour
             Debug.LogWarning("SelectedObject에 Foundation이 없습니다.");
             ExitBuildConfirm();
             return;
+        }
+
+        // Turret_Grade gradeController = turretPrefab[tower].GetComponent<Turret_Grade>();
+        if (TurretGradeAdapter.TryGetBuildCost(turretPrefab[tower], out int buildCost))
+        {
+            // 골드 부족
+            if (DataManager.Instance.PlayerGold < buildCost)
+            {
+                Debug.LogWarning($"골드 부족가 부족합니다.");
+                ExitBuildConfirm();
+                return;
+            }
+            DataManager.Instance.PlayerGold -= buildCost;
+            //Debug.Log($"타워 설치! 비용: {buildCost}, 남은 골드: {DataManager.Instance.PlayerGold}");
+        
         }
 
         foundation.BuildTower(turretPrefab[tower]);
