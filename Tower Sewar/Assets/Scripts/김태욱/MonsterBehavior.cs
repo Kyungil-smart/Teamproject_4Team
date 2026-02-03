@@ -114,6 +114,12 @@ public class MonsterBehavior : MonoBehaviour
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // TODO : 플레이어 체력 감소 추가 -제갈도원-
             DataManager.Instance.PlayerLife -= 1;
+            if(DataManager.Instance.PlayerLife <= 0)
+            {
+                // 체력 0이되면 타이틀 가는걸로.
+                DataManager.Instance.Init();
+                GameSceneManager.Instance.LoadTitle();
+            }
             Die();
 
             return;

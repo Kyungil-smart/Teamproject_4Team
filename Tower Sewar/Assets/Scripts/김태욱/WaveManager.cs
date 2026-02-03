@@ -95,8 +95,8 @@ public class WaveManager : MonoBehaviour
                     
                     if(_numsOfSpawnMonster != 0)
                     {
-                        Debug.Log($"{_numsOfSpawnMonster}마리의 몬스터가 남아있습니다!!");
-                        DataManager.Instance.PlayerLife -= _numsOfSpawnMonster;
+                        Debug.Log($"버그 ~ {_numsOfSpawnMonster}마리의 몬스터가 남아있습니다!!");
+                        //DataManager.Instance.PlayerLife -= _numsOfSpawnMonster;
                     }
 
 

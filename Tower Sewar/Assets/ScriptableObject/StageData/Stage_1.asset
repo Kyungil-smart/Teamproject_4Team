@@ -23,7 +23,7 @@ MonoBehaviour:
     _clearGold: 50
   - _monsterData: {fileID: 11400000, guid: e877d8adb9aee3342bb47d7364f6f569, type: 2}
     _spawnAmount: 10
-    _spawnDelay: 4
+    _spawnDelay: 1
     spawn_Left: 0
     spawn_Right: 0
     _waveReadyTime: 1
