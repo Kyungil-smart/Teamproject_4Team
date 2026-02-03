@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // ⏸ Pause 상태면 이동 로직 자체를 실행하지 않는다
+        if (controlStateManager != null && !controlStateManager.CanMove)
+            return;
+
         Move();
     }
 
