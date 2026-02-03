@@ -45,7 +45,6 @@ public class Turret : MonoBehaviour
         if (_gradeController == null) return;
         if (_curGrade >= 0 && _gradeController._towerData.Count > 0)
         {
-            Debug.Log(_collider.radius);
             MachineGun_Tower_Sound_Manager.instance.PlaySFX("Build");
             _collider.radius = _gradeController._towerData[_curGrade].TowerRange;
             UpgradeTower();

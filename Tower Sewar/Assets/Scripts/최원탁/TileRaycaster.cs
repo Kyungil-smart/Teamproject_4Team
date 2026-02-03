@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TileRaycaster : MonoBehaviour
@@ -28,9 +29,9 @@ public class TileRaycaster : MonoBehaviour
     // =========================
     // 상태 플래그 (기존 구조 유지)
     // =========================
-    private bool isBuildMode = false;          // 설치 모드 여부
-    private bool isBuildConfirmUIOpen = false; // 확인 UI 여부
-    private bool isUpgradeUIOpen = false; // 업그레이드 여부
+    [SerializeField] private bool isBuildMode = false;          // 설치 모드 여부
+    [SerializeField] private bool isBuildConfirmUIOpen = false; // 확인 UI 여부
+    [SerializeField] private bool isUpgradeUIOpen = false; // 업그레이드 여부
 
     private void Awake()
     {
@@ -39,7 +40,8 @@ public class TileRaycaster : MonoBehaviour
 
     private void Update()
     {
-
+        Debug.Log(isBuildMode + "빌드모드");
+        Debug.Log(isBuildConfirmUIOpen + "UI open");
         // =========================
         // UI 위를 클릭 중이면
         // 게임 입력 처리하지 않는다
@@ -74,12 +76,12 @@ public class TileRaycaster : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // 추가 한거임
-            if (isBuildMode)
-            {
-                HandleCancelInput();
-            }
-            else if (Cursor.lockState == CursorLockMode.Locked)
+             // 추가 한거임
+             if (isBuildMode)
+             {
+            HandleCancelInput();
+             }
+            if (Cursor.lockState == CursorLockMode.Locked)
             {
                 // 빌드 모드가 아닌 평소 상태에서도 ESC로 락온 해제
                 UnlockCursor();
