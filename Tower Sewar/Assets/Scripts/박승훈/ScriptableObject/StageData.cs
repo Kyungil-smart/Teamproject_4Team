@@ -5,8 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Stage Data", menuName = "Scriptable Object/Stage Data", order = 0)]
 public class StageData : ScriptableObject
 {
+    [Header("스테이지 초기 골드")]
+    [SerializeField] int _startGold;
+    public  int StartGold => _startGold;
+
     [SerializeField] List<WaveData> _waveDatas = new List<WaveData>();
     public List<WaveData> WaveDatas => _waveDatas;
+
 }
 
 [System.Serializable]

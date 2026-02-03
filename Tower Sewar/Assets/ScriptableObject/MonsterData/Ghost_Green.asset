@@ -15,7 +15,7 @@ MonoBehaviour:
   _monsterType: Ghost
   _monsterPrefab: {fileID: 1000010538092382, guid: 883ef5043222d504788fef76a50bcb51, type: 3}
   _deadMonsterPrefab: {fileID: 1000010538092382, guid: 2fab6c3770090ac418b7dfd5af6f7ee2, type: 3}
-  _hp: 200
-  _moveSpeed: 4.5
-  _dropGold: 25
-  _scale: {x: 50, y: 50, z: 50}
+  _hp: 350
+  _moveSpeed: 3
+  _dropGold: 30
+  _scale: {x: 100, y: 100, z: 100}

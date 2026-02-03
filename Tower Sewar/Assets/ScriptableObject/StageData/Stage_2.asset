@@ -12,28 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726327b959ce35f4dbf60ca7cbbece44, type: 3}
   m_Name: Stage_2
   m_EditorClassIdentifier: 
+  _startGold: 550
   _waveDatas:
-  - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
-    _spawnAmount: 4
-    _spawnDelay: 3
-    _waveReadyTime: 3
-    _waveLimitTime: 10
-    _clearGold: 50
-  - _monsterData: {fileID: 11400000, guid: 6cb7d7bbb03366949ad3e0674002c07e, type: 2}
-    _spawnAmount: 4
-    _spawnDelay: 3
-    _waveReadyTime: 3
-    _waveLimitTime: 10
-    _clearGold: 75
-  - _monsterData: {fileID: 11400000, guid: bd9e43a31965899499a8a2a5e816e2f6, type: 2}
-    _spawnAmount: 4
-    _spawnDelay: 3
-    _waveReadyTime: 3
-    _waveLimitTime: 10
-    _clearGold: 100
   - _monsterData: {fileID: 11400000, guid: e975c264fe123914d9ba6f6bdf17ed12, type: 2}
-    _spawnAmount: 4
+    _spawnAmount: 21
+    _spawnDelay: 2
+    spawn_Left: 1
+    spawn_Right: 1
+    _waveReadyTime: 10
+    _waveLimitTime: 45
+    _clearGold: 175
+  - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
+    _spawnAmount: 18
+    _spawnDelay: 2.4
+    spawn_Left: 1
+    spawn_Right: 1
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 175
+  - _monsterData: {fileID: 11400000, guid: 24f9913c47a65ef47be067ec8b3785f2, type: 2}
+    _spawnAmount: 12
+    _spawnDelay: 3.5
+    spawn_Left: 1
+    spawn_Right: 1
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 200
+  - _monsterData: {fileID: 11400000, guid: 6cb7d7bbb03366949ad3e0674002c07e, type: 2}
+    _spawnAmount: 14
     _spawnDelay: 3
-    _waveReadyTime: 3
-    _waveLimitTime: 10
-    _clearGold: 125
+    spawn_Left: 1
+    spawn_Right: 1
+    _waveReadyTime: 7
+    _waveLimitTime: 45
+    _clearGold: 200

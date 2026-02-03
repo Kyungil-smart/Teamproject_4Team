@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3998484101113552144}
   - component: {fileID: 3694357992993013988}
-  - component: {fileID: 2766461301663095841}
+  - component: {fileID: 5602849162338870680}
   m_Layer: 0
   m_Name: Test MachineGun
   m_TagString: Untagged
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2766461301663095841
+--- !u!114 &5602849162338870680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,11 +142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerSound: {fileID: 3694357992993013988}
-  attackVolume: 0.25
-  buildVolume: 0.35
+  attackVolume: 0.18
+  buildVolume: 0.6
   upgradeVolume: 0.2
   destroyVolume: 0.15
   attackSfx: {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
   buildSfx: {fileID: 8300000, guid: f39bb14a4d0c8bb4f9c5123138bab39c, type: 3}
-  UpgradeSfx: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
+  upgradeSfx: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
   destroySfx: {fileID: 8300000, guid: 958408b32ccf3714ea02821877b0870c, type: 3}

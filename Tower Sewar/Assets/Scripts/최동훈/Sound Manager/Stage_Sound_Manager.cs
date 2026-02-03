@@ -12,8 +12,10 @@ using UnityEngine;
 
 public class Stage_Sound_Manager : MonoBehaviour
 {
+    // 싱글톤 패턴
     public static Stage_Sound_Manager instance;
 
+    // 인스펙터 생성
     [Header("Sound Player")]
     public AudioSource SoundPlayer;
     public AudioSource SfxPlayer;
@@ -43,6 +45,7 @@ public class Stage_Sound_Manager : MonoBehaviour
             instance = this;
         }
     }
+    // 게임 진행 상태에 따라 사운드 출력
     public void SettingSound(string state)
     {
         if (SoundPlayer == null || SfxPlayer == null)
@@ -55,12 +58,12 @@ public class Stage_Sound_Manager : MonoBehaviour
         switch (state)
         {
             case "Waiting":
-                Debug.Log("준비시간");
+                // Debug.Log("준비시간");
                 Sound(waitingBgm , waitingVolume, true);
                 break;
 
             case "Wave":
-                Debug.Log("디펜스");
+                // Debug.Log("디펜스");
                 StartCoroutine(SfxToBgm(waveSfx, waveSfxVolume, waveBgm, waveVolume));
                 break;
 
@@ -77,7 +80,7 @@ public class Stage_Sound_Manager : MonoBehaviour
                 break;
         }
     }
-
+    // 스테이지 사운드 조절 메서드
     private void Sound(AudioClip stageState, float stageVolume, bool isLoop)
     {
         SoundPlayer.clip = stageState;
@@ -85,6 +88,8 @@ public class Stage_Sound_Manager : MonoBehaviour
         SoundPlayer.loop = isLoop;
         SoundPlayer.Play();
     }
+
+    // Sfx, BGM 딜레이 재생하는 메서드 (코루틴 사용)
     private IEnumerator SfxToBgm(AudioClip sfx, float sfxVol, AudioClip bgm, float bgmVol)
     {
         if (sfx != null)

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
-
     public static WaveManager _instance;
 
     //스테이지 정보
@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     WayPoint _wayPoint2;
 
+    [SerializeField] private HUDManager hudManager;
     //현재 Wave 단계
     private int _wave;
     public int Wave { get { return _wave; } }
@@ -35,13 +36,13 @@ public class WaveManager : MonoBehaviour
             _isReadyTime = value;
             if (_isReadyTime)
             {
-                Debug.Log("Wait");
-                Stage_Sound_Manager.instance.SettingSound("Waiting");
+                // Debug.Log("Wait");
+                Stage_Sound_Manager.instance?.SettingSound("Waiting");
             }
             else
             {
-                Debug.Log("Start");
-                Stage_Sound_Manager.instance.SettingSound("Wave");
+                // Debug.Log("Start");
+                Stage_Sound_Manager.instance?.SettingSound("Wave");
             }
         }
     }
@@ -54,20 +55,41 @@ public class WaveManager : MonoBehaviour
     //맵에 스폰된 몬스터의 총 개수
     public int NumsOfMonsters
     { get { return MonsterSpawner.Instance.MonsterCount; } }
-     
+
+    bool _isNextStageReserved;
+
     void Awake()
     {
         _instance = this;
-        Init();
+        
     }
 
     void Start()
     {
-        Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
+        Init();
+        // Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
     }
 
     void Update()
     {
+        if(_isNextStageReserved)
+        {
+            if (NumsOfMonsters == 0)
+            {
+                if (GameSceneManager.Instance?.CurrentSceneIndex()
+                    >= SceneManager.sceneCountInBuildSettings - 1)
+                {
+                    Debug.Log($"{SceneManager.sceneCountInBuildSettings} 씬 카운트");
+                    hudManager?.ShowVictoryPanel();
+                    Destroy(this.gameObject);
+                    return;
+                }
+                Debug.Log("로드 다음 스테이지");
+                GameSceneManager.Instance?.LoadNextStage();
+            }
+            return;
+        }
+
         //웨이브 시간 차감
         _waveTimer -= Time.deltaTime;
 
@@ -79,17 +101,18 @@ public class WaveManager : MonoBehaviour
         //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
         {
-            IsReadyTime = !_isReadyTime;
 
             //다음Wave로 전환을위해 초기화작업
-            if (_isReadyTime)
+            if (!IsReadyTime)
             {
+                //웨이브 클리어 골드 추가
+                DataManager.Instance.PlayerGold += _stageData.WaveDatas[_wave].ClearGold;
+
                 //웨이브를 모두 깼다면 클리어 처리
                 if (_wave == _stageData.WaveDatas.Count - 1)
                 {
-                    Debug.Log("웨이브 올클리어");
-                    //TODO: 씬전환필요함
-
+                    //Scene전환
+                    _isNextStageReserved = true;
                     return;
                 }
 
@@ -98,13 +121,15 @@ public class WaveManager : MonoBehaviour
                 _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
                 _numsOfSpawnMonster = 0;
                 _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
-                Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
+                // Debug.Log($"[{Wave}]단계 [준비]시간입니다. ({_waveTimer:00}초)");
             }
             else
             {
                 _waveTimer = _stageData.WaveDatas[_wave].WaveLimitTime;
-                Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
+                // Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
             }
+
+            IsReadyTime = !IsReadyTime;
         }
 
         SpawnMonster();
@@ -118,6 +143,8 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
+        DataManager.Instance.PlayerGold = _stageData.StartGold;
+        _isNextStageReserved = false;
     }
 
     void SpawnMonster()
@@ -137,21 +164,21 @@ public class WaveManager : MonoBehaviour
                 if (d.Spawn_Left)
                 {
                     MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
-                    _numsOfSpawnMonster++;
+                    // _numsOfSpawnMonster++;
                 }
                 if (d.Spawn_Right)
                 {
                     MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint2);
-                    _numsOfSpawnMonster++;
+                    // _numsOfSpawnMonster++;
                 }
             }
             //일반적인 스폰이라면 그냥 스폰.
             else
             {
                 MonsterSpawner.Instance.SpawnMonster(_stageData.WaveDatas[_wave].MonsterData, _wayPoint1);
-                _numsOfSpawnMonster++;
             }
 
+            _numsOfSpawnMonster++;
             
             _spawnCoolTime -= _stageData.WaveDatas[_wave].SpawnDelay;
         }

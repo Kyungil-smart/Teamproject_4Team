@@ -94,7 +94,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000010585735776}
@@ -134,8 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3652592e3e39b46afdc22e98b9f5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterData: {fileID: 11400000, guid: bcb781bc76f32a340af76a711fc4a4c5, type: 2}
-  _wayPoint: {fileID: 11400000, guid: ebb2d37a32158074e86adc1da791a885, type: 2}
+  _hp: 0
 --- !u!54 &-5480181649405487645
 Rigidbody:
   m_ObjectHideFlags: 0

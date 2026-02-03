@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -32,6 +33,9 @@ public class MonsterBehavior : MonoBehaviour
         }
     }
 
+    Transform _aimPoint;
+
+
     private void Awake()
     {
     }
@@ -55,6 +59,8 @@ public class MonsterBehavior : MonoBehaviour
         {
             //골드지급!!!!!!!!!!!!!!!!!!!!!!!!!!
             // _dropGold
+            // TODO : 골드 추가 했습니다. - 제갈도원 -
+            DataManager.Instance.PlayerGold += _dropGold;
             Die();
         }
     }
@@ -71,7 +77,7 @@ public class MonsterBehavior : MonoBehaviour
             _velocity = _monsterData.MoveSpeed;
             _dropGold = _monsterData.DropGold;
         }
-        //TODO: Maps[0] -> Maps[현재맵]으로 변경해야한다.
+
         if (_wayPoint != null)
         {
             //경로설정
@@ -82,12 +88,16 @@ public class MonsterBehavior : MonoBehaviour
             transform.forward = dir.normalized;
             //초기위치 설정
             transform.position = _pathPoints[0];
+            //Debug.Log($"transform x {transform.position.x:0.00} y{transform.position.y:0.00} z{transform.position.z:0.00}");
+
         }
 
         //애니메이션 시작시간 랜덤
         Animator animator = GetComponent<Animator>();
         float rand = Random.Range(0f, 1f);
         animator.Play(0, 0, rand);
+
+        SetAimPoint();
 
     }
 
@@ -102,9 +112,12 @@ public class MonsterBehavior : MonoBehaviour
         {
             //Debug.Log("도착!!!!!!!!!!!!!!!!!!");
             // player체력을 깎아야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+            // TODO : 플레이어 체력 감소 추가 -제갈도원-
+            DataManager.Instance.PlayerLife -= 1;
             Die();
-
+            
+            Base_Sound_Manager.instance.BaseSFX("Taken_Damage");
+            
             return;
         }
         
@@ -121,9 +134,6 @@ public class MonsterBehavior : MonoBehaviour
             Vector3 dir = _pathPoints[_pathIndex] - transform.position;
             transform.forward = dir.normalized;
         }
-
-        
-
     }
 
     //몬스터에게 데미지를 입힘
@@ -142,8 +152,8 @@ public class MonsterBehavior : MonoBehaviour
     {
         MonsterSpawner.Instance.DieAnimation(_monsterData, transform); //사망 애니메이션
 
-        Enemy_Sound_Manager.instance.PlaySfx(); // 몬스터 사망 사운드
-        Enemy_VFX_Manager.instance.Death(transform); //몬스터 죽음 VFX
+        Enemy_Sound_Manager.instance?.PlaySfx(); // 몬스터 사망 사운드
+        Enemy_VFX_Manager.instance?.Death(transform); //몬스터 죽음 VFX
 
         //몬스터 destroy
         MonsterSpawner.Instance.RemoveMonster(gameObject);
@@ -156,5 +166,28 @@ public class MonsterBehavior : MonoBehaviour
     public void SetWayPoint(WayPoint wayPoint)
         { _wayPoint = wayPoint; }
 
+    //asdfasdf
+    public Transform GetAimPoint()
+    {
+        return _aimPoint != null ? _aimPoint : transform;
+    }
+
+    void SetAimPoint()
+    {
+        if (_aimPoint == null)
+        {
+            GameObject ap = new GameObject("AimPoint");
+            ap.transform.SetParent(transform);
+            _aimPoint = ap.transform;
+        }
+
+        Collider col = GetComponentInChildren<Collider>();
+        if (col != null)
+        {
+            Vector3 v = new Vector3(col.bounds.center.x * transform.localScale.x, col.bounds.center.y * transform.localScale.y, col.bounds.center.z * transform.localScale.z);
+            _aimPoint.position = transform.position + v;
+            //Debug.Log($"t x {_aimPoint.position.x:0.00} y{_aimPoint.position.y:0.00} z{_aimPoint.position.z:0.00}");
+        }
+    }
     
 }

@@ -36,6 +36,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // ⏸ Pause 상태면 이동 로직 자체를 실행하지 않는다
+        if (controlStateManager != null && !controlStateManager.CanMove)
+        {
+            if (controlStateManager == null || !controlStateManager.CanMove)
+            {
+                animator.SetBool("IsRunning", false);
+                return;
+            }
+
+            if (Cursor.lockState != CursorLockMode.Locked)
+            {
+                animator.SetBool("IsRunning", false);
+                return;
+            }
+            return;
+        }
+
         Move();
     }
 
@@ -44,17 +61,7 @@ public class PlayerMovement : MonoBehaviour
         // -------------------------------------------------
         // 이동 가능 상태 체크
         // -------------------------------------------------
-        if (controlStateManager == null || !controlStateManager.CanMove)
-        {
-            animator.SetBool("IsRunning", false);
-            return;
-        }
-
-        if (Cursor.lockState != CursorLockMode.Locked)
-        {
-            animator.SetBool("IsRunning", false);
-            return;
-        }
+        
 
         // -------------------------------------------------
         // 입력 처리
@@ -85,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         // -------------------------------------------------
         // 이동량 계산
         // -------------------------------------------------
-        Vector3 moveDelta = moveDir * moveSpeed * Time.deltaTime;
+        Vector3 moveDelta = moveDir * (moveSpeed * Time.deltaTime);
 
         // -------------------------------------------------
         // Capsule 기준점 설정 (반드시 먼저!)
