@@ -21,15 +21,14 @@ public class DataManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        Init();
     }
     private void Start()
     {
-        Init();
     }
 
     public void Init()
     {
-        PlayerGold = 150;
         PlayerLife = 10;
     }
 }

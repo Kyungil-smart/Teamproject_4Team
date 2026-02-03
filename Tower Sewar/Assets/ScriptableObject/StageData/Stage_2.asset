@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726327b959ce35f4dbf60ca7cbbece44, type: 3}
   m_Name: Stage_2
   m_EditorClassIdentifier: 
+  _startGold: 500
   _waveDatas:
   - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
     _spawnAmount: 4
