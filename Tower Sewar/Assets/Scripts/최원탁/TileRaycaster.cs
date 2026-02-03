@@ -180,20 +180,18 @@ public class TileRaycaster : MonoBehaviour
             return;
         }
 
-        Turret_Grade gradeController = turretPrefab[tower].GetComponent<Turret_Grade>();
-        if (gradeController != null && gradeController._towerData.Count > 0)
+        // Turret_Grade gradeController = turretPrefab[tower].GetComponent<Turret_Grade>();
+        if (TurretGradeAdapter.TryGetBuildCost(turretPrefab[tower], out int buildCost))
         {
-            int buildCost = gradeController._towerData[0].TowerBuildCost;
-        
             // 골드 부족
             if (DataManager.Instance.PlayerGold < buildCost)
             {
-                Debug.LogWarning($"골드 부족가 부족합니다. 필요 : {buildCost}, 보유 : {DataManager.Instance.PlayerGold}");
+                Debug.LogWarning($"골드 부족가 부족합니다.");
                 ExitBuildConfirm();
                 return;
             }
             DataManager.Instance.PlayerGold -= buildCost;
-            Debug.Log($"타워 설치! 비용: {buildCost}, 남은 골드: {DataManager.Instance.PlayerGold}");
+            //Debug.Log($"타워 설치! 비용: {buildCost}, 남은 골드: {DataManager.Instance.PlayerGold}");
         
         }
 
