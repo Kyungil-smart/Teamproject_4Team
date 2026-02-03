@@ -71,7 +71,7 @@ public class Turret : MonoBehaviour
 
         if (monster == null) return;
         
-        Debug.Log(monster.name);
+        // Debug.Log(monster.name);
     
         Transform aim = monster.GetAimPoint();
         if (!_enemyList.Contains(aim))
@@ -127,8 +127,8 @@ public class Turret : MonoBehaviour
     public void Upgrade()
     {
         if (_curGrade + 1 < _gradeController._towerData.Count)
-        {
-            _curGrade++;
+        { 
+            CurGrade++;
             if(_curGrade > 0)
                 MachineGun_Tower_Sound_Manager.instance.PlaySFX("Upgrade");
             UpgradeTower();
@@ -160,7 +160,7 @@ public class Turret : MonoBehaviour
             _muzzleScripts = _currentModel.GetComponentsInChildren<Muzzle>();
             _muzzleIndex = 0;
             
-            Debug.Log(_gradeController._towerData[_curGrade].TowerRange);
+            // Debug.Log(_gradeController._towerData[_curGrade].TowerRange);
             _collider.radius = _gradeController._towerData[_curGrade].TowerRange;
         }
     }

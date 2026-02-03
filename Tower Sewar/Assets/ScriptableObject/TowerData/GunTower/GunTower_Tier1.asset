@@ -16,6 +16,6 @@ MonoBehaviour:
   _towerName: GunTower
   _towerBuildCost: 150
   _towerUpCost: 150
-  _towerAtt: 10
-  _towerAttDelay: 0.75
+  _towerAtt: 12
+  _towerAttDelay: 0.7
   _towerRange: 4

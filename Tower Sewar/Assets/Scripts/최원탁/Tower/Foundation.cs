@@ -9,10 +9,7 @@ public class Foundation : MonoBehaviour
     /// <summary>
     /// 이 파운데이션에 타워를 지을 수 있는지
     /// </summary>
-    public bool CanBuild()
-    {
-        return builtTower == null;
-    }
+    public bool CanBuild() => builtTower == null;
 
     /// <summary>
     /// 타워 생성 (월드에 독립적으로 생성)
@@ -76,6 +73,8 @@ public class Foundation : MonoBehaviour
 
         // 골드 차감
         DataManager.Instance.PlayerGold -= buildCost;
+        
+        Transform spawnTransform = buildPoint != null ? buildPoint : transform;
 
         // 실제 타워 설치
         GameObject turretObj = Instantiate(
@@ -84,6 +83,7 @@ public class Foundation : MonoBehaviour
             Quaternion.identity
         );
 
+        builtTower = turretObj;
         BuiltTurret = turretObj.GetComponent<Turret>();
 
         Debug.Log($"타워 설치 성공! 남은 골드: {DataManager.Instance.PlayerGold}");
@@ -101,5 +101,6 @@ public class Foundation : MonoBehaviour
 
         Destroy(builtTower);
         builtTower = null;
+        BuiltTurret = null;
     }
 }

@@ -40,7 +40,7 @@ public class UIcontroller : MonoBehaviour
 
     public void CloseTowerSelection()
     {
-        Debug.Log("진입");
+        // Debug.Log("진입");
         foreach (GameObject g in TowerSelectionPanel)
             g.SetActive(false);
 
@@ -54,21 +54,21 @@ public class UIcontroller : MonoBehaviour
     public void BulletTower()
     {
         _selectedTower = (int)TowerType.GunTower;
-        Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
+        // Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
         BuildSelect();
     }
 
     public void CannonTower()
     {
         _selectedTower = (int)TowerType.CannonTower;
-        Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
+        // Debug.Log($"{(TowerType)_selectedTower} Selected Tower");
         BuildSelect();
     }
 
     // 카드 선택 완료 버튼
     public void BuildSelect()
     {
-        Debug.Log($"{(TowerType)_selectedTower} Selected BuildTower");
+        // Debug.Log($"{(TowerType)_selectedTower} Selected BuildTower");
 
         if (_raycaster != null)
             _raycaster.OnTowerSelectedFromUI();
