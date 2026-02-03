@@ -54,7 +54,9 @@ public class WaveManager : MonoBehaviour
     //맵에 스폰된 몬스터의 총 개수
     public int NumsOfMonsters
     { get { return MonsterSpawner.Instance.MonsterCount; } }
-     
+
+    bool _isNextStageReserved;
+
     void Awake()
     {
         _instance = this;
@@ -69,6 +71,13 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
+        if(_isNextStageReserved)
+        {
+            if(NumsOfMonsters == 0)
+                GameSceneManager.Instance.LoadNextStage();
+            return;
+        }
+
         //웨이브 시간 차감
         _waveTimer -= Time.deltaTime;
 
@@ -80,10 +89,9 @@ public class WaveManager : MonoBehaviour
         //타이머가 끝나면 상태변경(준비시간 or 웨이브시간)
         if (_waveTimer <= 0)
         {
-            IsReadyTime = !_isReadyTime;
 
             //다음Wave로 전환을위해 초기화작업
-            if (_isReadyTime)
+            if (!IsReadyTime)
             {
                 //웨이브 클리어 골드 추가
                 DataManager.Instance.PlayerGold += _stageData.WaveDatas[_wave].ClearGold;
@@ -92,19 +100,7 @@ public class WaveManager : MonoBehaviour
                 if (_wave == _stageData.WaveDatas.Count - 1)
                 {
                     //Scene전환
-                    
-                    if(_numsOfSpawnMonster != 0)
-                    {
-                        Debug.Log($"버그 ~ {_numsOfSpawnMonster}마리의 몬스터가 남아있습니다!!");
-                        //DataManager.Instance.PlayerLife -= _numsOfSpawnMonster;
-                    }
-
-
-                    GameSceneManager.Instance.LoadNextStage();
-                    Debug.Log("스테이지의 모든 웨이브가 진행되었습니다. 다음 Scene으로 넘어갑니다.");
-                    
-
-
+                    _isNextStageReserved = true;
                     return;
                 }
 
@@ -120,6 +116,8 @@ public class WaveManager : MonoBehaviour
                 _waveTimer = _stageData.WaveDatas[_wave].WaveLimitTime;
                 Debug.Log($"[{Wave}]단계 [전투]시간입니다. ({_waveTimer:00}초)");
             }
+
+            IsReadyTime = !IsReadyTime;
         }
 
         SpawnMonster();
@@ -134,6 +132,7 @@ public class WaveManager : MonoBehaviour
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
         DataManager.Instance.PlayerGold = _stageData.StartGold;
+        _isNextStageReserved = false;
     }
 
     void SpawnMonster()
