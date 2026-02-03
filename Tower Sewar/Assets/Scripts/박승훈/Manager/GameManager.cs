@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
         GenerateManager<SoundManager>();
         GenerateManager<InputManager>();
         GenerateManager<Title_BGM_Manager>();
-        GenerateManager<UIManager>();
         GenerateManager<UI_SFX_Manager>();
     }
 
