@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         // GenerateManager<WaveManager>();
+        GenerateManager<GameSceneManager>();
         GenerateManager<DataManager>();
         GenerateManager<SoundManager>();
         GenerateManager<InputManager>();
