@@ -18,4 +18,4 @@ MonoBehaviour:
   _towerUpCost: 0
   _towerAtt: 75
   _towerAttDelay: 5
-  _towerRange: 12
+  _towerRange: 15
