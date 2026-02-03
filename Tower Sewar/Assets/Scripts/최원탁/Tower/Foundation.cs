@@ -46,6 +46,52 @@ public class Foundation : MonoBehaviour
     }
 
     /// <summary>
+    /// [역할]
+    /// - 타워 설치를 "시도"한다
+    /// - 골드가 충분하면 설치 + 차감
+    /// - 부족하면 아무 일도 하지 않고 실패 반환
+    /// </summary>
+    public bool TryBuildTower(GameObject turretPrefab)
+    {
+        // 이미 타워가 설치된 상태면 실패
+        if (!CanBuild())
+        {
+            Debug.Log("Foundation : 이미 타워가 설치되어 있습니다.");
+            return false;
+        }
+
+        // Adapter를 통해 설치 비용 조회
+        if (!TurretGradeAdapter.TryGetBuildCost(turretPrefab, out int buildCost))
+        {
+            Debug.LogError("Foundation : 타워 비용 조회 실패");
+            return false;
+        }
+
+        // 골드 부족 체크 (DataManager는 수정 안 함)
+        if (DataManager.Instance.PlayerGold < buildCost)
+        {
+            Debug.Log($"골드 부족! 필요:{buildCost}, 보유:{DataManager.Instance.PlayerGold}");
+            return false;
+        }
+
+        // 골드 차감
+        DataManager.Instance.PlayerGold -= buildCost;
+
+        // 실제 타워 설치
+        GameObject turretObj = Instantiate(
+            turretPrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        BuiltTurret = turretObj.GetComponent<Turret>();
+
+        Debug.Log($"타워 설치 성공! 남은 골드: {DataManager.Instance.PlayerGold}");
+        return true;
+    }
+
+
+    /// <summary>
     /// (선택) 타워 제거
     /// </summary>
     public void RemoveTower()
