@@ -116,6 +116,12 @@ public class TileRaycaster : MonoBehaviour
 
                 return;
             }
+            else 
+            {
+                SelectedObject = CurrentHoverObject;
+                EnterBuildMode();
+                return;
+            }
         }
 
         if (!CurrentHoverObject.TryGetComponent<IPlayerInteractable>(out var interactable))
@@ -200,8 +206,41 @@ public class TileRaycaster : MonoBehaviour
     {
         Debug.Log("▶ 업그레이드 CONFIRM 처리");
 
-        selectedTurret.Upgrade();
+        if (selectedTurret == null)
+        {
+            CloseUpgradeUI();
+            return;
+        }
 
+        // 업그레이드 비용 확인
+        Turret_Grade gradeController = selectedTurret.GetComponent<Turret_Grade>();
+        if (gradeController != null)
+        {
+            // 현재 등급 가져오기
+            var field = typeof(Turret).GetField("_curGrade", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            int currentGrade = field != null ? (int)field.GetValue(selectedTurret) : 0;
+            int nextGrade = currentGrade + 1;
+        
+            if (nextGrade < gradeController._towerData.Count)
+            {
+                int upgradeCost = gradeController._towerData[nextGrade].TowerUpCost;
+            
+                // 골드 부족
+                if (DataManager.Instance.PlayerGold < upgradeCost)
+                {
+                    Debug.LogWarning($"골드 부족! 필요: {upgradeCost}");
+                    CloseUpgradeUI();
+                    return;
+                }
+            
+                // 골드 차감
+                DataManager.Instance.PlayerGold -= upgradeCost;
+                Debug.Log($"업그레이드 비용: {upgradeCost}");
+            }
+        }
+
+        selectedTurret.Upgrade();
         selectedTurret = null;
         CloseUpgradeUI();
     }
