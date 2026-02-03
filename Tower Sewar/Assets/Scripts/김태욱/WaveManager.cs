@@ -133,6 +133,7 @@ public class WaveManager : MonoBehaviour
         _spawnCoolTime = _stageData.WaveDatas[_wave].SpawnDelay;
         _numsOfSpawnMonster = 0;
         _waveTimer = _stageData.WaveDatas[_wave].WaveReadyTime;
+        DataManager.Instance.PlayerGold = _stageData.StartGold;
     }
 
     void SpawnMonster()
