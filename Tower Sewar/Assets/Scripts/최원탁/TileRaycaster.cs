@@ -139,6 +139,7 @@ public class TileRaycaster : MonoBehaviour
             // Foundation에 이미 타워가 설치된 경우만
             if (!foundation.CanBuild())
             {
+                Debug.Log("이미 설치됨");
                 selectedTurret = foundation.BuiltTurret;
 
                 isUpgradeUIOpen = true;
