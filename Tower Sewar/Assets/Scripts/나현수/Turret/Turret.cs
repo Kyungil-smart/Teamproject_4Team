@@ -69,6 +69,7 @@ public class Turret : MonoBehaviour
         if (!other.CompareTag("Enemy")) return;
     
         MonsterBehavior monster = other.GetComponentInParent<MonsterBehavior>();
+
         if (monster == null) return;
         
         Debug.Log(monster.name);
