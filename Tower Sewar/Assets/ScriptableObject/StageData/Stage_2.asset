@@ -25,16 +25,16 @@ MonoBehaviour:
   - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
     _spawnAmount: 10
     _spawnDelay: 3
-    spawn_Left: 1
-    spawn_Right: 0
+    spawn_Left: 0
+    spawn_Right: 1
     _waveReadyTime: 20
     _waveLimitTime: 40
     _clearGold: 75
   - _monsterData: {fileID: 11400000, guid: 3b8345cc1d024084d8e32308ad5e47f0, type: 2}
     _spawnAmount: 10
     _spawnDelay: 3
-    spawn_Left: 0
-    spawn_Right: 1
+    spawn_Left: 1
+    spawn_Right: 0
     _waveReadyTime: 20
     _waveLimitTime: 40
     _clearGold: 75
@@ -50,14 +50,14 @@ MonoBehaviour:
     _spawnAmount: 20
     _spawnDelay: 1.5
     spawn_Left: 1
-    spawn_Right: 0
+    spawn_Right: 1
     _waveReadyTime: 20
     _waveLimitTime: 40
     _clearGold: 100
   - _monsterData: {fileID: 11400000, guid: 05e3c1e2744b6c149bab3377d9a2c185, type: 2}
     _spawnAmount: 20
     _spawnDelay: 1.5
-    spawn_Left: 0
+    spawn_Left: 1
     spawn_Right: 1
     _waveReadyTime: 20
     _waveLimitTime: 40
@@ -66,14 +66,14 @@ MonoBehaviour:
     _spawnAmount: 20
     _spawnDelay: 1.5
     spawn_Left: 1
-    spawn_Right: 0
+    spawn_Right: 1
     _waveReadyTime: 20
     _waveLimitTime: 40
     _clearGold: 125
   - _monsterData: {fileID: 11400000, guid: 6cb7d7bbb03366949ad3e0674002c07e, type: 2}
     _spawnAmount: 20
     _spawnDelay: 1.5
-    spawn_Left: 0
+    spawn_Left: 1
     spawn_Right: 1
     _waveReadyTime: 20
     _waveLimitTime: 40
