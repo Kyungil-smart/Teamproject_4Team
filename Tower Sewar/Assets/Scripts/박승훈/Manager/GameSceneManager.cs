@@ -8,7 +8,7 @@ public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager Instance {get; private set;}
 
-    static int nowStage;
+    private static int nowStage;
     
     private void Awake()
     {
@@ -20,7 +20,6 @@ public class GameSceneManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
     
     // 게임 씬 이동
     public void LoadGame()
@@ -32,14 +31,14 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadNextStage()
     {
-        nowStage++;
         Time.timeScale = 1f;
-        if( nowStage == 4 )
-        {
-            nowStage = 1;
-            LoadTitle();
-        }
-        SceneManager.LoadScene(nowStage);
+        SceneManager.LoadScene(CurrentSceneIndex() + 1);
+    }
+
+    public int CurrentSceneIndex()
+    {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        return SceneManager.GetActiveScene().buildIndex;
     }
     
     // 타이틀 씬 이동

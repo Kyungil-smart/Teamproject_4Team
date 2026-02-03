@@ -85,17 +85,17 @@ public class HUDManager : MonoBehaviour
     }
 
     // 현재 씬 재시작 (Stop, Defeat, Victory 모두 사용)
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        isDefeated = false;
-        isVictory = false;
-        isPaused = false;
-        
-        DataManager.Instance.InitLife();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    // public void RestartGame()
+    // {
+    //     Time.timeScale = 1f;
+    //     isDefeated = false;
+    //     isVictory = false;
+    //     isPaused = false;
+    //     
+    //     DataManager.Instance.InitLife();
+    //
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    // }
 
 
     /// 타이틀 씬으로 이동 (Stop, Defeat, Victory 모두 사용)
@@ -175,8 +175,8 @@ public class HUDManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
         Debug.Log("승리!");
+        
         Stage_Sound_Manager.instance?.SettingSound("Clear");
     }
 

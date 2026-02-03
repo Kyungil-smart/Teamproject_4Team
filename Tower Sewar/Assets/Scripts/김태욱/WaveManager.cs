@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
-
     public static WaveManager _instance;
 
     //스테이지 정보
@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     WayPoint _wayPoint2;
 
+    [SerializeField] private HUDManager hudManager;
     //현재 Wave 단계
     private int _wave;
     public int Wave { get { return _wave; } }
@@ -73,8 +74,19 @@ public class WaveManager : MonoBehaviour
     {
         if(_isNextStageReserved)
         {
-            if(NumsOfMonsters == 0)
-                GameSceneManager.Instance.LoadNextStage();
+            if (NumsOfMonsters == 0)
+            {
+                if (GameSceneManager.Instance?.CurrentSceneIndex()
+                    >= SceneManager.sceneCountInBuildSettings - 1)
+                {
+                    Debug.Log($"{SceneManager.sceneCountInBuildSettings} 씬 카운트");
+                    hudManager?.ShowVictoryPanel();
+                    Destroy(this.gameObject);
+                    return;
+                }
+                Debug.Log("로드 다음 스테이지");
+                GameSceneManager.Instance?.LoadNextStage();
+            }
             return;
         }
 

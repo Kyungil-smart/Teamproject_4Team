@@ -783,6 +783,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6779682698579245812, guid: 46bb1b4c51c6fb84e9777daafd202ce8, type: 3}
   m_PrefabInstance: {fileID: 178720184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &205869230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5724013554759340246, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+  m_PrefabInstance: {fileID: 1642022795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f36d79ab75a7b49b18ebfae45d7630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &216815110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3141,11 +3152,15 @@ PrefabInstance:
     - target: {fileID: 6569072135470931288, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
       propertyPath: _stageData
       value: 
-      objectReference: {fileID: 11400000, guid: d154a1207e2db9643b2b38cb6c7b04cc, type: 2}
+      objectReference: {fileID: 11400000, guid: ebfc1e8e10e41bf43afd76927579677f, type: 2}
     - target: {fileID: 6569072135470931288, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
       propertyPath: _wayPoint1
       value: 
       objectReference: {fileID: 11400000, guid: adfc463d31f407c4c8c785008baa35f6, type: 2}
+    - target: {fileID: 6569072135470931288, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 205869230}
     - target: {fileID: 6952703776137374985, guid: d86777383769ddb4f8a42f231589ee75, type: 3}
       propertyPath: m_LocalPosition.y
       value: 16.38
@@ -5560,6 +5575,26 @@ PrefabInstance:
       propertyPath: mapBoundary
       value: 
       objectReference: {fileID: 326145544}
+    - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1615677131}
+    - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PopButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_SFX_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237879343149700506, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724013554759340246, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: controlStateManager
+      value: 
+      objectReference: {fileID: 2034932572}
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -5575,6 +5610,10 @@ PrefabInstance:
     - target: {fileID: 6464391707972626485, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602400384154549578, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6923003849941893588, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -6775,6 +6814,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8259867319992412203, guid: 1be92378ed2854946acbb24fd8accf5c, type: 3}
   m_PrefabInstance: {fileID: 2010253473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2034932572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5944004887278916367, guid: 9b6a7480689d38d418e13fc06b0bb86c, type: 3}
+  m_PrefabInstance: {fileID: 1642022795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61ea9f33a95e7345814d3b9ca099877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2037994048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6907,6 +6957,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1443824555}
     m_Modifications:
+    - target: {fileID: 1409161889584235900, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
+      propertyPath: clearVolume
+      value: 0.634
+      objectReference: {fileID: 0}
     - target: {fileID: 3102800510367138446, guid: 5540e1316651edf48b69251dceeab5ca, type: 3}
       propertyPath: m_Name
       value: Stage3 Wave Manager
