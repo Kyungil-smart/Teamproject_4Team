@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class Rocket_Canon : Rocket
 {
-    [SerializeField] private float _launchTime = 2.0f;
+    [SerializeField] private float _launchTime  = 0.7f;
     [SerializeField] private float _launchSpeed = 1.0f;
-    [SerializeField] private float _downSpeed = 30.0f;
-    
+    [SerializeField] private float _downSpeed   = 45.0f;
     
     [SerializeField] private float explosionRadius = 3.0f;
-
     private float _elapsedTime = 0f;
 
     public override void Launch(Transform target, TowerData towerData)

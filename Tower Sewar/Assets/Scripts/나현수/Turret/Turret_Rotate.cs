@@ -36,6 +36,12 @@ public class Turret_Rotate : MonoBehaviour
         }
         else
         {
+            if (transform.localEulerAngles.x != 0 || transform.localEulerAngles.z != 0)
+            {
+                Quaternion setRotate = Quaternion.Euler(0, transform.localEulerAngles.y, 0);
+                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, setRotate, _rotateSpeed * Time.deltaTime);
+            }
+
             transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
         }
     }
