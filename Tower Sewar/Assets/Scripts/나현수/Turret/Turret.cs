@@ -97,8 +97,6 @@ public class Turret : MonoBehaviour
     private void HandleFiring()
     {
         _attTimer += Time.deltaTime;
-        Debug.Log(_attTimer);
-        Debug.Log(_gradeController._towerData[_curGrade].TowerAttDelay);
         if (_attTimer >= _gradeController._towerData[_curGrade].TowerAttDelay)
         {
             FireSequential();
